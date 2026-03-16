@@ -20,65 +20,72 @@ export default function Pricing({ dict }: PricingProps) {
           />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {dict.pricing.plans.map((plan: any, index: number) => (
-            <AnimatedSection key={index} delay={index * 0.1}>
-              <div
-                className={`relative h-full flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-background border-accent shadow-xl shadow-accent/15 animate-glow-pulse'
-                    : 'bg-background border-border hover:border-accent/30'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="flex items-center gap-1.5 bg-accent text-black px-5 py-1.5 rounded-full text-xs font-bold shadow-lg shadow-accent/30">
-                      <Sparkles size={13} />
-                      {dict.pricing.mostPopular}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto items-start">
+          {dict.pricing.plans.map((plan: any, index: number) => {
+            const isPopular = plan.popular;
+            return (
+              <AnimatedSection key={index} delay={index * 0.09}>
+                <div
+                  className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
+                    isPopular
+                      ? 'bg-background border-accent/70 shadow-2xl shadow-accent/12 ring-1 ring-accent/20 -mt-0 md:-mt-4 md:-mb-4'
+                      : 'bg-background border-border/60 hover:border-accent/25'
+                  }`}
+                >
+                  {isPopular && (
+                    <div className="absolute -top-[1.125rem] left-1/2 -translate-x-1/2 whitespace-nowrap">
+                      <div className="flex items-center gap-1.5 bg-accent text-black px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-lg shadow-accent/25">
+                        <Sparkles size={11} />
+                        {dict.pricing.mostPopular}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Header */}
+                  <div className={`${isPopular ? 'pt-3' : ''} mb-7`}>
+                    <h3 className={`font-display text-lg font-bold mb-1 ${isPopular ? 'text-accent' : 'text-white'}`}>
+                      {plan.name}
+                    </h3>
+                    <p className="text-zinc-600 text-xs leading-relaxed mb-5">{plan.description}</p>
+                    <div className="flex items-baseline gap-1">
+                      <span className={`text-[3.25rem] font-display font-bold leading-none ${isPopular ? 'text-accent' : 'text-white'}`}>
+                        {plan.price}
+                      </span>
+                      <span className="text-zinc-600 text-sm ml-0.5">{plan.period}</span>
                     </div>
                   </div>
-                )}
 
-                {/* Plan header */}
-                <div className="mb-8 mt-2">
-                  <h3 className="text-xl font-bold text-white mb-1">{plan.name}</h3>
-                  <p className="text-zinc-500 text-sm mb-6">{plan.description}</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className={`text-5xl font-display font-bold ${plan.popular ? 'text-accent' : 'text-white'}`}>
-                      {plan.price}
-                    </span>
-                    <span className="text-zinc-600 text-sm">{plan.period}</span>
-                  </div>
+                  {/* Divider */}
+                  <div className="h-px bg-border/50 mb-6" />
+
+                  {/* Features */}
+                  <ul className="space-y-2.5 mb-8 flex-grow">
+                    {plan.features.map((feature: string, idx: number) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <Check
+                          size={15}
+                          className={`flex-shrink-0 mt-0.5 ${isPopular ? 'text-accent' : 'text-zinc-600'}`}
+                        />
+                        <span className="text-zinc-400 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <CTAButton
+                    variant={isPopular ? 'primary' : 'outline'}
+                    className="w-full"
+                    href="#contact"
+                  >
+                    {dict.pricing.cta}
+                  </CTAButton>
+
+                  <p className="text-center text-zinc-700 text-[11px] mt-3.5">
+                    {dict.pricing.noContract}
+                  </p>
                 </div>
-
-                {/* Features */}
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {plan.features.map((feature: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <Check
-                        size={17}
-                        className={`flex-shrink-0 mt-0.5 ${plan.popular ? 'text-accent' : 'text-zinc-500'}`}
-                      />
-                      <span className="text-zinc-300 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <CTAButton
-                  variant={plan.popular ? 'primary' : 'outline'}
-                  className="w-full"
-                  href="#contact"
-                >
-                  {dict.pricing.cta}
-                </CTAButton>
-
-                {/* No-contract note */}
-                <p className="text-center text-zinc-700 text-xs mt-4">
-                  {dict.pricing.noContract}
-                </p>
-              </div>
-            </AnimatedSection>
-          ))}
+              </AnimatedSection>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -10,6 +10,8 @@ interface ContactProps {
   dict: any;
 }
 
+const WA_URL = 'https://wa.me/1234567890';
+
 export default function Contact({ dict }: ContactProps) {
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
@@ -20,163 +22,162 @@ export default function Contact({ dict }: ContactProps) {
     setTimeout(() => {
       setFormState('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
-      setTimeout(() => setFormState('idle'), 6000);
-    }, 1500);
+      setTimeout(() => setFormState('idle'), 7000);
+    }, 1400);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const inputClass =
-    'w-full bg-background border border-border rounded-lg px-4 py-3 text-white placeholder-zinc-600 text-sm transition-all focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent';
+  const inputBase =
+    'w-full bg-background border border-border/70 rounded-lg px-4 py-3 text-white text-sm placeholder-zinc-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 hover:border-border';
 
   return (
     <section id="contact" className="bg-surface section-divider">
       <div className="container mx-auto py-section">
-        <AnimatedSection>
-          <SectionHeading
-            heading={dict.contact.heading}
-            subheading={dict.contact.subheading}
-          />
-        </AnimatedSection>
+        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 max-w-6xl mx-auto">
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Left — form */}
+          <AnimatedSection direction="left" delay={0.05}>
+            <SectionHeading
+              heading={dict.contact.heading}
+              subheading={dict.contact.subheading}
+              align="left"
+              className="mb-8"
+            />
 
-          {/* Contact form */}
-          <AnimatedSection direction="left" delay={0.1}>
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-zinc-400 mb-1.5">
-                  {dict.contact.form.name}
-                </label>
-                <input
-                  type="text" id="name" name="name"
-                  value={formData.name} onChange={handleChange}
-                  required className={inputClass}
-                  placeholder="John Doe"
-                />
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+                    {dict.contact.form.name}
+                  </label>
+                  <input
+                    type="text" id="name" name="name"
+                    value={formData.name} onChange={handleChange}
+                    required className={inputBase} placeholder="Alex Ionescu"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+                    {dict.contact.form.email}
+                  </label>
+                  <input
+                    type="email" id="email" name="email"
+                    value={formData.email} onChange={handleChange}
+                    required className={inputBase} placeholder="alex@example.com"
+                  />
+                </div>
               </div>
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-zinc-400 mb-1.5">
-                  {dict.contact.form.email}
-                </label>
-                <input
-                  type="email" id="email" name="email"
-                  value={formData.email} onChange={handleChange}
-                  required className={inputClass}
-                  placeholder="john@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-zinc-400 mb-1.5">
+                <label htmlFor="phone" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
                   {dict.contact.form.phone}
                 </label>
                 <input
                   type="tel" id="phone" name="phone"
                   value={formData.phone} onChange={handleChange}
-                  className={inputClass}
-                  placeholder="+40 712 345 678"
+                  className={inputBase} placeholder="+40 712 345 678"
                 />
               </div>
+
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-zinc-400 mb-1.5">
+                <label htmlFor="message" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
                   {dict.contact.form.message}
                 </label>
                 <textarea
                   id="message" name="message"
                   value={formData.message} onChange={handleChange}
-                  required rows={5} className={`${inputClass} resize-none`}
+                  required rows={5} className={`${inputBase} resize-none`}
                   placeholder="I want to lose 15kg and build lean muscle..."
                 />
               </div>
 
               <CTAButton type="submit" className="w-full" disabled={formState === 'sending'}>
-                <Send size={18} className={formState === 'sending' ? 'animate-pulse' : ''} />
+                <Send size={16} className={formState === 'sending' ? 'animate-pulse' : ''} />
                 {formState === 'sending' ? dict.contact.form.sending : dict.contact.form.submit}
               </CTAButton>
 
               {formState === 'success' && (
-                <div className="p-4 bg-accent/10 border border-accent/40 rounded-lg text-accent text-sm text-center">
+                <p className="text-accent text-sm text-center bg-accent/8 border border-accent/25 rounded-lg py-3 px-4">
                   {dict.contact.form.success}
-                </div>
+                </p>
               )}
               {formState === 'error' && (
-                <div className="p-4 bg-red-500/10 border border-red-500/40 rounded-lg text-red-400 text-sm text-center">
+                <p className="text-red-400 text-sm text-center bg-red-500/8 border border-red-500/25 rounded-lg py-3 px-4">
                   {dict.contact.form.error}
-                </div>
+                </p>
               )}
             </form>
           </AnimatedSection>
 
-          {/* Right column */}
-          <AnimatedSection direction="right" delay={0.2}>
-            <div className="space-y-6 h-full flex flex-col">
+          {/* Right — trust + info */}
+          <AnimatedSection direction="right" delay={0.12}>
+            <div className="flex flex-col gap-5 h-full">
 
-              {/* Primary WhatsApp CTA */}
+              {/* Primary WhatsApp */}
               <a
-                href="https://wa.me/1234567890"
+                href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-5 rounded-2xl bg-[#128C7E]/15 border border-[#128C7E]/40 hover:border-[#25D366]/60 transition-all group"
+                className="flex items-center gap-4 p-5 rounded-2xl bg-[#075E54]/10 border border-[#128C7E]/30 hover:border-[#25D366]/50 transition-all duration-200 group"
               >
-                <div className="w-14 h-14 bg-[#25D366]/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/25 transition-colors">
-                  <MessageCircle className="text-[#25D366]" size={26} />
+                <div className="w-12 h-12 bg-[#25D366]/12 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-[#25D366]/22 transition-colors">
+                  <MessageCircle className="text-[#25D366]" size={24} />
                 </div>
-                <div>
-                  <p className="text-white font-bold text-base">{dict.contact.whatsappPrimary}</p>
-                  <p className="text-zinc-500 text-sm">Most direct way to reach me</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-bold text-sm">{dict.contact.whatsappPrimary}</p>
+                  <p className="text-zinc-600 text-xs mt-0.5">Most direct path to getting started</p>
                 </div>
-                <span className="ml-auto text-zinc-600 text-xl group-hover:text-accent transition-colors">→</span>
+                <span className="text-zinc-700 group-hover:text-accent transition-colors text-lg leading-none">→</span>
               </a>
 
-              {/* Reply time badge */}
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-background border border-border/60 self-start">
-                <Clock size={14} className="text-accent" />
-                <span className="text-zinc-400 text-xs font-medium">{dict.contact.replyTime}</span>
+              {/* Reply time */}
+              <div className="flex items-center gap-2 self-start px-3.5 py-2 rounded-full bg-background border border-border/50">
+                <Clock size={13} className="text-accent flex-shrink-0" />
+                <span className="text-zinc-500 text-xs">{dict.contact.replyTime}</span>
               </div>
 
-              {/* Trust block — client quote */}
-              <div className="bg-background border border-border/50 rounded-2xl p-6">
-                <div className="flex gap-1 mb-3">
+              {/* Trust quote */}
+              <div className="bg-background border border-border/40 rounded-2xl p-6 flex-grow">
+                <div className="flex gap-0.5 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="text-accent fill-accent" />
+                    <Star key={i} size={13} className="text-accent fill-accent" />
                   ))}
                 </div>
-                <p className="text-zinc-300 text-sm italic leading-relaxed mb-4">
+                <p className="text-zinc-300 text-sm italic leading-[1.8] mb-5">
                   &ldquo;{dict.contact.trustQuote}&rdquo;
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-accent/15 text-accent flex items-center justify-center text-xs font-bold flex-shrink-0">
+                <div className="flex items-center gap-3 pt-4 border-t border-border/30">
+                  <div className="w-8 h-8 rounded-full bg-accent/15 text-accent flex items-center justify-center text-[11px] font-bold flex-shrink-0">
                     JL
                   </div>
-                  <p className="text-zinc-500 text-xs">{dict.contact.trustName}</p>
+                  <p className="text-zinc-600 text-xs">{dict.contact.trustName}</p>
                 </div>
               </div>
 
               {/* Contact links */}
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 <a
                   href="mailto:contact@elitetrainer.com"
-                  className="flex items-center gap-3 p-4 rounded-xl bg-background border border-border hover:border-accent/30 transition-colors group"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-background border border-border/40 hover:border-accent/25 transition-colors group"
                 >
-                  <Mail size={18} className="text-zinc-500 group-hover:text-accent transition-colors flex-shrink-0" />
+                  <Mail size={16} className="text-zinc-600 group-hover:text-accent transition-colors flex-shrink-0" />
                   <div>
-                    <p className="text-white text-sm font-medium">{dict.contact.info.email}</p>
-                    <p className="text-zinc-600 text-xs">contact@elitetrainer.com</p>
+                    <p className="text-zinc-300 text-xs font-semibold">{dict.contact.info.email}</p>
+                    <p className="text-zinc-700 text-[11px] mt-0.5">contact@elitetrainer.com</p>
                   </div>
                 </a>
-
                 <a
                   href="https://instagram.com/elitetrainer"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-4 rounded-xl bg-background border border-border hover:border-accent/30 transition-colors group"
+                  target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3.5 rounded-xl bg-background border border-border/40 hover:border-accent/25 transition-colors group"
                 >
-                  <Instagram size={18} className="text-zinc-500 group-hover:text-accent transition-colors flex-shrink-0" />
+                  <Instagram size={16} className="text-zinc-600 group-hover:text-accent transition-colors flex-shrink-0" />
                   <div>
-                    <p className="text-white text-sm font-medium">{dict.contact.info.instagram}</p>
-                    <p className="text-zinc-600 text-xs">@elitetrainer</p>
+                    <p className="text-zinc-300 text-xs font-semibold">{dict.contact.info.instagram}</p>
+                    <p className="text-zinc-700 text-[11px] mt-0.5">@elitetrainer</p>
                   </div>
                 </a>
               </div>

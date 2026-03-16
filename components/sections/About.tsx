@@ -9,66 +9,46 @@ interface AboutProps {
 }
 
 export default function About({ dict }: AboutProps) {
-  const certPills = ['NASM', 'PN1', 'FMS', '8 Years'];
+  const certPills = ['NASM', 'PN1', 'FMS', '8 Yrs'];
 
   return (
     <section id="about" className="bg-surface section-divider">
       <div className="container mx-auto py-section">
-        <AnimatedSection className="mb-16">
-          <SectionHeading
-            heading={dict.about.heading}
-            subheading={dict.about.subheading}
-          />
-        </AnimatedSection>
-
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
 
           {/* Portrait card */}
           <AnimatedSection direction="left">
-            <div className="relative max-w-sm mx-auto lg:mx-0">
-              {/* Glow */}
-              <div className="absolute -inset-4 bg-accent/8 rounded-3xl blur-2xl pointer-events-none" />
+            <div className="relative max-w-[360px] mx-auto lg:mx-0">
+              {/* Ambient glow */}
+              <div className="absolute -inset-6 bg-accent/6 rounded-[2rem] blur-3xl pointer-events-none" />
 
-              {/* Card */}
-              <div className="relative rounded-2xl overflow-hidden border border-border/60 bg-gradient-to-b from-surface-light to-background aspect-[3/4]">
-                {/* Top-left accent corner mark */}
-                <div className="absolute top-0 left-0 w-12 h-1 bg-accent rounded-br" />
-                <div className="absolute top-0 left-0 w-1 h-12 bg-accent rounded-br" />
+              <div className="relative rounded-2xl overflow-hidden border border-white/6 bg-gradient-to-b from-zinc-800/50 to-zinc-900/80 aspect-[3/4]">
+                {/* Corner accent */}
+                <div className="absolute top-0 left-0 w-10 h-px bg-accent" />
+                <div className="absolute top-0 left-0 w-px h-10 bg-accent" />
 
                 {/* Silhouette */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                  <svg
-                    viewBox="0 0 120 180"
-                    fill="none"
-                    className="w-36 h-52 opacity-15"
-                    aria-hidden="true"
-                  >
-                    <ellipse cx="60" cy="28" rx="22" ry="22" fill="currentColor" className="text-accent" />
-                    <path
-                      d="M20 75 C20 55 40 45 60 45 C80 45 100 55 100 75 L108 130 L80 130 L75 100 L75 175 L45 175 L45 100 L40 130 L12 130 Z"
-                      fill="currentColor"
-                      className="text-accent"
-                    />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg viewBox="0 0 100 160" className="w-24 h-40 opacity-[0.12]" aria-hidden="true">
+                    <ellipse cx="50" cy="22" rx="18" ry="18" fill="currentColor" className="text-accent" />
+                    <path d="M16 62 C16 46 34 36 50 36 C66 36 84 46 84 62 L90 108 L66 108 L62 82 L62 156 L38 156 L38 82 L34 108 L10 108 Z" fill="currentColor" className="text-accent" />
                   </svg>
-                  <p className="text-zinc-600 text-xs mt-4 tracking-widest uppercase">
-                    Photo Coming Soon
-                  </p>
                 </div>
 
-                {/* Bottom badge */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
-                  <p className="text-white font-display font-bold text-xl">
+                {/* Nameplate */}
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/90 to-transparent pt-16 pb-6 px-6">
+                  <p className="font-display font-bold text-white text-xl">
                     {dict.about.trainerName}
                   </p>
                   <p className="text-accent text-sm font-medium mt-0.5">
                     {dict.about.trainerTitle}
                   </p>
-                  {/* Certification pills */}
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  {/* Cert pills */}
+                  <div className="flex flex-wrap gap-1.5 mt-4">
                     {certPills.map((cert) => (
                       <span
                         key={cert}
-                        className="px-2.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold"
+                        className="px-2 py-0.5 rounded bg-accent/15 border border-accent/25 text-accent text-[11px] font-bold tracking-wide"
                       >
                         {cert}
                       </span>
@@ -79,43 +59,52 @@ export default function About({ dict }: AboutProps) {
             </div>
           </AnimatedSection>
 
-          {/* Text content */}
+          {/* Copy */}
           <AnimatedSection direction="right" delay={0.1}>
-            <div className="space-y-6">
-              <p className="text-lg text-zinc-300 leading-relaxed">
+            <div className="pt-2 lg:pt-4">
+              <SectionHeading
+                heading={dict.about.heading}
+                subheading={dict.about.subheading}
+                align="left"
+                className="mb-8"
+              />
+
+              <p className="text-base md:text-lg text-zinc-300 leading-[1.8] mb-5">
                 {dict.about.story}
               </p>
-              <p className="text-base text-zinc-400 leading-relaxed italic border-l-2 border-accent/50 pl-4">
+              <p className="text-sm text-zinc-500 leading-[1.8] italic border-l-2 border-accent/50 pl-4 mb-8">
                 {dict.about.mission}
               </p>
 
               {/* Values */}
-              <div className="grid gap-4 pt-4">
+              <div className="space-y-3 mb-8">
                 {dict.about.values.map((value: any, index: number) => (
                   <div
                     key={index}
-                    className="flex gap-4 p-4 rounded-xl bg-background border-l-2 border-accent border border-border/40 hover:border-accent/40 transition-colors"
+                    className="flex gap-3.5 p-4 rounded-xl bg-background border-l-2 border-accent border border-border/30 hover:border-accent/50 transition-colors duration-200"
                   >
-                    <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={20} />
+                    <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={18} />
                     <div>
-                      <h3 className="font-semibold text-white mb-1">{value.title}</h3>
-                      <p className="text-sm text-zinc-400">{value.description}</p>
+                      <p className="font-semibold text-white text-sm mb-0.5">{value.title}</p>
+                      <p className="text-xs text-zinc-500 leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Certifications list */}
-              <div className="pt-4 space-y-2">
-                <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-3">
+              {/* Certifications */}
+              <div>
+                <p className="text-[11px] font-bold text-accent uppercase tracking-[0.18em] mb-3">
                   Certifications
                 </p>
-                {dict.about.certifications.map((cert: string, i: number) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-zinc-400">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                    {cert}
-                  </div>
-                ))}
+                <div className="space-y-1.5">
+                  {dict.about.certifications.map((cert: string, i: number) => (
+                    <div key={i} className="flex items-center gap-2.5 text-sm text-zinc-400">
+                      <div className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
+                      {cert}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </AnimatedSection>

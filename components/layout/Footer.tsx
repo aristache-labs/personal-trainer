@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Youtube, Star, MessageCircle } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Star, MessageCircle, ArrowRight } from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
 import { Locale } from '@/lib/getDictionary';
 
@@ -18,104 +18,85 @@ export default function Footer({ locale, dict }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-surface border-t border-border/40">
+    <footer className="bg-surface border-t border-border/30">
 
       {/* Conversion strip */}
-      <div className="border-b border-border/40 bg-background/60">
+      <div className="border-b border-border/30">
         <div className="container mx-auto py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <p className="text-xl md:text-2xl font-display font-bold text-white">
+              <p className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
                 {dict.footer.ctaBannerText}
               </p>
-              <p className="text-zinc-500 text-sm mt-1">{dict.footer.ctaBannerSub}</p>
+              <p className="text-zinc-500 text-sm mt-2 max-w-sm leading-relaxed">
+                {dict.footer.ctaBannerSub}
+              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              {/* Social proof row */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-shrink-0">
               <div className="flex items-center gap-2">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={13} className="text-accent fill-accent" />
+                    <Star key={i} size={12} className="text-accent fill-accent" />
                   ))}
                 </div>
-                <span className="text-zinc-500 text-xs">{dict.footer.socialProof}</span>
+                <span className="text-zinc-600 text-xs">{dict.footer.socialProof}</span>
               </div>
-
               <CTAButton size="sm" href="#contact">
                 {dict.footer.ctaButton}
+                <ArrowRight size={14} />
               </CTAButton>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main footer */}
+      {/* Main footer grid */}
       <div className="container mx-auto py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
 
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="col-span-2">
             <Link href={`/${locale}`} className="text-2xl font-display font-bold block mb-3">
               <span className="text-white">Elite</span>
               <span className="text-accent">Trainer</span>
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-zinc-600 text-sm leading-relaxed max-w-[220px]">
               {dict.footer.tagline}
             </p>
 
-            {/* Social icons */}
-            <div className="flex gap-4 mt-6">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-background rounded-lg border border-border flex items-center justify-center text-zinc-500 hover:text-accent hover:border-accent/40 transition-all"
-                aria-label="Instagram"
-              >
-                <Instagram size={16} />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-background rounded-lg border border-border flex items-center justify-center text-zinc-500 hover:text-accent hover:border-accent/40 transition-all"
-                aria-label="Facebook"
-              >
-                <Facebook size={16} />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-background rounded-lg border border-border flex items-center justify-center text-zinc-500 hover:text-accent hover:border-accent/40 transition-all"
-                aria-label="YouTube"
-              >
-                <Youtube size={16} />
-              </a>
-              <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 bg-background rounded-lg border border-border flex items-center justify-center text-zinc-500 hover:text-[#25D366] hover:border-[#25D366]/40 transition-all"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle size={16} />
-              </a>
+            <div className="flex gap-2.5 mt-6">
+              {[
+                { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
+                { href: 'https://facebook.com',  icon: Facebook,  label: 'Facebook' },
+                { href: 'https://youtube.com',   icon: Youtube,   label: 'YouTube' },
+                { href: 'https://wa.me/1234567890', icon: MessageCircle, label: 'WhatsApp' },
+              ].map(({ href, icon: Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-9 h-9 bg-background rounded-lg border border-border/50 flex items-center justify-center text-zinc-600 hover:text-accent hover:border-accent/35 transition-all duration-200"
+                >
+                  <Icon size={15} />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick links */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
-              Quick Links
-            </h3>
-            <ul className="space-y-3">
+            <p className="text-[11px] font-bold text-zinc-600 uppercase tracking-[0.16em] mb-5">
+              {locale === 'ro' ? 'Navigare' : 'Navigate'}
+            </p>
+            <ul className="space-y-2.5">
               {links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-zinc-500 text-sm hover:text-accent transition-colors"
+                    className="text-zinc-500 text-sm hover:text-accent transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -124,23 +105,23 @@ export default function Footer({ locale, dict }: FooterProps) {
             </ul>
           </div>
 
-          {/* Language / contact */}
+          {/* Language */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-5">
-              Language
-            </h3>
+            <p className="text-[11px] font-bold text-zinc-600 uppercase tracking-[0.16em] mb-5">
+              {locale === 'ro' ? 'Limbă' : 'Language'}
+            </p>
             <div className="flex gap-2">
               {(['en', 'ro'] as Locale[]).map((l) => (
                 <Link
                   key={l}
                   href={`/${l}`}
-                  className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider border transition-all duration-200 ${
                     locale === l
                       ? 'bg-accent text-black border-accent'
-                      : 'bg-background text-zinc-500 border-border hover:border-accent/40 hover:text-white'
+                      : 'bg-transparent text-zinc-600 border-border/50 hover:border-accent/40 hover:text-zinc-300'
                   }`}
                 >
-                  {l.toUpperCase()}
+                  {l}
                 </Link>
               ))}
             </div>
@@ -148,8 +129,11 @@ export default function Footer({ locale, dict }: FooterProps) {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-6 border-t border-border/40">
-          <p className="text-zinc-700 text-xs text-center">{dict.footer.copyright}</p>
+        <div className="mt-10 pt-5 border-t border-border/25 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-zinc-700 text-xs">{dict.footer.copyright}</p>
+          <p className="text-zinc-800 text-xs">
+            Built with precision. <span className="text-accent/60">EliteTrainer®</span>
+          </p>
         </div>
       </div>
     </footer>

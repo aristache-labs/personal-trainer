@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown, Shield, Clock, Users } from 'lucide-react';
+import { ArrowDown, Shield, Clock, Users } from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
 import StatsCounter from '@/components/ui/StatsCounter';
 
@@ -9,51 +9,52 @@ interface HeroProps {
   dict: any;
 }
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export default function Hero({ dict }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-background section-divider"
+      className="relative min-h-screen flex items-center overflow-hidden bg-background section-divider"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/8 via-background to-background pointer-events-none" />
-
-      {/* Animated ambient blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Ambient gradients */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/6 via-transparent to-transparent" />
         <motion.div
-          animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.45, 0.25] }}
-          transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-1/3 right-0 w-[600px] h-[600px] bg-accent/15 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.12, 1], opacity: [0.2, 0.38, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute -top-40 right-0 w-[700px] h-[700px] bg-accent/12 rounded-full blur-[120px]"
         />
         <motion.div
-          animate={{ scale: [1.1, 1, 1.1], opacity: [0.12, 0.25, 0.12] }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-1/3 -left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl"
+          animate={{ scale: [1.1, 1, 1.1], opacity: [0.08, 0.18, 0.08] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute -bottom-40 -left-20 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[100px]"
         />
       </div>
 
-      <div className="container mx-auto relative z-10 py-12 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+      <div className="container mx-auto relative z-10 pt-28 pb-20 lg:pt-0 lg:pb-0 lg:min-h-screen lg:flex lg:items-center">
+        <div className="grid lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_480px] gap-10 xl:gap-20 items-center w-full">
 
-          {/* Left column — copy */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {/* Pre-headline accent bar */}
+          {/* Copy column */}
+          <div>
+            {/* Eyebrow */}
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="w-12 h-1 bg-accent rounded-full mb-6 origin-left"
-            />
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+              className="flex items-center gap-3 mb-7"
+            >
+              <div className="w-10 h-px bg-accent" />
+              <span className="text-accent text-xs font-bold uppercase tracking-[0.2em]">
+                Elite Personal Training
+              </span>
+            </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-[2.75rem] md:text-6xl lg:text-6xl xl:text-7xl font-display font-bold leading-[1.08] tracking-tight mb-6"
+              transition={{ delay: 0.12, duration: 0.65, ease }}
+              className="font-display text-[2.6rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-bold leading-[1.06] tracking-tight mb-6"
             >
               {dict.hero.headline}
               <br />
@@ -63,18 +64,18 @@ export default function Hero({ dict }: HeroProps) {
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.6 }}
-              className="text-lg md:text-xl text-zinc-400 mb-8 max-w-xl leading-relaxed"
+              transition={{ delay: 0.28, duration: 0.6, ease }}
+              className="text-base md:text-lg text-zinc-400 mb-9 max-w-lg leading-[1.75]"
             >
               {dict.hero.subheadline}
             </motion.p>
 
             {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-col sm:flex-row gap-3 mb-10"
+              transition={{ delay: 0.42, duration: 0.5, ease }}
+              className="flex flex-col sm:flex-row gap-3 mb-12"
             >
               <CTAButton size="lg" href="#contact">
                 {dict.hero.primaryCTA}
@@ -84,12 +85,12 @@ export default function Hero({ dict }: HeroProps) {
               </CTAButton>
             </motion.div>
 
-            {/* Stats row */}
+            {/* Stats */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.65, duration: 0.5 }}
-              className="grid grid-cols-3 gap-4 md:gap-8 mb-10 py-6 border-y border-border/40"
+              transition={{ delay: 0.56, duration: 0.5, ease }}
+              className="grid grid-cols-3 gap-4 md:gap-6 py-7 border-y border-border/40 mb-8"
             >
               <StatsCounter end={300} suffix="+" label={dict.hero.stats.clientsLabel} />
               <StatsCounter end={95}  suffix="%" label={dict.hero.stats.transformationsLabel} />
@@ -100,8 +101,8 @@ export default function Hero({ dict }: HeroProps) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.5 }}
-              className="flex flex-wrap gap-3"
+              transition={{ delay: 0.72, duration: 0.5 }}
+              className="flex flex-wrap gap-2"
             >
               {[
                 { icon: Shield, label: dict.hero.trustBadges.certified },
@@ -110,55 +111,56 @@ export default function Hero({ dict }: HeroProps) {
               ].map(({ icon: Icon, label }) => (
                 <div
                   key={label}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border/60 text-xs font-medium text-zinc-400"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface/80 border border-border/50 text-xs font-medium text-zinc-400 backdrop-blur-sm"
                 >
-                  <Icon size={13} className="text-accent flex-shrink-0" />
+                  <Icon size={12} className="text-accent flex-shrink-0" />
                   {label}
                 </div>
               ))}
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Right column — premium photo placeholder */}
+          {/* Photo card — desktop only */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden lg:flex justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.9, ease }}
+            className="hidden lg:block"
           >
-            <div className="relative w-full max-w-md">
-              {/* Glow halo */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-accent/10 to-transparent rounded-3xl blur-3xl scale-110 pointer-events-none" />
+            <div className="relative">
+              {/* Soft halo */}
+              <div className="absolute -inset-6 bg-accent/10 rounded-[2rem] blur-3xl pointer-events-none" />
 
-              {/* Photo frame card */}
-              <div className="relative rounded-3xl overflow-hidden border border-border/60 bg-gradient-to-b from-surface-light to-surface aspect-[3/4]">
-                {/* Subtle top gradient accent strip */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-70" />
+              {/* Frame */}
+              <div className="relative rounded-3xl overflow-hidden border border-white/8 bg-gradient-to-b from-zinc-800/60 to-zinc-900/80 backdrop-blur-sm aspect-[3/4]">
+                {/* Top accent line */}
+                <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent" />
 
-                {/* Silhouette SVG placeholder */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                  <svg
-                    viewBox="0 0 120 180"
-                    fill="none"
-                    className="w-40 h-56 opacity-20"
-                    aria-hidden="true"
-                  >
-                    <ellipse cx="60" cy="28" rx="22" ry="22" fill="currentColor" className="text-accent" />
-                    <path
-                      d="M20 75 C20 55 40 45 60 45 C80 45 100 55 100 75 L108 130 L80 130 L75 100 L75 175 L45 175 L45 100 L40 130 L12 130 Z"
-                      fill="currentColor"
-                      className="text-accent"
-                    />
+                {/* Corner marks */}
+                <div className="absolute top-0 left-0 w-8 h-px bg-accent" />
+                <div className="absolute top-0 left-0 w-px h-8 bg-accent" />
+                <div className="absolute bottom-0 right-0 w-8 h-px bg-accent/50" />
+                <div className="absolute bottom-0 right-0 w-px h-8 bg-accent/50" />
+
+                {/* Silhouette */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg viewBox="0 0 100 160" className="w-28 h-44 opacity-[0.13]" aria-hidden="true">
+                    <ellipse cx="50" cy="22" rx="18" ry="18" fill="currentColor" className="text-accent" />
+                    <path d="M16 62 C16 46 34 36 50 36 C66 36 84 46 84 62 L90 108 L66 108 L62 82 L62 156 L38 156 L38 82 L34 108 L10 108 Z" fill="currentColor" className="text-accent" />
                   </svg>
-                  <p className="text-zinc-600 text-xs mt-6 tracking-wider uppercase">
-                    Photo Coming Soon
-                  </p>
                 </div>
 
-                {/* Bottom name badge */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 to-transparent p-6">
-                  <p className="text-white font-display font-bold text-lg leading-tight">Alex Ionescu</p>
-                  <p className="text-accent text-sm font-medium mt-0.5">Head Coach · NASM-CPT</p>
+                {/* Bottom nameplate */}
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/90 to-transparent pt-12 pb-7 px-7">
+                  <p className="font-display font-bold text-white text-lg leading-tight">
+                    {dict.about.trainerName}
+                  </p>
+                  <p className="text-accent text-sm font-medium mt-0.5">
+                    {dict.about.trainerTitle}
+                  </p>
+                  <p className="text-zinc-600 text-[11px] mt-3 tracking-widest uppercase">
+                    Photo Coming Soon
+                  </p>
                 </div>
               </div>
             </div>
@@ -166,20 +168,20 @@ export default function Hero({ dict }: HeroProps) {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll cue */}
       <motion.a
         href="#about"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-accent cursor-pointer"
-        aria-label="Scroll to about"
+        transition={{ delay: 1.1 }}
+        aria-label="Scroll down"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-zinc-600 hover:text-accent transition-colors"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ y: [0, 7, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ChevronDown size={28} strokeWidth={1.5} />
+          <ArrowDown size={20} strokeWidth={1.5} />
         </motion.div>
       </motion.a>
     </section>

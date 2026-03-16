@@ -21,11 +21,12 @@ export default function SectionHeading({
   return (
     <div className={cn('mb-12 md:mb-16', alignClass, className)}>
       {subheading && (
-        <p className="text-accent text-sm md:text-base font-semibold uppercase tracking-wider mb-3">
+        <p className="text-accent text-xs font-bold uppercase tracking-[0.18em] mb-4 flex items-center gap-2 justify-center [.text-left_&]:justify-start">
+          <span className="inline-block w-6 h-px bg-accent opacity-60" aria-hidden="true" />
           {subheading}
         </p>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+      <h2 className="font-display text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight mb-0">
         {heading}
       </h2>
       {children}

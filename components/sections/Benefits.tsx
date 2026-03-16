@@ -21,7 +21,7 @@ export default function Benefits({ dict }: BenefitsProps) {
           />
         </AnimatedSection>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {dict.benefits.items.map((benefit: any, index: number) => {
             const Icon = iconMap[index] || Target;
             const isEven = index % 2 === 0;
@@ -30,34 +30,33 @@ export default function Benefits({ dict }: BenefitsProps) {
             return (
               <AnimatedSection
                 key={index}
-                delay={index * 0.07}
-                direction={isEven ? 'left' : 'right'}
+                delay={index * 0.06}
+                direction="up"
               >
                 <div
-                  className={`flex gap-6 md:gap-10 items-center p-6 md:p-8 rounded-2xl bg-background border border-border/50 hover:border-accent/30 transition-colors group ${
-                    isEven ? 'flex-row' : 'flex-row-reverse'
+                  className={`flex items-center gap-6 md:gap-10 p-6 md:p-8 rounded-2xl bg-background border border-border/40 hover:border-accent/25 transition-colors duration-250 group ${
+                    isEven ? '' : 'md:flex-row-reverse'
                   }`}
                 >
-                  {/* Icon block with watermark number */}
+                  {/* Icon + watermark */}
                   <div className="relative flex-shrink-0">
-                    {/* Decorative watermark number */}
                     <span
-                      className="absolute -top-3 -left-3 text-5xl font-display font-bold text-accent/8 leading-none select-none pointer-events-none"
+                      className="absolute -top-4 -left-2 text-[3.5rem] font-display font-bold text-accent/[0.07] leading-none select-none pointer-events-none tabular-nums"
                       aria-hidden="true"
                     >
                       {num}
                     </span>
-                    <div className="relative w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                      <Icon className="text-accent" size={28} />
+                    <div className="relative w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:bg-accent/18 transition-colors">
+                      <Icon className="text-accent" size={26} />
                     </div>
                   </div>
 
                   {/* Text */}
-                  <div className={isEven ? 'text-left' : 'text-right md:text-right'}>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                  <div>
+                    <h3 className="font-display text-lg font-bold text-white mb-1.5 group-hover:text-accent transition-colors duration-200">
                       {benefit.title}
                     </h3>
-                    <p className="text-zinc-400 leading-relaxed max-w-xl">
+                    <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
                       {benefit.description}
                     </p>
                   </div>
