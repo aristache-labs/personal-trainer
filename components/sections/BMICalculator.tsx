@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useMotionValue, animate } from 'framer-motion';
 import {
   Calculator,
   RotateCcw,
@@ -43,8 +43,8 @@ const CATEGORIES: CategoryConfig[] = [
     borderColor: 'border-blue-400/30',
     barColor: 'bg-blue-400',
     // soft blue-tinted badge surface
-    badgeBg: 'bg-blue-500/10',
-    badgeBorder: 'border-blue-400/60',
+    badgeBg: 'bg-blue-500/20',
+    badgeBorder: 'border-blue-400/40',
   },
   {
     key: 'healthy',
@@ -55,8 +55,8 @@ const CATEGORIES: CategoryConfig[] = [
     borderColor: 'border-accent/30',
     barColor: 'bg-accent',
     // soft lime-tinted badge surface
-    badgeBg: 'bg-lime-400/10',
-    badgeBorder: 'border-accent/60',
+    badgeBg: 'bg-lime-400/20',
+    badgeBorder: 'border-accent/40',
   },
   {
     key: 'overweight',
@@ -67,8 +67,8 @@ const CATEGORIES: CategoryConfig[] = [
     borderColor: 'border-amber-400/30',
     barColor: 'bg-amber-400',
     // soft amber-tinted badge surface
-    badgeBg: 'bg-amber-400/10',
-    badgeBorder: 'border-amber-400/70',
+    badgeBg: 'bg-amber-400/20',
+    badgeBorder: 'border-amber-400/40',
   },
   {
     key: 'obese',
@@ -79,8 +79,8 @@ const CATEGORIES: CategoryConfig[] = [
     borderColor: 'border-rose-400/30',
     barColor: 'bg-rose-400',
     // soft rose-tinted badge surface
-    badgeBg: 'bg-rose-400/10',
-    badgeBorder: 'border-rose-400/70',
+    badgeBg: 'bg-rose-400/20',
+    badgeBorder: 'border-rose-400/40',
   },
 ];
 
@@ -106,6 +106,34 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
   const [age, setAge]       = useState('');
   const [bmi, setBmi]       = useState<number | null>(null);
   const [error, setError]   = useState('');
+
+  // Animated BMI display value
+  const bmiMotion = useMotionValue(0);
+  const [displayedBmi, setDisplayedBmi] = useState<number | null>(null);
+
+  // Animate the BMI value whenever a new result is set
+  useEffect(() => {
+    if (bmi === null) {
+      setDisplayedBmi(null);
+      bmiMotion.set(0);
+      return;
+    }
+
+    bmiMotion.set(0);
+    const controls = animate(bmiMotion, bmi, {
+      duration: 0.9,
+      ease: [0.22, 1, 0.36, 1],
+    });
+
+    const unsubscribe = bmiMotion.on('change', (latest) => {
+      setDisplayedBmi(parseFloat(latest.toFixed(1)));
+    });
+
+    return () => {
+      controls.stop();
+      unsubscribe();
+    };
+  }, [bmi, bmiMotion]);
 
   const d = dict?.bmi;
   if (!d) return null;
@@ -265,16 +293,18 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
               ) : (
                 <motion.div
                   key="result"
-                  initial={{ opacity: 0, scale: 0.97, y: 16 }}
+                  initial={{ opacity: 0, scale: 0.98, y: 16 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  exit={{ opacity: 0, scale: 0.98, y: 10 }}
+                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                   className="bg-surface border border-border/60 rounded-3xl overflow-hidden relative"
                 >
                   <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-                  {/* Ambient glow — softened and pushed into corner */}
-                  <div className={`absolute -top-10 -right-10 w-64 h-64 rounded-full blur-[80px] pointer-events-none opacity-8 ${category!.barColor}`} />
+                  {/* Ambient glow — softened and pushed into corner (mobile slightly gentler) */}
+                  <div
+                    className={`absolute -top-14 -right-16 w-56 h-56 sm:-top-10 sm:-right-10 sm:w-64 sm:h-64 rounded-full blur-[80px] pointer-events-none opacity-20 sm:opacity-30 ${category!.barColor}`}
+                  />
 
                   <div className="relative z-10 p-6 md:p-8">
 
@@ -299,17 +329,17 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                         <motion.span
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.1 }}
+                          transition={{ delay: 0.1, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                           className={`font-display text-[4.5rem] font-bold leading-none ${category!.color}`}
                         >
-                          {bmi}
+                          {displayedBmi !== null ? displayedBmi.toFixed(1) : bmi}
                         </motion.span>
                         {/* Badge: unified for mobile + desktop, softly tinted by status color */}
                         <motion.span
-                          initial={{ opacity: 0, x: -4 }}
+                          initial={{ opacity: 0, x: -6 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.2 }}
-                          className={`inline-flex items-center gap-1.5 mt-1 sm:mt-0 sm:mb-2 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.18em] border backdrop-blur-sm shadow-[0_0_12px_rgba(0,0,0,0.35)] ${category!.badgeBg} ${category!.badgeBorder} ${category!.color}`}
+                          transition={{ delay: 0.22, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                          className={`inline-flex items-center gap-2 mt-1 sm:mt-0 sm:mb-2 px-3.5 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.20em] border backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.3)] ${category!.badgeBg} ${category!.badgeBorder} ${category!.color}`}
                         >
                           {ActiveCategoryIcon && (
                             <ActiveCategoryIcon
@@ -334,12 +364,20 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                           <motion.div
                             initial={{ left: 0 }}
                             animate={{ left: `${indicatorPercent}%` }}
-                            transition={{ delay: 0.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                            transition={{ delay: 0.25, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
                             style={{ position: 'absolute' }}
                           >
-                            <span className={`absolute inset-0 m-auto rounded-full blur-[6px] opacity-60 w-5 h-5 ${category!.barColor}`} />
-                            <span
+                            <motion.span
+                              initial={{ opacity: 0.4, scale: 0.9 }}
+                              animate={{ opacity: 0.7, scale: 1 }}
+                              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                              className={`absolute inset-0 m-auto rounded-full blur-[6px] w-5 h-5 ${category!.barColor}`}
+                            />
+                            <motion.span
+                              initial={{ scale: 0.9 }}
+                              animate={{ scale: 1 }}
+                              transition={{ delay: 0.2, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                               className="relative block w-4 h-4 rotate-45 rounded-sm bg-white"
                               style={{ boxShadow: '0 0 0 2px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5)' }}
                             />
@@ -378,7 +416,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                       </div>
                     </div>
 
-                    <p className="mt-4 text-zinc-500 text-xs leading-relaxed italic">* {d.disclaimer}</p>
+                    <p className="mt-4 text-zinc-400 text-[11px] leading-relaxed italic">* {d.disclaimer}</p>
                   </div>
                 </motion.div>
               )}
