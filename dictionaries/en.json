@@ -31,7 +31,7 @@
     },
     "phone": "+40 712 345 678",
     "phoneLabel": "Call now",
-    "floatingBadges": ["Online Coaching", "1-on-1 Training", "Nutrition Included"],
+    "floatingBadges": ["Expert Coaching", "1-on-1 Training", "Nutrition Included"],
     "floatingStat": "Avg. 12-week result",
     "floatingStatValue": "-18 kg"
   },
@@ -265,7 +265,7 @@
       },
       {
         "title": "Coaching & Execution",
-        "description": "Regular sessions or check-ins where we execute the plan, refine technique, and build unstoppable momentum."
+        "description": "Regular sessions and check-ins where we execute the plan, sharpen your technique, and build the kind of consistency that compounds."
       },
       {
         "title": "Progress Tracking",
@@ -348,8 +348,8 @@
         "answer": "Yes, all plans include nutrition guidance. The level of detail varies by plan — from basic guidelines in Starter to fully customized meal planning in Pro and Elite."
       },
       {
-        "question": "Can I train online from anywhere?",
-        "answer": "Absolutely. Online coaching works from anywhere in the world. You'll receive your custom program, weekly check-ins via video call, and 24/7 support through the app."
+        "question": "Can I work with you from anywhere?",
+        "answer": "Absolutely. My programs work from anywhere in the world. You'll receive a fully personalised training and nutrition plan, regular check-ins via video call, and dedicated expert support every step of the way."
       },
       {
         "question": "How quickly will I see results?",
@@ -414,7 +414,8 @@
     "subheading": "Follow the Journey",
     "heading": "Behind the Training",
     "follow": "Follow on Instagram",
-    "handle": "@elitetrainer"
+    "handle": "@elitetrainer",
+    "viewPost": "View post"
   },
   "ctaLimited": {
     "eyebrow": "Limited Availability",
@@ -433,6 +434,7 @@
     "heading": "BMI Calculator",
     "subheading": "Know Your Starting Point",
     "freeAssessmentLabel": "Free Assessment Tool",
+    "inputError": "Please enter a valid height (50–250 cm) and weight (20–300 kg).",
     "categoriesLabel": "BMI Categories",
     "estimateNote": "Results are an estimate and don't replace a full professional assessment.",
     "intro": "Calculate your Body Mass Index to understand where you are and where you want to go. Use this as a starting point — not a finish line.",
@@ -456,7 +458,7 @@
       "overweight": "25.0 – 29.9",
       "obese": "30.0 and above"
     },
-    "cta": "Ready to improve your BMI? Book a free consultation.",
+    "cta": "Know your starting point — now let's build the plan around it. Book a free consultation.",
     "ctaButton": "Book Free Consultation",
     "disclaimer": "BMI is a general screening tool. It does not account for muscle mass, age, or body composition. Always consult a qualified professional.",
     "reset": "Recalculate"

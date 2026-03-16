@@ -21,23 +21,23 @@ export async function generateMetadata({ params }: { params: { locale: Locale } 
   const dict = getDictionary(locale);
   
   return {
-    title: params.locale === 'en' 
-      ? 'Elite Trainer - Personal Training & Online Coaching'
-      : 'Elite Trainer - Antrenament Personal & Coaching Online',
+    title: params.locale === 'en'
+      ? 'Elite Trainer - Elite Personal Training'
+      : 'Elite Trainer - Antrenament Personal de Elită',
     description: params.locale === 'en'
-      ? 'Transform your body with elite personal training and online coaching. Evidence-based programs, personalized nutrition, and expert guidance for sustainable results.'
-      : 'Transformă-ți corpul cu antrenament personal de elită și coaching online. Programe bazate pe știință, nutriție personalizată și ghidare expertă pentru rezultate sustenabile.',
+      ? 'Transform your body with elite personal training. Evidence-based programs, personalised nutrition, and expert guidance for real, sustainable results.'
+      : 'Transformă-ți corpul cu antrenament personal de elită. Programe bazate pe știință, nutriție personalizată și ghidare expertă pentru rezultate reale și sustenabile.',
     openGraph: {
       type: 'website',
       locale: params.locale === 'en' ? 'en_US' : 'ro_RO',
       url: `https://elitetrainer.com/${params.locale}`,
       siteName: 'Elite Trainer',
-      title: params.locale === 'en' 
-        ? 'Elite Trainer - Personal Training & Online Coaching'
-        : 'Elite Trainer - Antrenament Personal & Coaching Online',
+      title: params.locale === 'en'
+        ? 'Elite Trainer - Elite Personal Training'
+        : 'Elite Trainer - Antrenament Personal de Elită',
       description: params.locale === 'en'
-        ? 'Transform your body with elite personal training and online coaching.'
-        : 'Transformă-ți corpul cu antrenament personal de elită și coaching online.',
+        ? 'Transform your body with elite personal training. Science-backed, personalised, results-driven.'
+        : 'Transformă-ți corpul cu antrenament personal de elită. Bazat pe știință, personalizat, orientat spre rezultate.',
     },
   };
 }
