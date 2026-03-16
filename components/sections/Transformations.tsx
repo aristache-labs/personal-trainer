@@ -39,7 +39,7 @@ function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc,
           </svg>
         )}
         <span className="absolute top-3 left-3 z-10">
-          <span className="px-2 py-0.5 rounded bg-zinc-900/80 text-[10px] font-bold tracking-[0.15em] text-zinc-300 uppercase border border-zinc-600/60 backdrop-blur-sm">
+          <span className="px-2 py-1 rounded bg-zinc-800 text-[10px] font-bold tracking-[0.15em] text-white uppercase border border-zinc-500">
             {beforeLabel}
           </span>
         </span>
@@ -73,7 +73,7 @@ function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc,
           </svg>
         )}
         <span className="absolute top-3 right-3 z-10">
-          <span className="px-2 py-0.5 rounded bg-zinc-900/80 text-[10px] font-bold tracking-[0.15em] text-accent uppercase border border-accent/40 backdrop-blur-sm">
+          <span className="px-2 py-1 rounded bg-accent text-[10px] font-bold tracking-[0.15em] text-black uppercase border border-accent">
             {afterLabel}
           </span>
         </span>

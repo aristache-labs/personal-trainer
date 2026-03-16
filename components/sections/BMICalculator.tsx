@@ -122,86 +122,83 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                       </p>
                     </div>
 
-                    {/* Two-column layout */}
-                    <div className="grid md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)] gap-6 md:gap-10 items-start">
-                      {/* Left: inputs + button */}
-                      <div>
-                        <p className="text-xs text-zinc-400 leading-relaxed mb-5">
-                          {d.intro ?? d.subheading}
-                        </p>
-                        <div className="grid sm:grid-cols-3 gap-3 mb-4">
-                          <div>
-                            <label className={labelCls}>{d.heightLabel}</label>
-                            <input
-                              type="number"
-                              value={height}
-                              onChange={e => setHeight(e.target.value)}
-                              placeholder={d.heightPlaceholder}
-                              className={inputCls}
-                              min={50} max={250}
-                            />
-                          </div>
-                          <div>
-                            <label className={labelCls}>{d.weightLabel}</label>
-                            <input
-                              type="number"
-                              value={weight}
-                              onChange={e => setWeight(e.target.value)}
-                              placeholder={d.weightPlaceholder}
-                              className={inputCls}
-                              min={20} max={300}
-                            />
-                          </div>
-                          <div>
-                            <label className={labelCls}>{d.ageLabel}</label>
-                            <input
-                              type="number"
-                              value={age}
-                              onChange={e => setAge(e.target.value)}
-                              placeholder={d.agePlaceholder}
-                              className={inputCls}
-                              min={10} max={100}
-                            />
-                          </div>
+                    {/* Single-column: inputs + button */}
+                    <div>
+                      <p className="text-xs text-zinc-400 leading-relaxed mb-5">
+                        {d.intro ?? d.subheading}
+                      </p>
+                      <div className="grid sm:grid-cols-3 gap-3 mb-4">
+                        <div>
+                          <label className={labelCls}>{d.heightLabel}</label>
+                          <input
+                            type="number"
+                            value={height}
+                            onChange={e => setHeight(e.target.value)}
+                            placeholder={d.heightPlaceholder}
+                            className={inputCls}
+                            min={50} max={250}
+                          />
                         </div>
-                        {error && <p className="text-rose-400 text-xs mb-3">{error}</p>}
-                        <button
-                          onClick={calculate}
-                          className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-accent text-black font-bold text-sm hover:bg-accent/90 active:scale-95 transition-all duration-150 shadow-md shadow-accent/20"
-                        >
-                          <Calculator size={15} />
-                          {d.calculate}
-                        </button>
+                        <div>
+                          <label className={labelCls}>{d.weightLabel}</label>
+                          <input
+                            type="number"
+                            value={weight}
+                            onChange={e => setWeight(e.target.value)}
+                            placeholder={d.weightPlaceholder}
+                            className={inputCls}
+                            min={20} max={300}
+                          />
+                        </div>
+                        <div>
+                          <label className={labelCls}>{d.ageLabel}</label>
+                          <input
+                            type="number"
+                            value={age}
+                            onChange={e => setAge(e.target.value)}
+                            placeholder={d.agePlaceholder}
+                            className={inputCls}
+                            min={10} max={100}
+                          />
+                        </div>
                       </div>
+                      {error && <p className="text-rose-400 text-xs mb-3">{error}</p>}
+                      <button
+                        onClick={calculate}
+                        className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-accent text-black font-bold text-sm hover:bg-accent/90 active:scale-95 transition-all duration-150 shadow-md shadow-accent/20"
+                      >
+                        <Calculator size={15} />
+                        {d.calculate}
+                      </button>
+                    </div>
 
-                      {/* Right: BMI category reference */}
-                      <div>
-                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-500 mb-3">
-                          {d.categoriesLabel ?? 'BMI Categories'}
-                        </p>
-                        <div className="space-y-2">
-                          {CATEGORIES.map(cat => {
-                            const Icon = CATEGORY_ICONS[cat.key];
-                            return (
-                              <div
-                                key={cat.key}
-                                className="flex items-center gap-2.5 py-1.5"
-                              >
-                                <div className={`flex h-7 w-7 items-center justify-center rounded-lg ${cat.bgColor} border ${cat.borderColor} flex-shrink-0`}>
-                                  <Icon className={`${cat.color} w-3.5 h-3.5`} strokeWidth={1.7} />
-                                </div>
-                                <div className="min-w-0 flex-1 flex items-center justify-between gap-2">
-                                  <p className={`text-[11px] font-semibold leading-tight ${cat.color}`}>
-                                    {d.categories[cat.key]}
-                                  </p>
-                                  <p className="text-[10px] text-zinc-500 leading-tight">
-                                    {d.ranges[cat.key]}
-                                  </p>
-                                </div>
-                              </div>
-                            );
-                          })}
-                        </div>
+                    {/* Horizontal category strip */}
+                    <div className="mt-6 pt-5 border-t border-border/40">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                        {d.categoriesLabel ?? 'BMI Categories'}
+                      </p>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        {CATEGORIES.map(cat => {
+                          const Icon = CATEGORY_ICONS[cat.key];
+                          return (
+                            <div
+                              key={cat.key}
+                              className={[
+                                'flex flex-col items-center gap-1.5 rounded-xl px-3 py-3 border text-center',
+                                cat.bgColor,
+                                cat.borderColor,
+                              ].join(' ')}
+                            >
+                              <Icon className={`${cat.color} w-4 h-4`} strokeWidth={1.7} />
+                              <p className={`text-xs font-bold leading-tight ${cat.color}`}>
+                                {d.categories[cat.key]}
+                              </p>
+                              <p className="text-xs text-zinc-400 leading-tight">
+                                {d.ranges[cat.key]}
+                              </p>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

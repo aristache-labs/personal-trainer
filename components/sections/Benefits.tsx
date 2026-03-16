@@ -75,34 +75,22 @@ export default function Benefits({ dict }: BenefitsProps) {
                   )}
 
                   <div className="relative z-10 p-6 sm:p-7 flex flex-col gap-4 h-full">
-                    {/* Icon row */}
-                    <div
-                      className={[
-                        'inline-flex h-11 w-11 items-center justify-center rounded-xl border flex-shrink-0',
-                        isFeatured
-                          ? 'bg-accent/15 border-accent/40'
-                          : 'bg-accent/8 border-accent/20',
-                      ].join(' ')}
-                    >
-                      <Icon
-                        className="text-accent"
-                        size={20}
-                        strokeWidth={1.6}
-                      />
-                    </div>
-
-                    {/* Micro-label */}
-                    <p
-                      className={[
-                        'text-[10px] font-bold uppercase tracking-[0.22em]',
-                        isFeatured ? 'text-accent/80' : 'text-zinc-400',
-                      ].join(' ')}
-                    >
-                      {chipText}
-                    </p>
-
-                    {/* Title + description */}
-                    <div className="space-y-2 flex-1">
+                    {/* Icon + title inline */}
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={[
+                          'inline-flex h-10 w-10 items-center justify-center rounded-xl border flex-shrink-0',
+                          isFeatured
+                            ? 'bg-accent/15 border-accent/40'
+                            : 'bg-accent/8 border-accent/20',
+                        ].join(' ')}
+                      >
+                        <Icon
+                          className="text-accent"
+                          size={19}
+                          strokeWidth={1.6}
+                        />
+                      </div>
                       <h3
                         className={[
                           'font-display text-base sm:text-lg font-semibold tracking-tight leading-snug',
@@ -111,10 +99,12 @@ export default function Benefits({ dict }: BenefitsProps) {
                       >
                         {benefit.title}
                       </h3>
-                      <p className="text-sm text-zinc-400 leading-relaxed">
-                        {benefit.description}
-                      </p>
                     </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-zinc-400 leading-relaxed flex-1">
+                      {benefit.description}
+                    </p>
                   </div>
                 </div>
               </AnimatedSection>
