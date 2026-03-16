@@ -39,7 +39,7 @@ export default function Process({ dict }: ProcessProps) {
                     {index + 1}
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1.5 leading-snug">{step.title}</h3>
-                  <p className="text-zinc-600 text-xs leading-relaxed">{step.description}</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{step.description}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -67,7 +67,7 @@ export default function Process({ dict }: ProcessProps) {
                     Step {index + 1}
                   </p>
                   <h3 className="text-sm font-bold text-white mb-1.5">{step.title}</h3>
-                  <p className="text-zinc-500 text-sm leading-relaxed">{step.description}</p>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{step.description}</p>
                 </div>
               </div>
             </AnimatedSection>

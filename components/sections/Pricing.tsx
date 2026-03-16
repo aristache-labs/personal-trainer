@@ -46,7 +46,7 @@ export default function Pricing({ dict }: PricingProps) {
                     <h3 className={`font-display text-lg font-bold mb-1 ${isPopular ? 'text-accent' : 'text-white'}`}>
                       {plan.name}
                     </h3>
-                    <p className="text-zinc-600 text-xs leading-relaxed mb-5">{plan.description}</p>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-5">{plan.description}</p>
                     <div className="flex items-baseline gap-1">
                       <span className={`text-[3.25rem] font-display font-bold leading-none ${isPopular ? 'text-accent' : 'text-white'}`}>
                         {plan.price}
@@ -66,7 +66,7 @@ export default function Pricing({ dict }: PricingProps) {
                           size={15}
                           className={`flex-shrink-0 mt-0.5 ${isPopular ? 'text-accent' : 'text-zinc-600'}`}
                         />
-                        <span className="text-zinc-400 text-sm">{feature}</span>
+                        <span className="text-zinc-300 text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>

@@ -88,7 +88,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <p className="px-5 pb-5 text-zinc-500 text-sm leading-[1.75]">
+            <p className="px-5 pb-5 text-zinc-300 text-sm leading-[1.75]">
               {answer}
             </p>
           </motion.div>

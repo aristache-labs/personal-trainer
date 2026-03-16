@@ -63,10 +63,10 @@ export default function Transformations({ dict }: TransformationsProps) {
                     <p className="text-zinc-600 text-xs mt-0.5">{featured.result}</p>
                   </div>
                 </div>
-                <p className="text-zinc-300 text-base leading-relaxed italic mb-4 max-w-md">
+                <p className="text-zinc-200 text-base leading-relaxed italic mb-4 max-w-md">
                   &ldquo;{featured.testimonial}&rdquo;
                 </p>
-                <p className="text-zinc-500 text-sm font-semibold">— {featured.name}</p>
+                <p className="text-zinc-400 text-sm font-semibold">— {featured.name}</p>
               </div>
             </div>
           </div>
@@ -111,10 +111,10 @@ export default function Transformations({ dict }: TransformationsProps) {
                       <p className="text-[11px] text-zinc-700">{item.result}</p>
                     </div>
                   </div>
-                  <p className="text-zinc-400 text-xs italic leading-relaxed mb-2">
+                  <p className="text-zinc-300 text-sm italic leading-relaxed mb-2">
                     &ldquo;{item.testimonial}&rdquo;
                   </p>
-                  <p className="text-zinc-600 text-xs font-semibold">— {item.name}</p>
+                  <p className="text-zinc-400 text-xs font-semibold">— {item.name}</p>
                 </div>
               </div>
             </AnimatedSection>

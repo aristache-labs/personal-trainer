@@ -126,7 +126,7 @@ function TestimonialCard({ item, index, verified }: TestimonialCardProps) {
         ))}
       </div>
 
-      <p className="text-zinc-400 text-sm leading-[1.8] flex-grow mb-5">
+      <p className="text-zinc-300 text-sm leading-[1.8] flex-grow mb-5">
         &ldquo;{item.text}&rdquo;
       </p>
 

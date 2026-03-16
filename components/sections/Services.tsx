@@ -39,7 +39,7 @@ export default function Services({ dict }: ServicesProps) {
                 <h3 className="font-display text-2xl font-bold text-white mb-3 group-hover:text-accent transition-colors">
                   {featured.title}
                 </h3>
-                <p className="text-zinc-400 leading-relaxed text-sm max-w-sm">
+                <p className="text-zinc-300 leading-relaxed text-sm max-w-sm">
                   {featured.description}
                 </p>
                 <motion.span
@@ -59,8 +59,8 @@ export default function Services({ dict }: ServicesProps) {
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {featured.benefits.map((b: string, i: number) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300">
-                      <div className="w-1.5 h-1.5 bg-accent/80 rounded-full mt-[5px] flex-shrink-0" />
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed">
+                      <div className="w-1.5 h-1.5 bg-accent/80 rounded-full mt-[6px] flex-shrink-0" />
                       {b}
                     </li>
                   ))}
@@ -120,7 +120,7 @@ function ServiceCard({ service, Icon, learnMore }: ServiceCardProps) {
       <h3 className="text-sm font-bold text-white mb-2 group-hover:text-accent transition-colors leading-snug">
         {service.title}
       </h3>
-      <p className="text-zinc-500 text-xs leading-relaxed mb-4 flex-grow">
+      <p className="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
         {service.description}
       </p>
 

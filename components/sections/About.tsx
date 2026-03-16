@@ -72,7 +72,7 @@ export default function About({ dict }: AboutProps) {
               <p className="text-base md:text-lg text-zinc-300 leading-[1.8] mb-5">
                 {dict.about.story}
               </p>
-              <p className="text-sm text-zinc-500 leading-[1.8] italic border-l-2 border-accent/50 pl-4 mb-8">
+              <p className="text-sm text-zinc-400 leading-[1.8] italic border-l-2 border-accent/50 pl-4 mb-8">
                 {dict.about.mission}
               </p>
 
@@ -86,7 +86,7 @@ export default function About({ dict }: AboutProps) {
                     <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={18} />
                     <div>
                       <p className="font-semibold text-white text-sm mb-0.5">{value.title}</p>
-                      <p className="text-xs text-zinc-500 leading-relaxed">{value.description}</p>
+                      <p className="text-sm text-zinc-400 leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 ))}

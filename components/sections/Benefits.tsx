@@ -56,7 +56,7 @@ export default function Benefits({ dict }: BenefitsProps) {
                     <h3 className="font-display text-lg font-bold text-white mb-1.5 group-hover:text-accent transition-colors duration-200">
                       {benefit.title}
                     </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+                    <p className="text-zinc-300 text-sm leading-relaxed max-w-2xl">
                       {benefit.description}
                     </p>
                   </div>
