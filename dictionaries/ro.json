@@ -1,0 +1,409 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "about": "Despre",
+    "services": "Servicii",
+    "transformations": "Transformări",
+    "pricing": "Prețuri",
+    "contact": "Contact",
+    "bookConsultation": "Rezervă Consultație"
+  },
+  "hero": {
+    "headline": "Transformă-ți Corpul,",
+    "headlineAccent": "Înalță-ți Viața",
+    "subheadline": "Antrenament personal de elită și coaching online conceput pentru rezultate reale și sustenabile. Fără scurtături — doar programe bazate pe știință, adaptate obiectivelor tale.",
+    "primaryCTA": "Începe Transformarea",
+    "secondaryCTA": "Vezi Programele",
+    "stats": {
+      "clients": "300+",
+      "clientsLabel": "Clienți Transformați",
+      "transformations": "95%",
+      "transformationsLabel": "Rată de Succes",
+      "experience": "8+",
+      "experienceLabel": "Ani Experiență"
+    },
+    "trustBadges": {
+      "certified": "Certificat NASM",
+      "years": "8+ Ani",
+      "clients": "300+ Clienți"
+    }
+  },
+  "about": {
+    "heading": "Despre Mine",
+    "subheading": "Partenerul Tău în Transformare",
+    "story": "Nu sunt aici să-ți vând soluții rapide sau pastile magice. Sunt antrenor personal certificat cu peste 8 ani de experiență în a-i ajuta pe oameni ca tine să obțină transformări sustenabile. Abordarea mea se bazează pe antrenament bazat pe dovezi, nutriție personalizată și responsabilitate constantă.",
+    "mission": "Misiunea mea este simplă: să te ajut să construiești un corp mai puternic și mai sănătos, dezvoltând în același timp disciplina și obiceiurile care durează toată viața.",
+    "trainerName": "Alex Ionescu",
+    "trainerTitle": "Head Coach & NASM-CPT",
+    "values": [
+      {
+        "title": "Bazat pe Știință",
+        "description": "Fiecare program se bazează pe știința sportului și metodologii dovedite."
+      },
+      {
+        "title": "Personalizat",
+        "description": "Fără planuri standard. Programul tău se adaptează la obiectivele, stilul de viață și progresul tău."
+      },
+      {
+        "title": "Sustenabil",
+        "description": "Ne concentrăm pe rezultate pe termen lung, nu pe diete drastice sau rutine insustenabile."
+      }
+    ],
+    "certifications": [
+      "Antrenor Personal Certificat NASM",
+      "Coach Nutriție de Precizie",
+      "Specialist Mișcare Funcțională"
+    ]
+  },
+  "services": {
+    "heading": "Servicii",
+    "subheading": "Programe Personalizate pentru Fiecare Obiectiv",
+    "learnMore": "Află Mai Mult",
+    "notSure": "Nu ești sigur ce program ți se potrivește?",
+    "notSureCTA": "Rezervă o Consultație Gratuită",
+    "items": [
+      {
+        "title": "Antrenament Personal 1-la-1",
+        "description": "Sesiuni de antrenament în persoană cu atenție deplină, corectare tehnică și programare progresivă.",
+        "benefits": [
+          "Planuri de antrenament personalizate",
+          "Coaching direct",
+          "Corectare formă",
+          "Program flexibil"
+        ]
+      },
+      {
+        "title": "Coaching Online",
+        "description": "Antrenează-te oriunde cu programare personalizată, evaluări săptămânale și suport 24/7.",
+        "benefits": [
+          "Programe de antrenament personalizate",
+          "Evaluări video săptămânale",
+          "Ghid nutrițional",
+          "Aplicație tracking progres"
+        ]
+      },
+      {
+        "title": "Ghid Nutrițional",
+        "description": "Planuri nutriționale bazate pe dovezi, concepute pentru tipul tău de corp, obiective și stil de viață.",
+        "benefits": [
+          "Calcul macronutrienți",
+          "Template-uri planificare mese",
+          "Ghid suplimente",
+          "Abordare dietetică flexibilă"
+        ]
+      },
+      {
+        "title": "Recompunere Corporală",
+        "description": "Pierde grăsime și construiește mușchi simultan cu protocoale strategice de antrenament și nutriție.",
+        "benefits": [
+          "Programare cu două faze",
+          "Optimizare metabolică",
+          "Tracking compoziție corporală",
+          "Abordare sustenabilă"
+        ]
+      },
+      {
+        "title": "Programe Ardere Grăsime",
+        "description": "Strategii de pierdere în greutate bazate pe știință care păstrează masa musculară și stimulează metabolismul.",
+        "benefits": [
+          "Strategie deficit caloric",
+          "Optimizare cardio",
+          "Managementul foamei",
+          "Protocoale recuperare metabolică"
+        ]
+      },
+      {
+        "title": "Construcție Musculară",
+        "description": "Programe axate pe hipertrofie concepute să maximizeze creșterea musculară și forța.",
+        "benefits": [
+          "Supraîncărcare progresivă",
+          "Periodizare volum",
+          "Optimizare recuperare",
+          "Specializare grupuri musculare"
+        ]
+      },
+      {
+        "title": "Planuri Antrenament Personalizate",
+        "description": "Planuri de antrenament adaptate programului, echipamentului și nivelului tău de experiență.",
+        "benefits": [
+          "Programare specifică obiectivelor",
+          "Opțiuni acasă sau sală",
+          "Bibliotecă video exerciții",
+          "Actualizări lunare plan"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "heading": "De Ce Să Mă Alegi",
+    "subheading": "Ce Diferențiază Acest Program",
+    "items": [
+      {
+        "title": "Planuri Personalizate",
+        "description": "Fiecare program este construit personalizat pentru obiectivele, tipul de corp și stilul tău de viață unic. Nimic generic."
+      },
+      {
+        "title": "Rezultate Sustenabile",
+        "description": "Fără diete drastice sau rutine extreme. Construim obiceiuri care durează toată viața."
+      },
+      {
+        "title": "Expertiză de Top",
+        "description": "Peste 8 ani de experiență și multiple certificări asigură că ești în mâini experte la fiecare pas."
+      },
+      {
+        "title": "Responsabilitate Completă",
+        "description": "Evaluări regulate și tracking progres te mențin motivat și constant pe drumul cel bun."
+      },
+      {
+        "title": "Perfecționare Tehnică",
+        "description": "Învață forma corectă pentru a maximiza fiecare repetiție, a-ți proteja articulațiile și a elimina riscul de accidentare."
+      },
+      {
+        "title": "Suport pe Termen Lung",
+        "description": "Sunt investit în succesul tău pe termen lung — nu doar în primele câteva săptămâni."
+      }
+    ]
+  },
+  "transformations": {
+    "heading": "Rezultate Reale",
+    "subheading": "Transformări Care Vorbesc de la Sine",
+    "beforeLabel": "Înainte",
+    "afterLabel": "După",
+    "disclaimer": "Rezultatele variază. Progresul individual depinde de consistență, efort și respectarea programului.",
+    "items": [
+      {
+        "name": "Alex M.",
+        "metric": "−18 kg",
+        "duration": "5 luni",
+        "result": "Program Ardere Grăsime",
+        "testimonial": "Cea mai bună decizie pe care am luat-o vreodată. Programul a fost dificil dar merită total."
+      },
+      {
+        "name": "Sarah K.",
+        "metric": "+8 kg",
+        "duration": "6 luni",
+        "result": "Construcție Musculară",
+        "testimonial": "În sfârșit am corpul puternic și încrezător pe care mi l-am dorit mereu."
+      },
+      {
+        "name": "Michael R.",
+        "metric": "−25 kg",
+        "duration": "8 luni",
+        "result": "Recompunere Corporală",
+        "testimonial": "Experiență care mi-a schimbat viața. Mă simt ca o persoană complet nouă."
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "Povești Clienți",
+    "subheading": "Ce Spun Clienții Mei",
+    "verified": "Client Verificat",
+    "items": [
+      {
+        "name": "Jessica L.",
+        "role": "Manager Marketing",
+        "rating": 5,
+        "text": "Am încercat mulți antrenori, dar aceasta este prima dată când am văzut rezultate reale și durabile. Abordarea personalizată și suportul constant au făcut toată diferența."
+      },
+      {
+        "name": "David P.",
+        "role": "Inginer Software",
+        "rating": 5,
+        "text": "Ca cineva cu program încărcat, coaching-ul online a fost perfect. Flexibilitatea combinată cu îndrumarea expertă m-au ajutat să-mi ating obiectivele fără să-mi compromit munca."
+      },
+      {
+        "name": "Emma T.",
+        "role": "Profesoară",
+        "rating": 5,
+        "text": "Doar ghidul nutrițional merită fiecare ban. În sfârșit înțeleg cum să mănânc pentru obiectivele mele fără să mă simt restricționată sau nefericită."
+      },
+      {
+        "name": "Chris B.",
+        "role": "Antreprenor",
+        "rating": 5,
+        "text": "Atenție incredibilă la detalii și grijă reală pentru progresul meu. Nu doar un antrenor — un adevărat coach care este investit în succesul tău."
+      },
+      {
+        "name": "Lisa M.",
+        "role": "Asistentă Medicală",
+        "rating": 5,
+        "text": "Abordarea structurată și evaluările săptămânale m-au menținut responsabilă. Nu am fost niciodată atât de constantă cu antrenamentul în toată viața mea."
+      },
+      {
+        "name": "Tom H.",
+        "role": "Director Vânzări",
+        "rating": 5,
+        "text": "Cea mai bună investiție în mine pe care am făcut-o vreodată. Programul mi-a transformat nu doar corpul, ci întreaga relație cu fitness-ul și sănătatea."
+      }
+    ]
+  },
+  "process": {
+    "heading": "Cum Funcționează",
+    "subheading": "Călătoria Ta Spre Transformare",
+    "steps": [
+      {
+        "title": "Consultație Inițială",
+        "description": "Discutăm despre obiectivele, experiența, stilul de viață și eventualele limitări. Asta mă ajută să înțeleg exact ce ai nevoie."
+      },
+      {
+        "title": "Evaluare & Analiză",
+        "description": "Evaluare cuprinzătoare a nivelului actual de fitness, compoziției corporale și tiparelor de mișcare."
+      },
+      {
+        "title": "Creare Plan Personalizat",
+        "description": "Proiectez programul tău personalizat de antrenament și nutriție adaptat obiectivelor și circumstanțelor tale specifice."
+      },
+      {
+        "title": "Coaching & Execuție",
+        "description": "Sesiuni regulate sau evaluări unde executăm planul, rafinăm tehnica și construim un momentum de neoprit."
+      },
+      {
+        "title": "Tracking Progres",
+        "description": "Măsurători săptămânale, fotografii și metrici de performanță pentru a urmări transformarea ta obiectiv."
+      },
+      {
+        "title": "Adaptare & Optimizare",
+        "description": "Programul tău evoluează cu progresul tău. Ajustăm continuu pe baza rezultatelor și feedback-ului."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Planuri Investiție",
+    "subheading": "Alege Programul Care Se Potrivește Obiectivelor Tale",
+    "mostPopular": "Cel Mai Popular",
+    "cta": "Începe Acum",
+    "noContract": "Anulezi oricând. Fără contract.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "€199",
+        "period": "/lună",
+        "description": "Perfect pentru începători gata să-și înceapă călătoria fitness.",
+        "features": [
+          "Plan antrenament personalizat",
+          "Ghiduri nutriționale de bază",
+          "Evaluări lunare",
+          "Suport email",
+          "Bibliotecă video exerciții"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Pro",
+        "price": "€349",
+        "period": "/lună",
+        "description": "Alegerea cea mai populară pentru cei care caută transformare serioasă.",
+        "features": [
+          "Program antrenament personalizat",
+          "Plan nutrițional personalizat",
+          "Evaluări video săptămânale",
+          "Suport chat 24/7",
+          "Aplicație tracking progres",
+          "Video-uri review formă",
+          "Ghid suplimente"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Elite",
+        "price": "€599",
+        "period": "/lună",
+        "description": "Experiență premium cu suport maxim și rezultate.",
+        "features": [
+          "Tot din Pro",
+          "2 evaluări săptămânale",
+          "Răspuns prioritar",
+          "Analize avansate",
+          "Plan suplimente personalizat",
+          "Sesiune lunară în persoană",
+          "Acces comunitate pe viață"
+        ],
+        "popular": false
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Întrebări Frecvente",
+    "subheading": "Tot Ce Trebuie Să Știi",
+    "stillHaveQuestions": "Ai întrebări?",
+    "contactWhatsApp": "Scrie-ne pe WhatsApp",
+    "items": [
+      {
+        "question": "Trebuie să am experiență la sală pentru a începe?",
+        "answer": "Deloc. Lucrez atât cu începători cât și cu atleți avansați. Programul tău va fi adaptat la nivelul tău actual de experiență și te voi învăța tot ce trebuie să știi."
+      },
+      {
+        "question": "Coaching-ul nutrițional este inclus?",
+        "answer": "Da, toate planurile includ ghidare nutrițională. Nivelul de detaliu variază în funcție de plan — de la ghiduri de bază în Starter până la planificare completă de mese în Pro și Elite."
+      },
+      {
+        "question": "Pot să mă antrenez online de oriunde?",
+        "answer": "Absolut. Coaching-ul online funcționează de oriunde din lume. Vei primi programul tău personalizat, evaluări săptămânale prin apel video și suport 24/7 prin aplicație."
+      },
+      {
+        "question": "Cât de repede voi vedea rezultate?",
+        "answer": "Majoritatea clienților observă schimbări vizibile în 3–4 săptămâni. Transformări semnificative durează de obicei 12–16 săptămâni. Rezultatele sustenabile necesită consistență, și exact asta construim împreună."
+      },
+      {
+        "question": "Ce se întâmplă dacă am accidentări sau limitări?",
+        "answer": "Nicio problemă. Voi proiecta programul tău în jurul oricăror accidentări sau limitări. Am experiență vastă în lucrul cu diverse condiții și voi asigura mereu un antrenament sigur și eficient."
+      },
+      {
+        "question": "Cât de des vom verifica progresul?",
+        "answer": "Săptămânal pentru planurile Pro și Elite, lunar pentru Starter. Tracking-ul progresului include măsurători, fotografii, metrici de performanță și feedback subiectiv."
+      },
+      {
+        "question": "Pot să schimb planul mai târziu?",
+        "answer": "Da, poți face upgrade sau downgrade la planul tău oricând. Vreau să fii în programul care servește cel mai bine nevoile și obiectivele tale."
+      },
+      {
+        "question": "Ce echipament am nevoie?",
+        "answer": "Depinde de programul tău. Pot proiecta planuri pentru acces complet la sală, configurații home gym sau chiar echipament minimal. Vom discuta despre asta în timpul consultației."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Gata de Transformare?",
+    "subheading": "Rezervă o consultație gratuită astăzi. Hai să discutăm despre obiectivele tale și să construim planul tău.",
+    "replyTime": "Răspuns tipic: sub 2 ore",
+    "trustQuote": "A lucra cu acest coach a fost cea mai bună investiție pe care am făcut-o în mine.",
+    "trustName": "Jessica L., clientă din 2023",
+    "whatsappPrimary": "Începe pe WhatsApp",
+    "form": {
+      "name": "Nume Complet",
+      "email": "Adresă Email",
+      "phone": "Număr Telefon",
+      "message": "Spune-mi despre obiectivele tale",
+      "submit": "Trimite Mesaj",
+      "sending": "Se trimite...",
+      "success": "Mesaj trimis! Voi reveni în 24 de ore.",
+      "error": "Ceva nu a mers bine. Te rog încearcă WhatsApp sau email."
+    },
+    "info": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "instagram": "Instagram",
+      "whatsappCTA": "Conversație WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Antrenament personal de elită pentru rezultate reale.",
+    "ctaBannerText": "Gata de transformare?",
+    "ctaBannerSub": "Rezervă consultația ta gratuită astăzi și fă primul pas.",
+    "ctaButton": "Rezervă Apel Gratuit",
+    "socialProof": "Evaluat 5/5 de 300+ clienți",
+    "links": {
+      "services": "Servicii",
+      "about": "Despre",
+      "pricing": "Prețuri",
+      "contact": "Contact",
+      "faq": "Întrebări"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "YouTube"
+    },
+    "copyright": "© 2026 Elite Trainer. Toate drepturile rezervate."
+  }
+}

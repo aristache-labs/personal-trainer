@@ -1,0 +1,409 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "transformations": "Transformations",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "bookConsultation": "Book Consultation"
+  },
+  "hero": {
+    "headline": "Transform Your Body,",
+    "headlineAccent": "Elevate Your Life",
+    "subheadline": "Elite personal training and online coaching designed for real, sustainable results. No shortcuts — just science-backed programs tailored to your goals.",
+    "primaryCTA": "Start Your Journey",
+    "secondaryCTA": "View Programs",
+    "stats": {
+      "clients": "300+",
+      "clientsLabel": "Clients Transformed",
+      "transformations": "95%",
+      "transformationsLabel": "Success Rate",
+      "experience": "8+",
+      "experienceLabel": "Years Experience"
+    },
+    "trustBadges": {
+      "certified": "NASM Certified",
+      "years": "8+ Years",
+      "clients": "300+ Clients"
+    }
+  },
+  "about": {
+    "heading": "About Me",
+    "subheading": "Your Partner in Transformation",
+    "story": "I'm not here to sell you quick fixes or magic pills. I'm a certified personal trainer with over 8 years of experience helping people like you achieve sustainable transformations. My approach is built on evidence-based training, personalized nutrition, and unwavering accountability.",
+    "mission": "My mission is simple: help you build a stronger, healthier body while developing the discipline and habits that last a lifetime.",
+    "trainerName": "Alex Ionescu",
+    "trainerTitle": "Head Coach & NASM-CPT",
+    "values": [
+      {
+        "title": "Evidence-Based",
+        "description": "Every program is grounded in sports science and proven methodologies."
+      },
+      {
+        "title": "Personalized",
+        "description": "No cookie-cutter plans. Your program adapts to your goals, lifestyle, and progress."
+      },
+      {
+        "title": "Sustainable",
+        "description": "We focus on long-term results, not crash diets or unsustainable routines."
+      }
+    ],
+    "certifications": [
+      "NASM Certified Personal Trainer",
+      "Precision Nutrition Coach",
+      "Functional Movement Specialist"
+    ]
+  },
+  "services": {
+    "heading": "Services",
+    "subheading": "Tailored Programs for Every Goal",
+    "learnMore": "Learn More",
+    "notSure": "Not sure which program is right for you?",
+    "notSureCTA": "Book a Free Consultation",
+    "items": [
+      {
+        "title": "1-on-1 Personal Training",
+        "description": "In-person training sessions with full attention, technique correction, and progressive programming.",
+        "benefits": [
+          "Customized workout plans",
+          "Hands-on coaching",
+          "Form correction",
+          "Flexible scheduling"
+        ]
+      },
+      {
+        "title": "Online Coaching",
+        "description": "Train anywhere with personalized programming, weekly check-ins, and 24/7 support.",
+        "benefits": [
+          "Custom training programs",
+          "Weekly video check-ins",
+          "Nutrition guidance",
+          "Progress tracking app"
+        ]
+      },
+      {
+        "title": "Nutrition Guidance",
+        "description": "Evidence-based nutrition plans designed for your body type, goals, and lifestyle.",
+        "benefits": [
+          "Macro calculations",
+          "Meal planning templates",
+          "Supplement guidance",
+          "Flexible dieting approach"
+        ]
+      },
+      {
+        "title": "Body Recomposition",
+        "description": "Lose fat and build muscle simultaneously with strategic training and nutrition protocols.",
+        "benefits": [
+          "Dual-phase programming",
+          "Metabolic optimization",
+          "Body composition tracking",
+          "Sustainable approach"
+        ]
+      },
+      {
+        "title": "Fat Loss Programs",
+        "description": "Science-backed fat loss strategies that preserve muscle and boost metabolism.",
+        "benefits": [
+          "Calorie deficit strategy",
+          "Cardio optimization",
+          "Hunger management",
+          "Metabolic recovery protocols"
+        ]
+      },
+      {
+        "title": "Muscle Building",
+        "description": "Hypertrophy-focused programs designed to maximize muscle growth and strength.",
+        "benefits": [
+          "Progressive overload",
+          "Volume periodization",
+          "Recovery optimization",
+          "Muscle group specialization"
+        ]
+      },
+      {
+        "title": "Custom Workout Plans",
+        "description": "Tailored workout plans designed around your schedule, equipment, and experience level.",
+        "benefits": [
+          "Goal-specific programming",
+          "Home or gym options",
+          "Video exercise library",
+          "Monthly plan updates"
+        ]
+      }
+    ]
+  },
+  "benefits": {
+    "heading": "Why Choose Me",
+    "subheading": "What Sets This Program Apart",
+    "items": [
+      {
+        "title": "Personalized Plans",
+        "description": "Every program is custom-built for your unique goals, body type, and lifestyle. Nothing generic, ever."
+      },
+      {
+        "title": "Sustainable Results",
+        "description": "No crash diets or extreme routines. We build habits that last a lifetime."
+      },
+      {
+        "title": "Expert Guidance",
+        "description": "8+ years of experience and multiple certifications ensure you're in expert hands at every step."
+      },
+      {
+        "title": "Full Accountability",
+        "description": "Regular check-ins and progress tracking keep you motivated and consistently on track."
+      },
+      {
+        "title": "Technique Mastery",
+        "description": "Learn proper form to maximize every rep, protect your joints, and eliminate injury risk."
+      },
+      {
+        "title": "Long-Term Support",
+        "description": "I'm invested in your long-term success — not just the first few weeks."
+      }
+    ]
+  },
+  "transformations": {
+    "heading": "Real Results",
+    "subheading": "Transformations That Speak for Themselves",
+    "beforeLabel": "Before",
+    "afterLabel": "After",
+    "disclaimer": "Results vary. Individual outcomes depend on consistency, effort, and adherence to the program.",
+    "items": [
+      {
+        "name": "Alex M.",
+        "metric": "−18 kg",
+        "duration": "5 months",
+        "result": "Fat Loss Program",
+        "testimonial": "Best decision I ever made. The program was tough but totally worth it."
+      },
+      {
+        "name": "Sarah K.",
+        "metric": "+8 kg",
+        "duration": "6 months",
+        "result": "Muscle Building",
+        "testimonial": "I finally have the strong, confident body I've always wanted."
+      },
+      {
+        "name": "Michael R.",
+        "metric": "−25 kg",
+        "duration": "8 months",
+        "result": "Body Recomposition",
+        "testimonial": "Life-changing experience. I feel like a completely new person."
+      }
+    ]
+  },
+  "testimonials": {
+    "heading": "Client Stories",
+    "subheading": "What My Clients Say",
+    "verified": "Verified Client",
+    "items": [
+      {
+        "name": "Jessica L.",
+        "role": "Marketing Manager",
+        "rating": 5,
+        "text": "I've tried many trainers, but this is the first time I've seen real, lasting results. The personalized approach and constant support made all the difference."
+      },
+      {
+        "name": "David P.",
+        "role": "Software Engineer",
+        "rating": 5,
+        "text": "As someone with a busy schedule, the online coaching was perfect. The flexibility combined with expert guidance helped me achieve my goals without compromising my work."
+      },
+      {
+        "name": "Emma T.",
+        "role": "Teacher",
+        "rating": 5,
+        "text": "The nutrition guidance alone was worth every cent. I finally understand how to eat for my goals without feeling restricted or miserable."
+      },
+      {
+        "name": "Chris B.",
+        "role": "Entrepreneur",
+        "rating": 5,
+        "text": "Incredible attention to detail and genuine care for my progress. Not just a trainer — a true coach who is invested in your success."
+      },
+      {
+        "name": "Lisa M.",
+        "role": "Nurse",
+        "rating": 5,
+        "text": "The structured approach and weekly check-ins kept me accountable. I've never been this consistent with my training in my entire life."
+      },
+      {
+        "name": "Tom H.",
+        "role": "Sales Director",
+        "rating": 5,
+        "text": "Best investment in myself I've ever made. The program transformed not just my body, but my entire relationship with fitness and health."
+      }
+    ]
+  },
+  "process": {
+    "heading": "How It Works",
+    "subheading": "Your Journey to Transformation",
+    "steps": [
+      {
+        "title": "Initial Consultation",
+        "description": "We discuss your goals, experience, lifestyle, and any limitations. This helps me understand exactly what you need."
+      },
+      {
+        "title": "Assessment & Analysis",
+        "description": "Comprehensive evaluation of your current fitness level, body composition, and movement patterns."
+      },
+      {
+        "title": "Custom Plan Creation",
+        "description": "I design your personalized training and nutrition program tailored to your specific goals and circumstances."
+      },
+      {
+        "title": "Coaching & Execution",
+        "description": "Regular sessions or check-ins where we execute the plan, refine technique, and build unstoppable momentum."
+      },
+      {
+        "title": "Progress Tracking",
+        "description": "Weekly measurements, photos, and performance metrics to track your transformation objectively."
+      },
+      {
+        "title": "Adaptation & Optimization",
+        "description": "Your program evolves with your progress. We continuously adjust based on results and feedback."
+      }
+    ]
+  },
+  "pricing": {
+    "heading": "Investment Plans",
+    "subheading": "Choose the Program That Fits Your Goals",
+    "mostPopular": "Most Popular",
+    "cta": "Get Started",
+    "noContract": "Cancel anytime. No contracts.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "€199",
+        "period": "/month",
+        "description": "Perfect for beginners ready to start their fitness journey.",
+        "features": [
+          "Custom workout plan",
+          "Basic nutrition guidelines",
+          "Monthly check-ins",
+          "Email support",
+          "Exercise video library"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Pro",
+        "price": "€349",
+        "period": "/month",
+        "description": "The most popular choice for serious transformation seekers.",
+        "features": [
+          "Personalized training program",
+          "Custom nutrition plan",
+          "Weekly video check-ins",
+          "24/7 chat support",
+          "Progress tracking app",
+          "Form review videos",
+          "Supplement guidance"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Elite",
+        "price": "€599",
+        "period": "/month",
+        "description": "Premium experience with maximum support and results.",
+        "features": [
+          "Everything in Pro",
+          "2x weekly check-ins",
+          "Priority response",
+          "Advanced analytics",
+          "Personalized supplement plan",
+          "Monthly in-person session",
+          "Lifetime community access"
+        ],
+        "popular": false
+      }
+    ]
+  },
+  "faq": {
+    "heading": "Common Questions",
+    "subheading": "Everything You Need to Know",
+    "stillHaveQuestions": "Still have questions?",
+    "contactWhatsApp": "Chat with us on WhatsApp",
+    "items": [
+      {
+        "question": "Do I need gym experience to start?",
+        "answer": "Not at all. I work with beginners and advanced athletes alike. Your program will be tailored to your current experience level, and I'll teach you everything you need to know."
+      },
+      {
+        "question": "Is nutrition coaching included?",
+        "answer": "Yes, all plans include nutrition guidance. The level of detail varies by plan — from basic guidelines in Starter to fully customized meal planning in Pro and Elite."
+      },
+      {
+        "question": "Can I train online from anywhere?",
+        "answer": "Absolutely. Online coaching works from anywhere in the world. You'll receive your custom program, weekly check-ins via video call, and 24/7 support through the app."
+      },
+      {
+        "question": "How quickly will I see results?",
+        "answer": "Most clients notice visible changes within 3–4 weeks. Significant transformations typically take 12–16 weeks. Sustainable results require consistency, and that's exactly what we build together."
+      },
+      {
+        "question": "What if I have injuries or limitations?",
+        "answer": "No problem. I'll design your program around any injuries or limitations. I have extensive experience working with various conditions and will always ensure safe, effective training."
+      },
+      {
+        "question": "How often will we check progress?",
+        "answer": "Weekly for Pro and Elite plans, monthly for Starter. Progress tracking includes measurements, photos, performance metrics, and subjective feedback."
+      },
+      {
+        "question": "Can I switch plans later?",
+        "answer": "Yes, you can upgrade or downgrade your plan at any time. I want you in the program that best serves your needs and goals."
+      },
+      {
+        "question": "What equipment do I need?",
+        "answer": "It depends on your program. I can design plans for full gym access, home gym setups, or even minimal equipment. We'll discuss this during your consultation."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Ready to Transform?",
+    "subheading": "Book a free consultation today. Let's talk about your goals and build your plan.",
+    "replyTime": "Typical reply: under 2 hours",
+    "trustQuote": "Working with this coach was the single best investment I made in myself.",
+    "trustName": "Jessica L., client since 2023",
+    "whatsappPrimary": "Start on WhatsApp",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Tell me about your goals",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! I'll get back to you within 24 hours.",
+      "error": "Something went wrong. Please try WhatsApp or email instead."
+    },
+    "info": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "instagram": "Instagram",
+      "whatsappCTA": "Chat on WhatsApp"
+    }
+  },
+  "footer": {
+    "tagline": "Elite personal training for real results.",
+    "ctaBannerText": "Ready to transform?",
+    "ctaBannerSub": "Book your free consultation today and take the first step.",
+    "ctaButton": "Book Free Call",
+    "socialProof": "Rated 5/5 by 300+ clients",
+    "links": {
+      "services": "Services",
+      "about": "About",
+      "pricing": "Pricing",
+      "contact": "Contact",
+      "faq": "FAQ"
+    },
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "YouTube"
+    },
+    "copyright": "© 2026 Elite Trainer. All rights reserved."
+  }
+}
