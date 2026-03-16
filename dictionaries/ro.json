@@ -66,6 +66,7 @@
     "heading": "Servicii",
     "subheading": "Programe Personalizate pentru Fiecare Obiectiv",
     "learnMore": "Află Mai Mult",
+    "whatsIncluded": "Ce este inclus",
     "notSure": "Nu ești sigur ce program ți se potrivește?",
     "notSureCTA": "Rezervă o Consultație Gratuită",
     "items": [
@@ -179,26 +180,26 @@
     "items": [
       {
         "name": "Alex M.",
-        "metric": "−18 kg",
+        "metric": "−15 kg",
         "duration": "5 luni",
         "result": "Program Ardere Grăsime",
-        "secondaryMetrics": ["Grăsime −8%", "Forță +25%"],
+        "secondaryMetrics": ["Grăsime −10%", "Forță +25%"],
         "testimonial": "Cea mai bună decizie pe care am luat-o vreodată. Programul a fost dificil dar merită total."
       },
       {
         "name": "Sarah K.",
-        "metric": "+8 kg",
+        "metric": "+10 kg",
         "duration": "6 luni",
-        "result": "Construcție Musculară",
-        "secondaryMetrics": ["Masă Slabă +8 kg", "Grăsime −3%"],
+        "result": "Recompunere Corporală",
+        "secondaryMetrics": ["Talie −10 cm", "Energie +40%"],
         "testimonial": "În sfârșit am corpul puternic și încrezător pe care mi l-am dorit mereu."
       },
       {
         "name": "Michael R.",
-        "metric": "−25 kg",
+        "metric": "−20 kg",
         "duration": "8 luni",
-        "result": "Recompunere Corporală",
-        "secondaryMetrics": ["Talie −14 cm", "Energie +40%"],
+        "result": "Construcție Musculară",
+        "secondaryMetrics": ["Masă Slabă +10 kg", "Grăsime −15%"],
         "testimonial": "Experiență care mi-a schimbat viața. Mă simt ca o persoană complet nouă."
       }
     ]

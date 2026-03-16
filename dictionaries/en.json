@@ -66,6 +66,7 @@
     "heading": "Services",
     "subheading": "Tailored Programs for Every Goal",
     "learnMore": "Learn More",
+    "whatsIncluded": "What's Included",
     "notSure": "Not sure which program is right for you?",
     "notSureCTA": "Book a Free Consultation",
     "items": [
@@ -179,26 +180,26 @@
     "items": [
       {
         "name": "Alex M.",
-        "metric": "−18 kg",
+        "metric": "−15 kg",
         "duration": "5 months",
         "result": "Fat Loss Program",
-        "secondaryMetrics": ["Body Fat −8%", "Strength +25%"],
+        "secondaryMetrics": ["Body Fat −10%", "Strength +25%"],
         "testimonial": "Best decision I ever made. The program was tough but totally worth it."
       },
       {
         "name": "Sarah K.",
-        "metric": "+8 kg",
+        "metric": "-10 kg",
         "duration": "6 months",
-        "result": "Muscle Building",
-        "secondaryMetrics": ["Lean Mass +8 kg", "Body Fat −3%"],
+        "result": "Body Recomposition",
+        "secondaryMetrics": ["Waist −10 cm", "Energy +40%"],
         "testimonial": "I finally have the strong, confident body I've always wanted."
       },
       {
         "name": "Michael R.",
-        "metric": "−25 kg",
+        "metric": "−20 kg",
         "duration": "8 months",
-        "result": "Body Recomposition",
-        "secondaryMetrics": ["Waist −14 cm", "Energy +40%"],
+        "result": "Muscle Building",
+        "secondaryMetrics": ["Lean Mass +10 kg", "Body Fat −15%"],
         "testimonial": "Life-changing experience. I feel like a completely new person."
       }
     ]
