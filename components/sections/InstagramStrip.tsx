@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Instagram, Flame, Trophy, Apple, Brain } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { Instagram, Flame, Trophy, Apple, Brain, Dumbbell, Utensils, Moon } from 'lucide-react';
+import { useRef } from 'react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
 interface InstagramStripProps {
@@ -51,6 +52,127 @@ const SUPPORTING_POSTS = [
     accentBorder: 'border-violet-400/25',
   },
 ];
+
+const PILLARS = [
+  {
+    Icon: Dumbbell,
+    labelEn: 'Training',
+    labelRo: 'Antrenament',
+    subEn: 'Progressive overload',
+    subRo: 'Supraîncărcare progresivă',
+    color: 'text-accent',
+    border: 'border-accent/25',
+    bg: 'bg-accent/8',
+    glow: 'shadow-[0_0_22px_rgba(190,242,100,0.14)]',
+    iconColor: 'text-accent',
+  },
+  {
+    Icon: Utensils,
+    labelEn: 'Nutrition',
+    labelRo: 'Nutriție',
+    subEn: 'Structure & adherence',
+    subRo: 'Structură & consecvență',
+    color: 'text-emerald-300',
+    border: 'border-emerald-400/25',
+    bg: 'bg-emerald-400/6',
+    glow: 'shadow-[0_0_22px_rgba(52,211,153,0.14)]',
+    iconColor: 'text-emerald-300',
+  },
+  {
+    Icon: Moon,
+    labelEn: 'Recovery',
+    labelRo: 'Recuperare',
+    subEn: 'Sleep, stress & habits',
+    subRo: 'Somn, stres & obiceiuri',
+    color: 'text-sky-300',
+    border: 'border-sky-400/25',
+    bg: 'bg-sky-400/6',
+    glow: 'shadow-[0_0_22px_rgba(56,189,248,0.14)]',
+    iconColor: 'text-sky-300',
+  },
+];
+
+const pillarsVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+const pillarItem = {
+  hidden: { opacity: 0, y: 8 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+};
+const spineVariant = {
+  hidden: { scaleY: 0, opacity: 0 },
+  visible: { scaleY: 1, opacity: 1, transition: { duration: 0.45, delay: 0.45, ease: [0.22, 1, 0.36, 1] } },
+};
+const resultVariant = {
+  hidden: { opacity: 0, y: 6 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.68, ease: [0.22, 1, 0.36, 1] } },
+};
+
+function MethodDiagram({ isRo }: { isRo: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' });
+
+  return (
+    <div ref={ref} className="absolute inset-0 flex flex-col items-center justify-center px-5 gap-3">
+      {/* Top 3 pillar blocks */}
+      <motion.div
+        className="flex items-stretch justify-center gap-2.5 w-full"
+        variants={pillarsVariants}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+      >
+        {PILLARS.map((p) => (
+          <motion.div
+            key={p.labelEn}
+            variants={pillarItem}
+            className={`flex-1 flex flex-col items-center gap-1.5 rounded-xl py-2.5 px-2 border ${p.border} ${p.bg} ${p.glow} backdrop-blur-sm`}
+            style={{ background: 'rgba(9,9,11,0.72)' }}
+          >
+            <p.Icon size={14} className={p.iconColor} strokeWidth={1.5} />
+            <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-[0.18em] leading-none ${p.color}`}>
+              {isRo ? p.labelRo : p.labelEn}
+            </span>
+            <span className="text-[8px] md:text-[9px] text-zinc-500 tracking-[0.06em] leading-tight text-center hidden sm:block">
+              {isRo ? p.subRo : p.subEn}
+            </span>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Subtle vertical spine implying convergence */}
+      <motion.div
+        className="flex flex-col items-center gap-0.5 origin-top"
+        variants={spineVariant}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+      >
+        <span className="w-px h-4 bg-gradient-to-b from-accent/50 to-accent/20 rounded-full" />
+        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 ring-2 ring-accent/20 ring-offset-0" />
+        <span className="w-px h-4 bg-gradient-to-b from-accent/30 to-accent/5 rounded-full" />
+      </motion.div>
+
+      {/* Bottom result module */}
+      <motion.div
+        variants={resultVariant}
+        initial="hidden"
+        animate={inView ? 'visible' : 'hidden'}
+        className="flex flex-col items-center gap-1 rounded-2xl py-3 px-5 border border-accent/40"
+        style={{
+          background: 'linear-gradient(135deg,rgba(190,242,100,0.08) 0%,rgba(9,9,11,0.80) 100%)',
+          boxShadow: '0 0 28px rgba(190,242,100,0.18), inset 0 0 0 1px rgba(190,242,100,0.08)',
+        }}
+      >
+        <span className="text-[9px] md:text-[10px] text-accent/70 uppercase tracking-[0.2em] font-semibold">
+          {isRo ? 'Rezultate Sustenabile' : 'Sustainable Results'}
+        </span>
+        <span className="text-[8px] md:text-[9px] text-zinc-500 tracking-[0.08em] hidden sm:block">
+          {isRo ? 'Construit să dureze' : 'Built to last'}
+        </span>
+      </motion.div>
+    </div>
+  );
+}
 
 export default function InstagramStrip({ dict }: InstagramStripProps) {
   const d = dict.instagram;
@@ -124,27 +246,20 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
 
               {/* Media-style focal area */}
-              <div className="relative z-10 px-6 pt-6">
-                <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-900/80 via-zinc-900 to-black/90">
+              <div className="relative z-10 px-5 pt-5 md:px-6 md:pt-6">
+                <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-900/85 via-zinc-900 to-black/95">
                   <div className="aspect-[16/9] relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-zinc-900/80 mix-blend-screen" />
                     <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_20%_0,rgba(190,242,100,0.18),transparent_55%),radial-gradient(circle_at_80%_100%,rgba(24,24,27,0.9),transparent_60%)]" />
                     <div className="absolute inset-4 rounded-xl border border-white/5" />
-                    <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/70 border border-white/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-zinc-200">
-                      <FEATURED_POST.icon size={13} className={FEATURED_POST.accent} strokeWidth={1.6} />
-                      <span className="hidden xs:inline">{isRo ? FEATURED_POST.categoryRo : FEATURED_POST.category}</span>
-                      <span className="xs:hidden">{isRo ? 'Coaching' : 'Coaching'}</span>
-                    </div>
-                    <div className="absolute top-3 right-3 h-7 px-2 rounded-full bg-black/70 border border-white/10 flex items-center gap-1.5 text-[10px] text-zinc-300">
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" />
-                      <span>{isRo ? 'Metodă în detaliu' : 'Method breakdown'}</span>
-                    </div>
+                    {/* Premium method visualization */}
+                    <MethodDiagram isRo={isRo} />
                   </div>
                 </div>
               </div>
 
               {/* Content overlay */}
-              <div className="relative z-10 p-6 pb-7 bg-gradient-to-t from-zinc-950 via-zinc-950/92 to-transparent mt-2">
+              <div className="relative z-10 p-5 pb-6 md:p-6 md:pb-7 bg-gradient-to-t from-zinc-950 via-zinc-950/92 to-transparent mt-1.5 md:mt-2">
                 <p className={`text-xs font-bold uppercase tracking-[0.15em] mb-3 ${FEATURED_POST.accent}`}>
                   {isRo ? FEATURED_POST.categoryRo : FEATURED_POST.category}
                 </p>
@@ -153,17 +268,13 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
                 </p>
                 <div className="flex items-center gap-1.5 text-zinc-400 group-hover:text-accent transition-colors">
                   <Instagram size={12} />
-                  <span className="text-[11px] font-medium">{viewInsight}</span>
+                  <span className="text-[11px] font-medium">
+                    {isRo ? 'Citește analiza' : 'Read breakdown'}
+                  </span>
                   <span className="text-[11px] translate-x-0 group-hover:translate-x-0.5 transition-transform">→</span>
                 </div>
               </div>
 
-              {/* Instagram hover badge */}
-              <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-8 h-8 rounded-xl bg-background/80 backdrop-blur-sm flex items-center justify-center border border-border/40">
-                  <Instagram size={14} className="text-accent" />
-                </div>
-              </div>
             </motion.a>
           </AnimatedSection>
 
@@ -198,7 +309,7 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
                   {/* View arrow */}
                   <div className="flex-shrink-0 flex items-center gap-1.5 text-[11px] text-zinc-500 group-hover:text-accent transition-colors">
                     <span className="hidden sm:inline font-medium uppercase tracking-[0.16em]">
-                      {viewInsight}
+                      {isRo ? 'Vezi analiza' : 'View breakdown'}
                     </span>
                     <span className="translate-x-0 group-hover:translate-x-0.5 transition-transform text-sm">
                       →
@@ -207,22 +318,35 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
                 </motion.a>
               </AnimatedSection>
             ))}
+            {/* Slim supporting strip to finish the column on desktop */}
+            <div className="hidden lg:flex items-center justify-between rounded-2xl border border-border/60 bg-background/80 px-4 py-3 mt-1 text-[11px] text-zinc-500">
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent/80" />
+                <span>{isRo ? 'Antrenament • Nutriție • Recuperare' : 'Training • Nutrition • Recovery'}</span>
+              </span>
+              <a
+                href="https://instagram.com/elitetrainer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[11px] text-zinc-400 hover:text-accent transition-colors"
+              >
+                <span className="uppercase tracking-[0.16em]">
+                  {isRo ? 'Mai multe insight-uri' : 'More insights'}
+                </span>
+                <span className="text-sm">→</span>
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom handle */}
         <AnimatedSection delay={0.3}>
-          <div className="flex items-center justify-center gap-3 mt-10">
-            <a
-              href="https://instagram.com/elitetrainer"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 text-zinc-400 hover:text-white text-sm font-medium transition-colors group"
-            >
-              <Instagram size={15} className="text-accent" />
+          <div className="flex items-center justify-center gap-2 mt-10 text-[12px] text-zinc-500">
+            <Instagram size={14} className="text-accent" />
+            <span className="text-zinc-400">
               {d.handle}
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity text-accent text-xs">→</span>
-            </a>
+              {d.handleMeta && ` · ${d.handleMeta}`}
+            </span>
           </div>
         </AnimatedSection>
       </div>
