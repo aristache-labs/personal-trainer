@@ -59,25 +59,25 @@ export default function Footer({ locale, dict }: FooterProps) {
       </div>
 
       {/* Main footer grid */}
-      <div className="container mx-auto py-12">
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1fr)] gap-10 md:gap-12">
+      <div className="container mx-auto py-10 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.75fr)_minmax(0,0.95fr)] gap-y-7 md:gap-y-10 md:gap-x-10">
 
           {/* Brand / identity */}
-          <div className="space-y-4">
-            <Link href={`/${locale}`} className="text-2xl font-display font-bold block">
+          <div className="space-y-4 md:space-y-5">
+            <Link href={`/${locale}`} className="text-2xl md:text-[26px] font-display font-bold block">
               <span className="text-white">Elite</span>
               <span className="text-accent">Trainer</span>
             </Link>
-            <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-zinc-300 text-sm leading-relaxed max-w-xs">
               {dict.footer.tagline}
             </p>
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-[11px] text-zinc-600">
               {locale === 'ro'
-                ? 'Antrenament • Nutriție • Responsabilitate'
+                ? 'Antrenament • Nutriție • Consecvență'
                 : 'Training • Nutrition • Accountability'}
             </p>
 
-            <div className="flex gap-2 pt-2">
+            <div className="flex gap-2 pt-1.5 md:pt-2">
               {[
                 { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
                 { href: 'https://facebook.com',  icon: Facebook,  label: 'Facebook' },
@@ -98,17 +98,17 @@ export default function Footer({ locale, dict }: FooterProps) {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Explore */}
           <div className="space-y-4">
-            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.18em]">
-              {locale === 'ro' ? 'Explorează' : 'Explore'}
+            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-1">
+              EXPLORE
             </p>
             <ul className="space-y-2.5">
               {links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-zinc-300 text-sm leading-relaxed hover:text-accent transition-colors duration-150"
+                    className="text-zinc-300 text-sm leading-relaxed hover:text-accent/90 transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -117,40 +117,69 @@ export default function Footer({ locale, dict }: FooterProps) {
             </ul>
           </div>
 
-          {/* Preferences / utility */}
-          <div className="space-y-3">
-            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.18em]">
-              {locale === 'ro' ? 'Preferințe' : 'Preferences'}
+          {/* Legal + language */}
+          <div className="space-y-4">
+            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-1">
+              LEGAL
             </p>
-            <div className="flex gap-2">
-              {(['en', 'ro'] as Locale[]).map((l) => (
-                <Link
-                  key={l}
-                  href={`/${l}`}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider border transition-all duration-200 ${
-                    locale === l
-                      ? 'bg-accent text-black border-accent'
-                      : 'bg-transparent text-zinc-300 border-border/50 hover:border-accent/40 hover:text-white'
-                  }`}
-                >
-                  {l}
-                </Link>
-              ))}
+            <ul className="space-y-2.5">
+              <li>
+                <a href="#terms" className="text-zinc-400 text-sm leading-relaxed hover:text-accent/90 transition-colors duration-150">
+                  {locale === 'ro' ? 'Termeni și condiții' : 'Terms & Conditions'}
+                </a>
+              </li>
+              <li>
+                <a href="#privacy" className="text-zinc-400 text-sm leading-relaxed hover:text-accent/90 transition-colors duration-150">
+                  {locale === 'ro' ? 'Politica de confidențialitate' : 'Privacy Policy'}
+                </a>
+              </li>
+              <li>
+                <a href="#cookies" className="text-zinc-400 text-sm leading-relaxed hover:text-accent/90 transition-colors duration-150">
+                  {locale === 'ro' ? 'Politica de cookies' : 'Cookie Policy'}
+                </a>
+              </li>
+            </ul>
+
+            <div className="space-y-2 pt-2">
+              <div className="flex gap-2">
+                {(['en', 'ro'] as Locale[]).map((l) => (
+                  <Link
+                    key={l}
+                    href={`/${l}`}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider border transition-all duration-200 ${
+                      locale === l
+                        ? 'bg-accent text-black border-accent'
+                        : 'bg-transparent text-zinc-300 border-border/50 hover:border-accent/40 hover:text-white'
+                    }`}
+                  >
+                    {l}
+                  </Link>
+                ))}
+              </div>
+              <p className="text-[11px] text-zinc-600 leading-relaxed max-w-[220px]">
+                {locale === 'ro'
+                  ? 'Română și engleză disponibile.'
+                  : 'English & Romanian available.'}
+              </p>
             </div>
-            <p className="text-[11px] text-zinc-500 leading-relaxed max-w-[200px]">
-              {locale === 'ro'
-                ? 'Disponibil în română și engleză.'
-                : 'Available in English and Romanian.'}
-            </p>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-10 pt-6 border-t border-border/25 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-zinc-500 text-xs">{dict.footer.copyright}</p>
-          <p className="text-zinc-600 text-xs">
-            {dict.footer.builtWithPrecision}{' '}
+        {/* Copyright / utility */}
+        <div className="mt-10 pt-5 border-t border-border/25 flex flex-col items-center gap-1.5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left sm:gap-3">
+          <p className="text-zinc-500 text-xs">
+            © 2026 Elite Trainer. All rights reserved.
+          </p>
+          <p className="text-zinc-600 text-xs flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 sm:justify-end">
+            <span className="text-zinc-500">Built with precision.</span>
             <span className="text-accent/80">EliteTrainer®</span>
+            <span className="text-zinc-700">{'\u00a0•\u00a0'}</span>
+            <a
+              href="#anpc"
+              className="text-zinc-500 hover:text-accent transition-colors duration-150"
+            >
+              ANPC
+            </a>
           </p>
         </div>
       </div>
