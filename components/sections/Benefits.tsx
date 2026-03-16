@@ -31,7 +31,7 @@ export default function Benefits({ dict }: BenefitsProps) {
   const localizedMicroLabels: string[] = dict.benefits.microLabels ?? [];
 
   return (
-    <section id="benefits" className="bg-surface section-divider">
+    <section id="benefits" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <AnimatedSection>
           <SectionHeading

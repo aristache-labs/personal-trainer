@@ -17,7 +17,7 @@ export default function Services({ dict }: ServicesProps) {
   const FeaturedIcon = iconMap[0];
 
   return (
-    <section id="services" className="bg-background section-divider">
+    <section id="services" className="bg-background section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <AnimatedSection>
           <SectionHeading

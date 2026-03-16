@@ -13,7 +13,7 @@ export default function About({ dict }: AboutProps) {
   const certPills = ['NASM', 'PN1', 'FMS', '8 Yrs'];
 
   return (
-    <section id="about" className="bg-surface section-divider">
+    <section id="about" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
 

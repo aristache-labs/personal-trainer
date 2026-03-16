@@ -17,7 +17,7 @@ export default function Hero({ dict }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-background section-divider"
+      className="relative min-h-screen flex items-center overflow-x-clip bg-background section-divider"
     >
       {/* Ambient gradients */}
       <div className="absolute inset-0 pointer-events-none">

@@ -18,7 +18,7 @@ export default function Footer({ locale, dict }: FooterProps) {
   ];
 
   return (
-    <footer className="bg-surface border-t border-border/30">
+    <footer className="bg-surface border-t border-border/30 overflow-x-clip">
 
       {/* Conversion strip */}
       <div className="border-b border-border/30">

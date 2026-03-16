@@ -34,7 +34,7 @@ export default function Contact({ dict }: ContactProps) {
     'w-full bg-background border border-border/70 rounded-lg px-4 py-3 text-white text-sm placeholder-zinc-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent/60 hover:border-border';
 
   return (
-    <section id="contact" className="bg-surface section-divider">
+    <section id="contact" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 max-w-6xl mx-auto">
 

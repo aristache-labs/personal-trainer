@@ -30,7 +30,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
   const [featured, ...rest] = items;
 
   return (
-    <section id="testimonials" className="bg-surface section-divider">
+    <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <AnimatedSection>
           <SectionHeading

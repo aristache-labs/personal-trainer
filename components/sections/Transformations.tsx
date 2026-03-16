@@ -87,7 +87,7 @@ export default function Transformations({ dict }: TransformationsProps) {
   const caseLabel: string = dict.transformations.caseLabel ?? 'Case';
 
   return (
-    <section id="transformations" className="bg-background section-divider">
+    <section id="transformations" className="bg-background section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <AnimatedSection>
           <SectionHeading

@@ -85,7 +85,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
   const labelCls = 'block text-xs font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1.5';
 
   return (
-    <section id="bmi" className="py-section-sm bg-background section-divider">
+    <section id="bmi" className="py-section-sm bg-background section-divider overflow-x-clip">
       <div className="container mx-auto">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto">

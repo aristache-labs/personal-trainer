@@ -13,7 +13,7 @@ interface FAQProps {
 
 export default function FAQ({ dict }: FAQProps) {
   return (
-    <section id="faq" className="bg-background section-divider">
+    <section id="faq" className="bg-background section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>

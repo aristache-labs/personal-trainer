@@ -11,7 +11,7 @@ interface PricingProps {
 
 export default function Pricing({ dict }: PricingProps) {
   return (
-    <section id="pricing" className="bg-surface section-divider">
+    <section id="pricing" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <AnimatedSection>
           <SectionHeading

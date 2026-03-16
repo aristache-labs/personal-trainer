@@ -123,30 +123,35 @@ function StepCard({
   index,
   active,
   isLeft,
+  isMobile,
   featured,
 }: {
   step: any;
   index: number;
   active: boolean;
   isLeft: boolean;
+  isMobile?: boolean;
   featured?: boolean;
 }) {
   const Icon = ICONS[index] ?? MessageCircle;
   const tag = MICRO_TAGS[index];
   const stepLabel = String(index + 1).padStart(2, '0');
 
+  /* On mobile avoid any horizontal x offset to prevent overflow */
+  const initialX = isMobile ? 0 : isLeft ? -28 : 28;
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: isLeft ? -28 : 28, y: 10, scale: 0.96 }}
+      initial={{ opacity: 0, x: initialX, y: 10, scale: 0.96 }}
       animate={
         active
           ? { opacity: 1, x: 0, y: 0, scale: 1 }
-          : { opacity: 0, x: isLeft ? -28 : 28, y: 10, scale: 0.96 }
+          : { opacity: 0, x: initialX, y: 10, scale: 0.96 }
       }
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className={[
         'group relative rounded-2xl overflow-hidden',
-        'p-6 sm:p-8 flex flex-col gap-4',
+        'p-5 sm:p-6 lg:p-8 flex flex-col gap-4',
         'hover:-translate-y-0.5 transition-all duration-300 cursor-default w-full',
         featured
           ? 'bg-surface border border-accent/30 hover:border-accent/50 hover:shadow-[0_0_40px_rgba(163,230,53,0.14)]'
@@ -250,16 +255,19 @@ function StepRow({
         </div>
       </div>
 
-      {/* ── Mobile: node + card ──────────────────────────── */}
-      <div className="lg:hidden flex gap-5 pb-8">
-        <div className="flex flex-col items-center flex-shrink-0 pt-1.5">
+      {/* ── Mobile: node column + card column ────────────── */}
+      {/* Node column width = 28px (w-7) so rail at left-[13px] centers exactly */}
+      <div className="lg:hidden flex items-stretch gap-3 pb-8">
+        {/* Node + connector column — fixed width so rail aligns */}
+        <div className="flex flex-col items-center w-7 flex-shrink-0 pt-1">
           <Node active={active} />
           {index < totalSteps - 1 && (
-            <div className="w-px flex-1 min-h-12 mt-2 bg-gradient-to-b from-border/40 to-transparent" />
+            <div className="w-px flex-1 min-h-12 mt-2 bg-gradient-to-b from-border/50 to-transparent" />
           )}
         </div>
+        {/* Card column — takes remaining width */}
         <div className="flex-1 min-w-0">
-          <StepCard step={step} index={index} active={active} isLeft={false} featured={featured} />
+          <StepCard step={step} index={index} active={active} isLeft={false} isMobile={true} featured={featured} />
         </div>
       </div>
     </div>
@@ -278,7 +286,7 @@ export default function Process({ dict }: ProcessProps) {
   const lineScaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section id="process" className="bg-background section-divider">
+    <section id="process" className="bg-background section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
 
         {/* Header */}
@@ -297,32 +305,31 @@ export default function Process({ dict }: ProcessProps) {
         {/* Steps area */}
         <div ref={stepsRef} className="relative mt-14">
 
-          {/* Desktop center track — layered */}
+          {/* ── Desktop center track ── */}
           <div className="hidden lg:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-border/20 pointer-events-none" />
-          {/* lime fill layer */}
           <motion.div
             className="hidden lg:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-accent/25 to-transparent pointer-events-none origin-top"
             style={{ scaleY: lineScaleY }}
           />
-          {/* soft glow layer on top of fill */}
           <motion.div
             className="hidden lg:block absolute left-1/2 -translate-x-[3px] top-0 bottom-0 w-[7px] bg-gradient-to-b from-accent/12 via-accent/5 to-transparent pointer-events-none origin-top blur-[3px]"
             style={{ scaleY: lineScaleY }}
           />
 
-          {/* Mobile left track — layered */}
-          <div className="lg:hidden absolute left-[11px] top-0 bottom-0 w-px bg-border/20 pointer-events-none" />
+          {/* ── Mobile left rail — centered under the w-7 node column ── */}
+          {/* Node column is w-7 (28px), so center is at 14px = left-[13px] is ~correct */}
+          <div className="lg:hidden absolute left-[13px] top-0 bottom-0 w-px bg-border/25 pointer-events-none" />
           <motion.div
-            className="lg:hidden absolute left-[11px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/60 via-accent/25 to-transparent pointer-events-none origin-top"
+            className="lg:hidden absolute left-[13px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/55 via-accent/20 to-transparent pointer-events-none origin-top"
             style={{ scaleY: lineScaleY }}
           />
           <motion.div
-            className="lg:hidden absolute left-[8px] top-0 bottom-0 w-[7px] bg-gradient-to-b from-accent/12 via-accent/5 to-transparent pointer-events-none origin-top blur-[3px]"
+            className="lg:hidden absolute left-[10px] top-0 bottom-0 w-[7px] bg-gradient-to-b from-accent/10 via-accent/4 to-transparent pointer-events-none origin-top blur-[2px]"
             style={{ scaleY: lineScaleY }}
           />
 
-          {/* Mobile stack */}
-          <div className="lg:hidden pl-2">
+          {/* Mobile stack — no extra padding, node column handles alignment */}
+          <div className="lg:hidden">
             {steps.map((step: any, i: number) => (
               <StepRow key={i} step={step} index={i} totalSteps={steps.length} />
             ))}
