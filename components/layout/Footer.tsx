@@ -132,7 +132,8 @@ export default function Footer({ locale, dict }: FooterProps) {
         <div className="mt-10 pt-5 border-t border-border/25 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-zinc-400 text-xs">{dict.footer.copyright}</p>
           <p className="text-zinc-500 text-xs">
-            Built with precision. <span className="text-accent/80">EliteTrainer®</span>
+            {dict.footer.builtWithPrecision}{' '}
+            <span className="text-accent/80">EliteTrainer®</span>
           </p>
         </div>
       </div>

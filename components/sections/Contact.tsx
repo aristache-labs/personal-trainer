@@ -89,17 +89,17 @@ export default function Contact({ dict }: ContactProps) {
                 />
               </div>
 
-              <div>
-                <label htmlFor="message" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
-                  {dict.contact.form.message}
-                </label>
-                <textarea
-                  id="message" name="message"
-                  value={formData.message} onChange={handleChange}
-                  required rows={5} className={`${inputBase} resize-none`}
-                  placeholder="I want to lose 15kg and build lean muscle..."
-                />
-              </div>
+                <div>
+                  <label htmlFor="message" className="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">
+                    {dict.contact.form.message}
+                  </label>
+                  <textarea
+                    id="message" name="message"
+                    value={formData.message} onChange={handleChange}
+                    required rows={5} className={`${inputBase} resize-none`}
+                    placeholder={dict.contact.form.messagePlaceholder ?? 'I want to lose 15kg and build lean muscle...'}
+                  />
+                </div>
 
               {/* Urgency note */}
               {dict.contact.urgencyNote && (
@@ -143,7 +143,9 @@ export default function Contact({ dict }: ContactProps) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-white font-bold text-sm">{dict.contact.whatsappPrimary}</p>
-                  <p className="text-zinc-500 text-xs mt-0.5">Most direct path to getting started</p>
+                  <p className="text-zinc-500 text-xs mt-0.5">
+                    {dict.contact.whatsappSecondary ?? 'Most direct path to getting started'}
+                  </p>
                 </div>
                 <span className="text-zinc-700 group-hover:text-accent transition-colors text-lg leading-none">→</span>
               </a>

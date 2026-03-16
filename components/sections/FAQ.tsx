@@ -37,7 +37,9 @@ export default function FAQ({ dict }: FAQProps) {
             <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-7 border-t border-border/30">
               <div>
                 <p className="text-white font-semibold text-sm">{dict.faq.stillHaveQuestions}</p>
-                <p className="text-zinc-600 text-xs mt-0.5">We usually reply in under 2 hours.</p>
+                <p className="text-zinc-600 text-xs mt-0.5">
+                  {dict.faq.replyNote ?? 'We usually reply in under 2 hours.'}
+                </p>
               </div>
               <CTAButton variant="secondary" href="https://wa.me/1234567890" className="flex-shrink-0">
                 <MessageCircle size={16} />

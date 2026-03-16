@@ -205,7 +205,7 @@
     ]
   },
   "testimonials": {
-    "heading": "Povești Clienți",
+    "heading": "Ce spun clienții",
     "subheading": "Ce Spun Clienții Mei",
     "verified": "Client Verificat",
     "items": [
@@ -248,7 +248,7 @@
     ]
   },
   "process": {
-    "heading": "Cum Funcționează",
+    "heading": "Cum funcționează",
     "subheading": "Călătoria Ta Spre Transformare",
     "steps": [
       {
@@ -336,6 +336,7 @@
     "heading": "Întrebări Frecvente",
     "subheading": "Tot Ce Trebuie Să Știi",
     "stillHaveQuestions": "Ai întrebări?",
+    "replyNote": "De obicei răspundem în mai puțin de 2 ore.",
     "contactWhatsApp": "Scrie-ne pe WhatsApp",
     "items": [
       {
@@ -379,6 +380,7 @@
     "trustQuote": "A lucra cu acest coach a fost cea mai bună investiție pe care am făcut-o în mine.",
     "trustName": "Jessica L., clientă din 2023",
     "whatsappPrimary": "Începe pe WhatsApp",
+    "whatsappSecondary": "Cel mai direct mod de a începe",
     "subCopy": "Următoarele tale 90 de zile încep cu o singură conversație.",
     "urgencyNote": "Locuri limitate disponibile luna aceasta",
     "availability": {
@@ -395,6 +397,7 @@
       "email": "Adresă Email",
       "phone": "Număr Telefon",
       "message": "Spune-mi despre obiectivele tale",
+      "messagePlaceholder": "Vreau să slăbesc 15kg și să pun masă musculară...",
       "submit": "Trimite Mesaj",
       "sending": "Se trimite...",
       "success": "Mesaj trimis! Voi reveni în 24 de ore.",
@@ -460,6 +463,7 @@
   },
   "footer": {
     "tagline": "Antrenament personal de elită pentru rezultate reale.",
+    "builtWithPrecision": "Creat cu precizie.",
     "ctaBannerText": "Gata de transformare?",
     "ctaBannerSub": "Rezervă consultația ta gratuită astăzi și fă primul pas.",
     "ctaButton": "Rezervă Apel Gratuit",
