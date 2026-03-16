@@ -249,31 +249,31 @@
   },
   "process": {
     "heading": "Cum funcționează",
-    "subheading": "Călătoria Ta Spre Transformare",
+    "subheading": "Un sistem clar în 6 pași construit pentru progres sustenabil — de la evaluare la rezultate pe termen lung.",
     "steps": [
       {
         "title": "Consultație Inițială",
-        "description": "Discutăm despre obiectivele, experiența, stilul de viață și eventualele limitări. Asta mă ajută să înțeleg exact ce ai nevoie."
+        "description": "Stabilim obiectivele, nivelul actual și cea mai bună strategie de start."
       },
       {
         "title": "Evaluare & Analiză",
-        "description": "Evaluare cuprinzătoare a nivelului actual de fitness, compoziției corporale și tiparelor de mișcare."
+        "description": "Evaluăm compoziția corporală, calitatea mișcărilor și indicatorii cheie de performanță."
       },
       {
         "title": "Creare Plan Personalizat",
-        "description": "Proiectez programul tău personalizat de antrenament și nutriție adaptat obiectivelor și circumstanțelor tale specifice."
+        "description": "Construim un sistem personalizat de antrenament și nutriție în jurul obiectivelor și stilului tău de viață."
       },
       {
         "title": "Coaching & Execuție",
-        "description": "Sesiuni regulate și evaluări unde executăm planul, rafinăm tehnica și construim tipul de consistență care produce rezultate durabile."
+        "description": "Implementăm planul, rafinăm tehnica și construim consistență săptămână de săptămână."
       },
       {
         "title": "Tracking Progres",
-        "description": "Măsurători săptămânale, fotografii și metrici de performanță pentru a urmări transformarea ta obiectiv."
+        "description": "Măsurători, fotografii și date de performanță mențin progresul clar și obiectiv."
       },
       {
         "title": "Adaptare & Optimizare",
-        "description": "Programul tău evoluează cu progresul tău. Ajustăm continuu pe baza rezultatelor și feedback-ului."
+        "description": "Programul evoluează continuu în funcție de rezultate, recuperare și feedback."
       }
     ]
   },

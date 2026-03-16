@@ -249,31 +249,31 @@
   },
   "process": {
     "heading": "How It Works",
-    "subheading": "Your Journey to Transformation",
+    "subheading": "A clear 6-step system built for sustainable progress — from evaluation to long-term results.",
     "steps": [
       {
         "title": "Initial Consultation",
-        "description": "We discuss your goals, experience, lifestyle, and any limitations. This helps me understand exactly what you need."
+        "description": "We define your goals, current level, and the best starting strategy."
       },
       {
         "title": "Assessment & Analysis",
-        "description": "Comprehensive evaluation of your current fitness level, body composition, and movement patterns."
+        "description": "We evaluate body composition, movement quality, and key performance markers."
       },
       {
         "title": "Custom Plan Creation",
-        "description": "I design your personalized training and nutrition program tailored to your specific goals and circumstances."
+        "description": "A tailored training and nutrition system is built around your goals and lifestyle."
       },
       {
         "title": "Coaching & Execution",
-        "description": "Regular sessions and check-ins where we execute the plan, sharpen your technique, and build the kind of consistency that compounds."
+        "description": "We implement the plan, refine technique, and build consistency week by week."
       },
       {
         "title": "Progress Tracking",
-        "description": "Weekly measurements, photos, and performance metrics to track your transformation objectively."
+        "description": "Measurements, photos, and performance data keep your progress objective."
       },
       {
         "title": "Adaptation & Optimization",
-        "description": "Your program evolves with your progress. We continuously adjust based on results and feedback."
+        "description": "Your program evolves continuously based on results, recovery, and feedback."
       }
     ]
   },
