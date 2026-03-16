@@ -60,11 +60,11 @@ const PILLARS = [
     labelRo: 'Antrenament',
     subEn: 'Progressive overload',
     subRo: 'Supraîncărcare progresivă',
-    color: 'text-accent',
-    border: 'border-accent/25',
-    bg: 'bg-accent/8',
-    glow: 'shadow-[0_0_22px_rgba(190,242,100,0.14)]',
-    iconColor: 'text-accent',
+    color: 'text-accent/90',
+    border: 'border-accent/35',
+    bg: 'bg-zinc-950/80',
+    glow: 'shadow-[0_0_18px_rgba(190,242,100,0.12)]',
+    iconColor: 'text-accent/90',
   },
   {
     Icon: Utensils,
@@ -72,11 +72,11 @@ const PILLARS = [
     labelRo: 'Nutriție',
     subEn: 'Structure & adherence',
     subRo: 'Structură & consecvență',
-    color: 'text-emerald-300',
-    border: 'border-emerald-400/25',
-    bg: 'bg-emerald-400/6',
-    glow: 'shadow-[0_0_22px_rgba(52,211,153,0.14)]',
-    iconColor: 'text-emerald-300',
+    color: 'text-emerald-200',
+    border: 'border-emerald-300/35',
+    bg: 'bg-zinc-950/80',
+    glow: 'shadow-[0_0_18px_rgba(52,211,153,0.10)]',
+    iconColor: 'text-emerald-200',
   },
   {
     Icon: Moon,
@@ -84,11 +84,11 @@ const PILLARS = [
     labelRo: 'Recuperare',
     subEn: 'Sleep, stress & habits',
     subRo: 'Somn, stres & obiceiuri',
-    color: 'text-sky-300',
-    border: 'border-sky-400/25',
-    bg: 'bg-sky-400/6',
-    glow: 'shadow-[0_0_22px_rgba(56,189,248,0.14)]',
-    iconColor: 'text-sky-300',
+    color: 'text-sky-200',
+    border: 'border-sky-300/35',
+    bg: 'bg-zinc-950/80',
+    glow: 'shadow-[0_0_18px_rgba(56,189,248,0.10)]',
+    iconColor: 'text-sky-200',
   },
 ];
 
@@ -114,10 +114,18 @@ function MethodDiagram({ isRo }: { isRo: boolean }) {
   const inView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' });
 
   return (
-    <div ref={ref} className="absolute inset-0 flex flex-col items-center justify-center px-5 gap-3">
+    <div
+      ref={ref}
+      className="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-5 gap-2"
+    >
+      {/* Subtle central editorial glow tying the system together */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full bg-[radial-gradient(circle_at_center,rgba(190,242,100,0.14),transparent_60%)] opacity-70 blur-3xl" />
+      </div>
+
       {/* Top 3 pillar blocks */}
       <motion.div
-        className="flex items-stretch justify-center gap-2.5 w-full"
+        className="flex items-stretch justify-center gap-2 w-full max-w-sm md:max-w-lg"
         variants={pillarsVariants}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
@@ -126,30 +134,36 @@ function MethodDiagram({ isRo }: { isRo: boolean }) {
           <motion.div
             key={p.labelEn}
             variants={pillarItem}
-            className={`flex-1 flex flex-col items-center gap-1.5 rounded-xl py-2.5 px-2 border ${p.border} ${p.bg} ${p.glow} backdrop-blur-sm`}
-            style={{ background: 'rgba(9,9,11,0.72)' }}
+            className={`flex flex-col items-center justify-center gap-1.5 rounded-2xl border ${p.border} ${p.bg} ${p.glow} backdrop-blur-sm basis-20 sm:basis-24 md:basis-32 py-3.5 md:py-4 px-2.5 md:px-3`}
+            style={{
+              background:
+                'radial-gradient(circle at 0% 0%, rgba(255,255,255,0.06), transparent 55%), radial-gradient(circle at 100% 100%, rgba(15,23,42,0.85), rgba(9,9,11,0.95))',
+              boxShadow:
+                '0 16px 30px rgba(0,0,0,0.70), 0 0 0 1px rgba(148,163,184,0.16), inset 0 1px 0 rgba(255,255,255,0.06)',
+            }}
           >
             <p.Icon size={14} className={p.iconColor} strokeWidth={1.5} />
-            <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-[0.18em] leading-none ${p.color}`}>
+            <span
+              className={`text-[9px] md:text-[11px] font-semibold uppercase tracking-[0.18em] leading-none ${p.color}`}
+            >
               {isRo ? p.labelRo : p.labelEn}
             </span>
-            <span className="text-[8px] md:text-[9px] text-zinc-500 tracking-[0.06em] leading-tight text-center hidden sm:block">
+            <span className="text-[8px] md:text-[10px] text-zinc-500 md:text-zinc-400 tracking-[0.06em] leading-tight text-center hidden sm:block">
               {isRo ? p.subRo : p.subEn}
             </span>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* Subtle vertical spine implying convergence */}
+      {/* Subtle vertical axis / light column implying convergence */}
       <motion.div
-        className="flex flex-col items-center gap-0.5 origin-top"
+        className="relative flex flex-col items-center gap-0 origin-top"
         variants={spineVariant}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
       >
-        <span className="w-px h-4 bg-gradient-to-b from-accent/50 to-accent/20 rounded-full" />
-        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 ring-2 ring-accent/20 ring-offset-0" />
-        <span className="w-px h-4 bg-gradient-to-b from-accent/30 to-accent/5 rounded-full" />
+        <span className="w-[1.5px] h-6 bg-gradient-to-b from-accent/30 via-accent/15 to-accent/0 rounded-full" />
+        <span className="absolute top-0 w-5 h-10 bg-[radial-gradient(circle_at_center,rgba(190,242,100,0.16),transparent_65%)] opacity-80 blur-[14px]" />
       </motion.div>
 
       {/* Bottom result module */}
@@ -157,16 +171,18 @@ function MethodDiagram({ isRo }: { isRo: boolean }) {
         variants={resultVariant}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="flex flex-col items-center gap-1 rounded-2xl py-3 px-5 border border-accent/40"
+        className="flex flex-col items-center gap-1.5 rounded-2xl py-4 md:py-4.5 px-7 md:px-9 border border-accent/45 min-w-[190px] md:min-w-[250px]"
         style={{
-          background: 'linear-gradient(135deg,rgba(190,242,100,0.08) 0%,rgba(9,9,11,0.80) 100%)',
-          boxShadow: '0 0 28px rgba(190,242,100,0.18), inset 0 0 0 1px rgba(190,242,100,0.08)',
+          background:
+            'radial-gradient(circle at 0% 0%, rgba(255,255,255,0.06), transparent 55%), linear-gradient(130deg,rgba(190,242,100,0.13) 0%,rgba(9,9,11,0.94) 55%,rgba(15,23,42,0.96) 100%)',
+          boxShadow:
+            '0 18px 40px rgba(0,0,0,0.75), 0 0 0 1px rgba(190,242,100,0.16), inset 0 1px 0 rgba(255,255,255,0.08)',
         }}
       >
-        <span className="text-[9px] md:text-[10px] text-accent/70 uppercase tracking-[0.2em] font-semibold">
+        <span className="text-[9px] md:text-[11px] text-accent/80 uppercase tracking-[0.2em] font-semibold">
           {isRo ? 'Rezultate Sustenabile' : 'Sustainable Results'}
         </span>
-        <span className="text-[8px] md:text-[9px] text-zinc-500 tracking-[0.08em] hidden sm:block">
+        <span className="text-[8px] md:text-[10px] text-zinc-500 md:text-zinc-400 tracking-[0.08em] hidden sm:block">
           {isRo ? 'Construit să dureze' : 'Built to last'}
         </span>
       </motion.div>
@@ -250,8 +266,8 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
                 <div className="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-900/85 via-zinc-900 to-black/95">
                   <div className="aspect-[16/9] relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-zinc-900/80 mix-blend-screen" />
-                    <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_20%_0,rgba(190,242,100,0.18),transparent_55%),radial-gradient(circle_at_80%_100%,rgba(24,24,27,0.9),transparent_60%)]" />
-                    <div className="absolute inset-4 rounded-xl border border-white/5" />
+                    <div className="absolute inset-0 opacity-55 bg-[radial-gradient(circle_at_20%_0,rgba(190,242,100,0.12),transparent_55%),radial-gradient(circle_at_80%_100%,rgba(24,24,27,0.85),transparent_60%)]" />
+                    <div className="absolute inset-[14px] rounded-[18px] border border-white/7" />
                     {/* Premium method visualization */}
                     <MethodDiagram isRo={isRo} />
                   </div>
