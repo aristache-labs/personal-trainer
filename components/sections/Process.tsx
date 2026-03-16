@@ -169,7 +169,7 @@ function StepCardContent({
         </h3>
       </div>
 
-      <p className="relative text-sm text-zinc-400 leading-relaxed">
+      <p className="relative text-sm text-zinc-400 leading-relaxed line-clamp-2 lg:line-clamp-none">
         {step.description}
       </p>
 
@@ -242,7 +242,7 @@ function MobileStepCard({
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className={[
         'group relative rounded-2xl overflow-hidden',
-        'p-5 sm:p-6 flex flex-col gap-4',
+        'p-4 sm:p-5 flex flex-col gap-3',
         'cursor-default w-full',
         featured
           ? 'bg-surface border border-accent/30'
@@ -300,7 +300,7 @@ function StepRow({
 
       {/* ── Mobile: node column + self-animating card ────── */}
       {/* Node column is w-7 (28px), rail at left-[13px] centers under it */}
-      <div className="lg:hidden flex items-stretch gap-3 pb-8">
+      <div className="lg:hidden flex items-stretch gap-3 pb-5 md:pb-8">
         <MobileNodeColumn index={index} totalSteps={totalSteps} />
         <div className="flex-1 min-w-0">
           <MobileStepCard step={step} index={index} featured={featured} />
@@ -319,7 +319,7 @@ function MobileNodeColumn({ index, totalSteps }: { index: number; totalSteps: nu
     <div ref={ref} className="flex flex-col items-center w-7 flex-shrink-0 pt-1">
       <Node active={active} />
       {index < totalSteps - 1 && (
-        <div className="w-px flex-1 min-h-12 mt-2 bg-gradient-to-b from-border/50 to-transparent" />
+        <div className="w-px flex-1 min-h-8 md:min-h-12 mt-2 bg-gradient-to-b from-border/50 to-transparent" />
       )}
     </div>
   );
@@ -338,7 +338,7 @@ export default function Process({ dict }: ProcessProps) {
 
   return (
     <section id="process" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
 
         {/* Header */}
         <motion.div
@@ -354,7 +354,7 @@ export default function Process({ dict }: ProcessProps) {
         </motion.div>
 
         {/* Steps area */}
-        <div ref={stepsRef} className="relative mt-14">
+        <div ref={stepsRef} className="relative mt-10 md:mt-14">
 
           {/* ── Desktop center track ── */}
           <div className="hidden lg:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-border/20 pointer-events-none" />

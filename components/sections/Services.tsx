@@ -18,7 +18,7 @@ export default function Services({ dict }: ServicesProps) {
 
   return (
     <section id="services" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <AnimatedSection>
           <SectionHeading
             heading={dict.services.heading}
@@ -28,11 +28,11 @@ export default function Services({ dict }: ServicesProps) {
 
         {/* Featured first service — full-width editorial card */}
         <AnimatedSection delay={0.05}>
-          <div className="group relative rounded-2xl border border-border bg-surface overflow-hidden mb-5 hover:border-accent/40 transition-colors duration-300">
+          <div className="group relative rounded-2xl border border-border bg-surface overflow-hidden mb-4 md:mb-5 hover:border-accent/40 transition-colors duration-300">
             <span className="absolute top-0 left-0 right-0 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             <div className="grid md:grid-cols-[1fr_1fr] gap-0">
               {/* Left: icon + title + description */}
-              <div className="p-8 md:p-10 border-b md:border-b-0 md:border-r border-border/50">
+              <div className="p-5 md:p-10 border-b md:border-b-0 md:border-r border-border/50">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center group-hover:bg-accent/25 transition-colors flex-shrink-0">
                     <FeaturedIcon className="text-accent" size={24} />
@@ -55,7 +55,7 @@ export default function Services({ dict }: ServicesProps) {
               </div>
 
               {/* Right: benefits list */}
-              <div className="p-8 md:p-10">
+              <div className="p-5 md:p-10">
                 <p className="text-[11px] font-bold text-accent uppercase tracking-[0.18em] mb-5">
                   {dict.services.whatsIncluded}
                 </p>
@@ -73,7 +73,7 @@ export default function Services({ dict }: ServicesProps) {
         </AnimatedSection>
 
         {/* Remaining 6 in a grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {rest.map((service: any, index: number) => {
             const Icon = iconMap[index + 1] || Dumbbell;
             return (
@@ -111,7 +111,7 @@ function ServiceCard({ service, Icon, learnMore }: ServiceCardProps) {
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.18 }}
-      className="group bg-surface border border-border rounded-2xl p-6 hover:border-accent/35 transition-all duration-300 hover:shadow-lg hover:shadow-accent/6 h-full flex flex-col relative overflow-hidden"
+      className="group bg-surface border border-border rounded-2xl p-4 md:p-6 hover:border-accent/35 transition-all duration-300 hover:shadow-lg hover:shadow-accent/6 h-full flex flex-col relative overflow-hidden"
     >
       <span className="absolute top-0 left-0 right-0 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
@@ -123,7 +123,7 @@ function ServiceCard({ service, Icon, learnMore }: ServiceCardProps) {
           {service.title}
         </h3>
       </div>
-      <p className="text-zinc-400 text-base sm:text-sm leading-relaxed mb-4 flex-grow">
+      <p className="text-zinc-400 text-base sm:text-sm leading-relaxed mb-4 flex-grow line-clamp-2 md:line-clamp-none">
         {service.description}
       </p>
 

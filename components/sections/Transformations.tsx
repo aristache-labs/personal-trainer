@@ -88,7 +88,7 @@ export default function Transformations({ dict }: TransformationsProps) {
 
   return (
     <section id="transformations" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <AnimatedSection>
           <SectionHeading
             heading={dict.transformations.heading}
@@ -98,7 +98,7 @@ export default function Transformations({ dict }: TransformationsProps) {
 
         {/* Featured result — wide case study card */}
         <AnimatedSection delay={0.05}>
-          <div className="group rounded-2xl border border-border bg-surface overflow-hidden mb-5 hover:border-accent/40 transition-all duration-300">
+          <div className="group rounded-2xl border border-border bg-surface overflow-hidden mb-4 md:mb-5 hover:border-accent/40 transition-all duration-300">
             <div className="grid md:grid-cols-[400px_1fr] lg:grid-cols-[480px_1fr] xl:grid-cols-[540px_1fr] gap-0">
               {/* Before/After visual */}
               <BeforeAfterVisual
@@ -110,7 +110,7 @@ export default function Transformations({ dict }: TransformationsProps) {
               />
 
               {/* Content */}
-              <div className="p-7 md:p-10 flex flex-col justify-center border-t md:border-t-0 md:border-l border-border/40">
+              <div className="p-5 md:p-10 flex flex-col justify-center border-t md:border-t-0 md:border-l border-border/40">
                 {/* Case eyebrow */}
                 <p className="text-xs uppercase tracking-[0.22em] text-zinc-200 font-semibold mb-4">
                   {caseLabel} 01 · {featured.result}
@@ -157,7 +157,7 @@ export default function Transformations({ dict }: TransformationsProps) {
             { beforeSrc: '/images/before-small-Michael.png', afterSrc: '/images/after-small-Michael.png' },
           ];
           return (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {rest.map((item: any, index: number) => (
                 <AnimatedSection key={index} delay={index * 0.1 + 0.1}>
                   <div className="group bg-surface border border-border rounded-2xl overflow-hidden hover:border-accent/35 transition-all duration-300 h-full">
@@ -171,7 +171,7 @@ export default function Transformations({ dict }: TransformationsProps) {
                     />
 
                 {/* Stats */}
-                <div className="p-6">
+                <div className="p-4 md:p-6">
                   {/* Case label */}
                   <p className="text-xs uppercase tracking-[0.22em] text-zinc-200 font-semibold mb-2">
                     {caseLabel} {String(index + 2).padStart(2, '0')} · {item.result}
@@ -197,7 +197,7 @@ export default function Transformations({ dict }: TransformationsProps) {
                     </div>
                   )}
 
-                  <p className="text-zinc-300 text-base sm:text-sm italic leading-relaxed mb-2">
+                  <p className="text-zinc-200 text-sm italic leading-relaxed mb-2">
                     &ldquo;{item.testimonial}&rdquo;
                   </p>
                   <p className="text-zinc-400 text-sm font-semibold">— {item.name}</p>
@@ -209,9 +209,29 @@ export default function Transformations({ dict }: TransformationsProps) {
           );
         })()}
 
+        {/* CTA strip — conversion bridge */}
+        {dict.transformations.ctaStrip && (
+          <AnimatedSection delay={0.2}>
+            <div className="mt-6 md:mt-8 rounded-2xl border border-border/50 bg-surface/80 px-5 py-5 md:px-6 md:py-6 text-center">
+              <h3 className="font-display text-lg md:text-xl font-bold text-white mb-1.5">
+                {dict.transformations.ctaStrip.headline}
+              </h3>
+              <p className="text-zinc-400 text-sm mb-4 max-w-md mx-auto">
+                {dict.transformations.ctaStrip.subline}
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-accent text-black font-semibold text-sm hover:bg-accent/90 active:scale-[0.98] transition-all shadow-md shadow-accent/20"
+              >
+                {dict.transformations.ctaStrip.cta}
+              </a>
+            </div>
+          </AnimatedSection>
+        )}
+
         {/* Disclaimer */}
         <AnimatedSection delay={0.3}>
-          <p className="text-center text-zinc-500 text-xs mt-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-center text-zinc-500 text-xs mt-6 md:mt-8 max-w-xl mx-auto leading-relaxed">
             {dict.transformations.disclaimer}
           </p>
         </AnimatedSection>

@@ -35,12 +35,12 @@ export default function Contact({ dict }: ContactProps) {
 
   return (
     <section id="contact" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 max-w-6xl mx-auto">
 
           {/* Left — premium consultation form */}
           <AnimatedSection direction="left" delay={0.05}>
-            <div className="mb-6">
+            <div className="mb-4 md:mb-6">
               <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
                 {dict.contact.eyebrow}
               </p>
@@ -54,9 +54,8 @@ export default function Contact({ dict }: ContactProps) {
               </p>
             </div>
 
-            {/* Mobile-only concierge stack to keep section unified */}
-            <div className="flex flex-col gap-3.5 mb-6 lg:hidden">
-              {/* Primary WhatsApp */}
+            {/* Mobile-only: WhatsApp + reply first (conversion order) */}
+            <div className="flex flex-col gap-3 mb-4 lg:hidden">
               <a
                 href={WA_URL}
                 target="_blank"
@@ -81,108 +80,15 @@ export default function Contact({ dict }: ContactProps) {
                   →
                 </span>
               </a>
-
-              {/* Reply pill */}
               <div className="flex items-center gap-2 self-start px-3.5 py-2 rounded-full bg-background/80 border border-border/60">
                 <Clock size={13} className="text-accent flex-shrink-0" />
                 <span className="text-zinc-500 text-xs">{dict.contact.replyTime}</span>
-              </div>
-
-              {/* Unified contact details card */}
-              <div className="bg-background/80 border border-border/45 rounded-2xl p-5 space-y-4">
-                <div className="flex items-center gap-2 mb-2.5">
-                  <CalendarClock size={14} className="text-accent flex-shrink-0" />
-                  <p className="text-white text-xs font-bold uppercase tracking-[0.16em]">
-                    {dict.contact.availability.label}
-                  </p>
-                </div>
-                <div className="space-y-2 mb-0.5">
-                  {[
-                    {
-                      day: dict.contact.availability.weekdays,
-                      hours: dict.contact.availability.weekdayHours,
-                      closed: false,
-                    },
-                    {
-                      day: dict.contact.availability.saturday,
-                      hours: dict.contact.availability.saturdayHours,
-                      closed: false,
-                    },
-                    {
-                      day: dict.contact.availability.sunday,
-                      hours: dict.contact.availability.sundayHours,
-                      closed: true,
-                    },
-                  ].map(({ day, hours, closed }) => (
-                    <div key={day} className="flex items-center justify-between">
-                      <span className="text-zinc-400 text-xs">{day}</span>
-                      <span className={`text-xs font-medium ${closed ? 'text-zinc-500' : 'text-zinc-100'}`}>
-                        {hours}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div className="h-px bg-border/35 my-1.5" />
-
-                <div className="space-y-2.5">
-                  <a
-                    href="mailto:contact@elitetrainer.com"
-                    className="flex items-center justify-between gap-3 group"
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className="w-8 h-8 rounded-xl bg-zinc-900 flex items-center justify-center flex-shrink-0">
-                        <Mail
-                          size={15}
-                          className="text-zinc-400 group-hover:text-accent transition-colors"
-                        />
-                      </span>
-                      <div className="min-w-0">
-                        <p className="text-zinc-300 text-xs font-semibold uppercase tracking-[0.14em]">
-                          {dict.contact.info.email}
-                        </p>
-                        <p className="text-zinc-400 text-[11px] truncate">contact@elitetrainer.com</p>
-                      </div>
-                    </div>
-                    <span className="text-zinc-600 text-xs group-hover:text-accent transition-colors">
-                      Email
-                    </span>
-                  </a>
-
-                  <a
-                    href="https://instagram.com/elitetrainer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-3 group"
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <span className="w-8 h-8 rounded-xl bg-zinc-900 flex items-center justify-center flex-shrink-0">
-                        <Instagram
-                          size={15}
-                          className="text-zinc-400 group-hover:text-accent transition-colors"
-                        />
-                      </span>
-                      <div className="min-w-0">
-                        <p className="text-zinc-300 text-xs font-semibold uppercase tracking-[0.14em]">
-                          {dict.contact.info.instagram}
-                        </p>
-                        <p className="text-zinc-400 text-[11px] truncate">@elitetrainer</p>
-                      </div>
-                    </div>
-                    <span className="text-zinc-600 text-xs group-hover:text-accent transition-colors">
-                      Instagram
-                    </span>
-                  </a>
-                </div>
-
-                <p className="text-zinc-500 text-[11px] leading-snug pt-1.5">
-                  {dict.contact.trustNote}
-                </p>
               </div>
             </div>
 
             <form
               onSubmit={handleSubmit}
-              className="space-y-5 rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-950/80 via-background/90 to-black/80 px-4 py-5 sm:px-5 sm:py-6 shadow-[0_18px_50px_rgba(0,0,0,0.7)] pb-8"
+              className="space-y-4 md:space-y-5 rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-950/80 via-background/90 to-black/80 px-4 py-5 sm:px-5 sm:py-6 shadow-[0_18px_50px_rgba(0,0,0,0.7)] pb-8"
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -289,6 +195,58 @@ export default function Contact({ dict }: ContactProps) {
                 </p>
               )}
             </form>
+
+            {/* Mobile-only: availability & contact details after form */}
+            <div className="mt-5 lg:hidden">
+              <div className="bg-background/80 border border-border/45 rounded-2xl p-5 space-y-4">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <CalendarClock size={14} className="text-accent flex-shrink-0" />
+                  <p className="text-white text-xs font-bold uppercase tracking-[0.16em]">
+                    {dict.contact.availability.label}
+                  </p>
+                </div>
+                <div className="space-y-2 mb-0.5">
+                  {[
+                    { day: dict.contact.availability.weekdays, hours: dict.contact.availability.weekdayHours, closed: false },
+                    { day: dict.contact.availability.saturday, hours: dict.contact.availability.saturdayHours, closed: false },
+                    { day: dict.contact.availability.sunday, hours: dict.contact.availability.sundayHours, closed: true },
+                  ].map(({ day, hours, closed }) => (
+                    <div key={day} className="flex items-center justify-between">
+                      <span className="text-zinc-400 text-xs">{day}</span>
+                      <span className={`text-xs font-medium ${closed ? 'text-zinc-500' : 'text-zinc-100'}`}>{hours}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="h-px bg-border/35 my-1.5" />
+                <div className="space-y-2.5">
+                  <a href="mailto:contact@elitetrainer.com" className="flex items-center justify-between gap-3 group">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="w-8 h-8 rounded-xl bg-zinc-900 flex items-center justify-center flex-shrink-0">
+                        <Mail size={15} className="text-zinc-400 group-hover:text-accent transition-colors" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-zinc-300 text-xs font-semibold uppercase tracking-[0.14em]">{dict.contact.info.email}</p>
+                        <p className="text-zinc-400 text-[11px] truncate">contact@elitetrainer.com</p>
+                      </div>
+                    </div>
+                    <span className="text-zinc-600 text-xs group-hover:text-accent transition-colors">Email</span>
+                  </a>
+                  <a href="https://instagram.com/elitetrainer" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 group">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="w-8 h-8 rounded-xl bg-zinc-900 flex items-center justify-center flex-shrink-0">
+                        <Instagram size={15} className="text-zinc-400 group-hover:text-accent transition-colors" />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-zinc-300 text-xs font-semibold uppercase tracking-[0.14em]">{dict.contact.info.instagram}</p>
+                        <p className="text-zinc-400 text-[11px] truncate">@elitetrainer</p>
+                      </div>
+                    </div>
+                    <span className="text-zinc-600 text-xs group-hover:text-accent transition-colors">Instagram</span>
+                  </a>
+                </div>
+                <p className="text-zinc-500 text-[11px] leading-snug pt-1.5">{dict.contact.trustNote}</p>
+              </div>
+            </div>
           </AnimatedSection>
 
           {/* Right — premium contact / concierge (desktop only, mobile handled above) */}

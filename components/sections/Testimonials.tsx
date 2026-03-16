@@ -32,9 +32,9 @@ export default function Testimonials({ dict }: TestimonialsProps) {
 
   return (
     <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <AnimatedSection>
-          <div className="max-w-2xl mx-auto text-center mb-9 md:mb-12">
+          <div className="max-w-2xl mx-auto text-center mb-7 md:mb-12">
             <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
               {dict.testimonials.eyebrow}
             </p>
@@ -189,7 +189,7 @@ function TestimonialCard({ item, index, compact = false }: TestimonialCardProps)
       </div>
 
       <p
-        className={`text-zinc-300 text-sm leading-relaxed flex-grow mb-3 ${
+        className={`text-zinc-100 text-sm leading-relaxed flex-grow mb-3 ${
           compact ? 'line-clamp-3' : 'line-clamp-4'
         }`}
       >

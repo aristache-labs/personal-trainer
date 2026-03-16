@@ -14,7 +14,7 @@ export default function About({ dict }: AboutProps) {
 
   return (
     <section id="about" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start">
 
           {/* Portrait card */}

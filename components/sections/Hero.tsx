@@ -38,8 +38,8 @@ export default function Hero({ dict }: HeroProps) {
         <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/[0.06] to-transparent" />
       </div>
 
-      <div className="container mx-auto relative z-10 pt-28 pb-20 lg:pt-0 lg:pb-0 lg:min-h-screen lg:flex lg:items-center">
-        <div className="grid lg:grid-cols-[1fr_460px] xl:grid-cols-[1fr_500px] gap-10 xl:gap-16 items-center w-full">
+      <div className="container mx-auto relative z-10 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-0 lg:pb-0 lg:min-h-screen lg:flex lg:items-center">
+        <div className="grid lg:grid-cols-[1fr_460px] xl:grid-cols-[1fr_500px] gap-8 lg:gap-10 xl:gap-16 items-center w-full">
 
           {/* Copy column */}
           <div>
@@ -48,7 +48,7 @@ export default function Hero({ dict }: HeroProps) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease }}
-              className="flex items-center gap-3 mb-7"
+              className="flex items-center gap-3 mb-5 md:mb-7"
             >
               <div className="w-10 h-px bg-accent" />
               <span className="text-accent text-xs font-bold uppercase tracking-[0.2em]">
@@ -60,7 +60,7 @@ export default function Hero({ dict }: HeroProps) {
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12, duration: 0.65, ease }}
-              className="font-display text-[2.6rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-bold leading-[1.04] tracking-[-0.02em] mb-6"
+              className="font-display text-[2.6rem] md:text-[3.5rem] lg:text-[3.75rem] xl:text-[4.25rem] font-bold leading-[1.04] tracking-[-0.02em] mb-4 md:mb-6"
             >
               {dict.hero.headline}
               <br />
@@ -71,7 +71,7 @@ export default function Hero({ dict }: HeroProps) {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.28, duration: 0.6, ease }}
-              className="text-base md:text-lg text-zinc-300 mb-9 max-w-lg leading-[1.75]"
+              className="text-base md:text-lg text-zinc-300 mb-6 md:mb-9 max-w-lg leading-[1.75]"
             >
               {dict.hero.subheadline}
             </motion.p>
@@ -81,7 +81,7 @@ export default function Hero({ dict }: HeroProps) {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.42, duration: 0.5, ease }}
-              className="flex flex-col sm:flex-row gap-3 mb-5"
+              className="flex flex-col sm:flex-row gap-3 mb-4 md:mb-5"
             >
               <CTAButton size="lg" href="#contact">
                 {dict.hero.primaryCTA}
@@ -98,7 +98,7 @@ export default function Hero({ dict }: HeroProps) {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.56, duration: 0.5, ease }}
-              className="grid grid-cols-3 gap-4 md:gap-6 py-7 border-y border-border/40 mb-8"
+              className="grid grid-cols-3 gap-3 md:gap-6 py-5 md:py-7 border-y border-border/40 mb-6 md:mb-8"
             >
               <StatsCounter end={300} suffix="+" label={dict.hero.stats.clientsLabel} />
               <StatsCounter end={95}  suffix="%" label={dict.hero.stats.transformationsLabel} />

@@ -14,10 +14,10 @@ interface FAQProps {
 export default function FAQ({ dict }: FAQProps) {
   return (
     <section id="faq" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-14 md:py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
-            <div className="mb-7 md:mb-9">
+            <div className="mb-6 md:mb-9">
               <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
                 {dict.faq.eyebrow}
               </p>
@@ -28,7 +28,7 @@ export default function FAQ({ dict }: FAQProps) {
             </div>
           </AnimatedSection>
 
-          <div className="space-y-2">
+          <div className="space-y-1.5 md:space-y-2">
             {dict.faq.items.map((item: any, index: number) => (
               <AnimatedSection key={index} delay={index * 0.045}>
                 <FAQItem question={item.question} answer={item.answer} />
@@ -80,7 +80,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-5 py-3 md:py-3.5 text-left gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-0"
+        className="w-full flex items-center justify-between px-5 py-3.5 text-left gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-0"
         aria-expanded={isOpen}
       >
         <span

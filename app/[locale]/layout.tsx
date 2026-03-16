@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getDictionary, Locale } from '@/lib/getDictionary';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import StickyMobileCTA from '@/components/ui/StickyMobileCTA';
 
 const syne = Syne({
   subsets: ['latin'],
@@ -56,8 +57,9 @@ export default async function LocaleLayout({
     <html lang={params.locale} className={`${syne.variable} ${dmSans.variable} scroll-smooth`}>
       <body className="antialiased">
         <Navbar locale={params.locale} dict={dict} />
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer locale={params.locale} dict={dict} />
+        <StickyMobileCTA dict={dict} />
       </body>
     </html>
   );

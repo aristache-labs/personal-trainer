@@ -10,6 +10,10 @@
     "phone": "+40 712 345 678",
     "callNow": "Sună acum"
   },
+  "stickyBar": {
+    "whatsappCta": "WhatsApp",
+    "bookCta": "Rezervă Consultație"
+  },
   "hero": {
     "headline": "Transformă-ți Corpul,",
     "headlineAccent": "Înalță-ți Viața",
@@ -178,6 +182,11 @@
     "afterLabel": "După",
     "caseLabel": "Caz",
     "disclaimer": "Rezultatele variază. Progresul individual depinde de consistență, efort și respectarea programului.",
+    "ctaStrip": {
+      "headline": "Vrei rezultate ca acestea?",
+      "subline": "Rezervă o consultație gratuită și începe planul tău.",
+      "cta": "Rezervă Consultație"
+    },
     "items": [
       {
         "name": "Alex M.",
@@ -286,6 +295,7 @@
     "bestStartBadge": "CEL MAI BUN START",
     "cta": "Alege pachetul",
     "note": "Toate pachetele includ ghidare personalizată, corectarea tehnicii și progres structurat.",
+    "trustRow": ["Coaching personalizat", "Ședințe 1-la-1", "Ajustări săptămânale", "Suport WhatsApp"],
     "plans": [
       {
         "id": "single",

@@ -60,7 +60,7 @@ export default function Footer({ locale, dict }: FooterProps) {
 
       {/* Main footer grid */}
       <div className="container mx-auto py-10 md:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.75fr)_minmax(0,0.95fr)] gap-y-7 md:gap-y-10 md:gap-x-10">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.75fr)_minmax(0,0.95fr)] gap-y-6 md:gap-y-10 md:gap-x-10">
 
           {/* Brand / identity */}
           <div className="space-y-4 md:space-y-5">
@@ -166,12 +166,12 @@ export default function Footer({ locale, dict }: FooterProps) {
         </div>
 
         {/* Copyright / utility */}
-        <div className="mt-10 pt-5 border-t border-border/25 flex flex-col items-center gap-1.5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left sm:gap-3">
-          <p className="text-zinc-500 text-xs">
+        <div className="mt-8 md:mt-10 pt-4 md:pt-5 border-t border-border/25 flex flex-col items-center gap-1.5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left sm:gap-3">
+          <p className="text-zinc-500 text-[11px] md:text-xs">
             © 2026 Elite Trainer. All rights reserved.
           </p>
-          <p className="text-zinc-600 text-xs flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 sm:justify-end">
-            <span className="text-zinc-500">Built with precision.</span>
+          <p className="text-zinc-600 text-[11px] md:text-xs flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 sm:justify-end">
+            <span className="text-zinc-500/90">Built with precision.</span>
             <span className="text-accent/80">EliteTrainer®</span>
             <span className="text-zinc-700">{'\u00a0•\u00a0'}</span>
             <a

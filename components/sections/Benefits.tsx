@@ -32,7 +32,7 @@ export default function Benefits({ dict }: BenefitsProps) {
 
   return (
     <section id="benefits" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <AnimatedSection>
           <SectionHeading
             heading={dict.benefits.heading}
@@ -40,7 +40,7 @@ export default function Benefits({ dict }: BenefitsProps) {
           />
         </AnimatedSection>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-5">
           {items.map((benefit: any, index: number) => {
             const Icon = iconMap[index] || Target;
             const isFeatured = index === 0;
@@ -74,7 +74,7 @@ export default function Benefits({ dict }: BenefitsProps) {
                     <div className="pointer-events-none absolute -top-20 right-0 h-48 w-48 rounded-full bg-accent/8 blur-3xl" />
                   )}
 
-                  <div className="relative z-10 p-6 sm:p-7 flex flex-col gap-4 h-full">
+                  <div className="relative z-10 p-4 sm:p-6 md:p-7 flex flex-col gap-3 md:gap-4 h-full">
                     {/* Icon + title inline */}
                     <div className="flex items-center gap-3">
                       <div
@@ -102,7 +102,7 @@ export default function Benefits({ dict }: BenefitsProps) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-base sm:text-sm text-zinc-400 leading-relaxed flex-1">
+                    <p className="text-base sm:text-sm text-zinc-400 leading-relaxed flex-1 line-clamp-3 md:line-clamp-none">
                       {benefit.description}
                     </p>
                   </div>

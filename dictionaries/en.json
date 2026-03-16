@@ -10,6 +10,10 @@
     "phone": "+40 712 345 678",
     "callNow": "Call now"
   },
+  "stickyBar": {
+    "whatsappCta": "WhatsApp",
+    "bookCta": "Book Consultation"
+  },
   "hero": {
     "headline": "Transform Your Body,",
     "headlineAccent": "Elevate Your Life",
@@ -178,6 +182,11 @@
     "afterLabel": "After",
     "caseLabel": "Case",
     "disclaimer": "Results vary. Individual outcomes depend on consistency, effort, and adherence to the program.",
+    "ctaStrip": {
+      "headline": "Want results like this?",
+      "subline": "Book a free consultation and start your plan.",
+      "cta": "Book Consultation"
+    },
     "items": [
       {
         "name": "Alex M.",
@@ -286,6 +295,7 @@
     "bestStartBadge": "BEST START",
     "cta": "Choose Package",
     "note": "All packages include personalized coaching, form guidance, and structured progression.",
+    "trustRow": ["Personalized coaching", "1-on-1 sessions", "Weekly adjustments", "WhatsApp support"],
     "plans": [
       {
         "id": "single",

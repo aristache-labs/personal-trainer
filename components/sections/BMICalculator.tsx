@@ -200,7 +200,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                 >
                   <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-                  <div className="p-6 md:p-8">
+                  <div className="p-5 md:p-8">
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-7">
                       <div className="flex items-center gap-3">

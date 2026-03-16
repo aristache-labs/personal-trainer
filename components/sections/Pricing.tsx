@@ -38,7 +38,7 @@ export default function Pricing({ dict }: PricingProps) {
     <section id="pricing" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-14 md:py-section">
         <AnimatedSection>
-          <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
+          <div className="max-w-3xl mx-auto text-center mb-8 md:mb-14">
             <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
               {pricing.eyebrow}
             </p>
@@ -92,6 +92,24 @@ export default function Pricing({ dict }: PricingProps) {
             );
           })}
         </div>
+
+        {pricing.trustRow && Array.isArray(pricing.trustRow) && pricing.trustRow.length > 0 && (
+          <AnimatedSection delay={0.2}>
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mt-4">
+              {pricing.trustRow.map((item: string, i: number) => (
+                <span
+                  key={i}
+                  className="text-zinc-500 text-[11px] md:text-xs font-medium"
+                >
+                  {item}
+                  {i < pricing.trustRow.length - 1 && (
+                    <span className="mx-1.5 text-zinc-600" aria-hidden="true">·</span>
+                  )}
+                </span>
+              ))}
+            </div>
+          </AnimatedSection>
+        )}
 
         {pricing.note && (
           <AnimatedSection delay={0.25}>
