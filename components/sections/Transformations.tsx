@@ -142,10 +142,11 @@ export default function Transformations({ dict }: TransformationsProps) {
         </AnimatedSection>
 
         {/* Remaining case study cards */}
-        {/* Images indexed from case 02 onward (index 0 = case 02) */}
+        {/* Images indexed from case 02 onward (index 0 = case 02, index 1 = case 03) */}
         {(() => {
           const smallImages: { beforeSrc?: string; afterSrc?: string }[] = [
             { beforeSrc: '/images/before-small-Sarah.png', afterSrc: '/images/after-small-Sarah.png' },
+            { beforeSrc: '/images/before-small-Michael.png', afterSrc: '/images/after-small-Michael.png' },
           ];
           return (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
