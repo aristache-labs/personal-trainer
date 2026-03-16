@@ -60,19 +60,19 @@ export default function Footer({ locale, dict }: FooterProps) {
 
       {/* Main footer grid */}
       <div className="container mx-auto py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)_minmax(0,1fr)] gap-10 md:gap-12">
 
-          {/* Brand */}
-          <div className="col-span-2">
-            <Link href={`/${locale}`} className="text-2xl font-display font-bold block mb-3">
+          {/* Brand / identity */}
+          <div className="space-y-4">
+            <Link href={`/${locale}`} className="text-2xl font-display font-bold block">
               <span className="text-white">Elite</span>
               <span className="text-accent">Trainer</span>
             </Link>
-            <p className="text-zinc-400 text-sm leading-relaxed max-w-[220px]">
+            <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
               {dict.footer.tagline}
             </p>
 
-            <div className="flex gap-2.5 mt-6">
+            <div className="flex gap-2.5 pt-1">
               {[
                 { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
                 { href: 'https://facebook.com',  icon: Facebook,  label: 'Facebook' },
@@ -85,7 +85,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 bg-background rounded-lg border border-border/50 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/35 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-zinc-950/80 border border-zinc-700/60 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/60 hover:bg-zinc-900/90 transition-all duration-200 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] hover:shadow-[0_0_28px_rgba(190,242,100,0.22)]"
                 >
                   <Icon size={15} />
                 </a>
@@ -93,9 +93,9 @@ export default function Footer({ locale, dict }: FooterProps) {
             </div>
           </div>
 
-          {/* Quick links */}
-          <div>
-            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.16em] mb-5">
+          {/* Navigation */}
+          <div className="space-y-4">
+            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.18em]">
               {locale === 'ro' ? 'Navigare' : 'Navigate'}
             </p>
             <ul className="space-y-2.5">
@@ -103,7 +103,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-zinc-300 text-sm hover:text-accent transition-colors duration-150"
+                    className="text-zinc-300 text-sm leading-relaxed hover:text-accent transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -112,10 +112,10 @@ export default function Footer({ locale, dict }: FooterProps) {
             </ul>
           </div>
 
-          {/* Language */}
-          <div>
-            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.16em] mb-5">
-              {locale === 'ro' ? 'Limbă' : 'Language'}
+          {/* Preferences / utility */}
+          <div className="space-y-3">
+            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.18em]">
+              {locale === 'ro' ? 'Preferințe' : 'Preferences'}
             </p>
             <div className="flex gap-2">
               {(['en', 'ro'] as Locale[]).map((l) => (
@@ -132,13 +132,18 @@ export default function Footer({ locale, dict }: FooterProps) {
                 </Link>
               ))}
             </div>
+            <p className="text-[11px] text-zinc-500 leading-relaxed max-w-[200px]">
+              {locale === 'ro'
+                ? 'Disponibil în română și engleză.'
+                : 'Available in English and Romanian.'}
+            </p>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 pt-5 border-t border-border/25 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-zinc-400 text-xs">{dict.footer.copyright}</p>
-          <p className="text-zinc-500 text-xs">
+        <div className="mt-10 pt-6 border-t border-border/25 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-zinc-500 text-xs">{dict.footer.copyright}</p>
+          <p className="text-zinc-600 text-xs">
             {dict.footer.builtWithPrecision}{' '}
             <span className="text-accent/80">EliteTrainer®</span>
           </p>
