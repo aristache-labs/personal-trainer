@@ -117,48 +117,27 @@ function Node({ active }: { active: boolean }) {
   );
 }
 
-/* ─── Step card ─────────────────────────────────────────────────────────── */
-function StepCard({
+/* ─── Shared card inner content ─────────────────────────────────────────── */
+function StepCardContent({
   step,
   index,
   active,
   isLeft,
-  isMobile,
   featured,
 }: {
   step: any;
   index: number;
   active: boolean;
   isLeft: boolean;
-  isMobile?: boolean;
   featured?: boolean;
 }) {
   const Icon = ICONS[index] ?? MessageCircle;
   const tag = MICRO_TAGS[index];
   const stepLabel = String(index + 1).padStart(2, '0');
 
-  /* On mobile avoid any horizontal x offset to prevent overflow */
-  const initialX = isMobile ? 0 : isLeft ? -28 : 28;
-
   return (
-    <motion.div
-      initial={{ opacity: 0, x: initialX, y: 10, scale: 0.96 }}
-      animate={
-        active
-          ? { opacity: 1, x: 0, y: 0, scale: 1 }
-          : { opacity: 0, x: initialX, y: 10, scale: 0.96 }
-      }
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className={[
-        'group relative rounded-2xl overflow-hidden',
-        'p-5 sm:p-6 lg:p-8 flex flex-col gap-4',
-        'hover:-translate-y-0.5 transition-all duration-300 cursor-default w-full',
-        featured
-          ? 'bg-surface border border-accent/30 hover:border-accent/50 hover:shadow-[0_0_40px_rgba(163,230,53,0.14)]'
-          : 'bg-surface border border-border/50 hover:border-accent/30 hover:shadow-[0_0_28px_rgba(163,230,53,0.09)]',
-      ].join(' ')}
-    >
-      {/* radial corner tint — stronger for featured */}
+    <>
+      {/* radial corner tint */}
       <div
         className={[
           'absolute inset-0 pointer-events-none',
@@ -171,7 +150,7 @@ function StepCard({
               : 'bg-[radial-gradient(ellipse_at_top_right,rgba(163,230,53,0.04),transparent_55%)]',
         ].join(' ')}
       />
-      {/* top inset shimmer — brighter on featured */}
+      {/* top inset shimmer */}
       <div
         className={[
           'absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent to-transparent',
@@ -179,12 +158,10 @@ function StepCard({
         ].join(' ')}
       />
 
-      {/* step label */}
       <p className="relative text-xs font-bold uppercase tracking-[0.22em] text-zinc-500">
         Step {stepLabel}
       </p>
 
-      {/* icon + title */}
       <div className="relative flex items-center gap-4">
         <IconBadge Icon={Icon} active={active} featured={featured} />
         <h3 className="font-display text-base sm:text-lg font-semibold text-white leading-snug">
@@ -192,12 +169,10 @@ function StepCard({
         </h3>
       </div>
 
-      {/* description */}
       <p className="relative text-sm text-zinc-400 leading-relaxed">
         {step.description}
       </p>
 
-      {/* micro-tag */}
       <span
         className={[
           'relative self-start mt-0.5 inline-block text-[10px] uppercase font-semibold tracking-[0.16em] rounded-full px-2.5 py-1',
@@ -208,11 +183,79 @@ function StepCard({
       >
         {tag}
       </span>
+    </>
+  );
+}
+
+/* ─── Desktop card — driven by parent useInView active state ─────────────── */
+function DesktopStepCard({
+  step,
+  index,
+  active,
+  isLeft,
+  featured,
+}: {
+  step: any;
+  index: number;
+  active: boolean;
+  isLeft: boolean;
+  featured?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: isLeft ? -28 : 28, y: 10, scale: 0.96 }}
+      animate={
+        active
+          ? { opacity: 1, x: 0, y: 0, scale: 1 }
+          : { opacity: 0, x: isLeft ? -28 : 28, y: 10, scale: 0.96 }
+      }
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className={[
+        'group relative rounded-2xl overflow-hidden',
+        'p-5 sm:p-6 lg:p-8 flex flex-col gap-4',
+        'hover:-translate-y-0.5 transition-all duration-300 cursor-default w-full',
+        featured
+          ? 'bg-surface border border-accent/30 hover:border-accent/50 hover:shadow-[0_0_40px_rgba(163,230,53,0.14)]'
+          : 'bg-surface border border-border/50 hover:border-accent/30 hover:shadow-[0_0_28px_rgba(163,230,53,0.09)]',
+      ].join(' ')}
+    >
+      <StepCardContent step={step} index={index} active={active} isLeft={isLeft} featured={featured} />
     </motion.div>
   );
 }
 
-/* ─── Single step row (one ref, dual layout via CSS) ───────────────────── */
+/* ─── Mobile card — self-contained whileInView, slides in from right ──────── */
+function MobileStepCard({
+  step,
+  index,
+  featured,
+}: {
+  step: any;
+  index: number;
+  featured?: boolean;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 28 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: '0px 0px -48px 0px' }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className={[
+        'group relative rounded-2xl overflow-hidden',
+        'p-5 sm:p-6 flex flex-col gap-4',
+        'cursor-default w-full',
+        featured
+          ? 'bg-surface border border-accent/30'
+          : 'bg-surface border border-border/50',
+      ].join(' ')}
+    >
+      {/* Always treat mobile cards as right-side for gradient direction */}
+      <StepCardContent step={step} index={index} active={true} isLeft={false} featured={featured} />
+    </motion.div>
+  );
+}
+
+/* ─── Single step row (one ref for desktop, mobile is self-animated) ──────── */
 function StepRow({
   step,
   index,
@@ -222,54 +265,62 @@ function StepRow({
   index: number;
   totalSteps: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const active = useInView(ref, { once: true, margin: '-60px' });
+  const desktopRef = useRef<HTMLDivElement>(null);
+  const desktopActive = useInView(desktopRef, { once: true, margin: '-60px' });
   const isLeft = index % 2 === 0;
   const featured = index === 1 || index === 3;
 
   return (
-    <div ref={ref}>
+    <div>
       {/* ── Desktop: left card | node | right card ───────── */}
-      <div className="hidden lg:grid grid-cols-[1fr_4rem_1fr] items-center py-7">
+      <div ref={desktopRef} className="hidden lg:grid grid-cols-[1fr_4rem_1fr] items-center py-7">
         {/* left slot */}
         <div className="flex justify-end pr-12">
           {isLeft ? (
             <div className="max-w-md w-full">
-              <StepCard step={step} index={index} active={active} isLeft={true} featured={featured} />
+              <DesktopStepCard step={step} index={index} active={desktopActive} isLeft={true} featured={featured} />
             </div>
           ) : null}
         </div>
 
         {/* node slot */}
         <div className="flex justify-center">
-          <Node active={active} />
+          <Node active={desktopActive} />
         </div>
 
         {/* right slot */}
         <div className="flex justify-start pl-12">
           {!isLeft ? (
             <div className="max-w-md w-full">
-              <StepCard step={step} index={index} active={active} isLeft={false} featured={featured} />
+              <DesktopStepCard step={step} index={index} active={desktopActive} isLeft={false} featured={featured} />
             </div>
           ) : null}
         </div>
       </div>
 
-      {/* ── Mobile: node column + card column ────────────── */}
-      {/* Node column width = 28px (w-7) so rail at left-[13px] centers exactly */}
+      {/* ── Mobile: node column + self-animating card ────── */}
+      {/* Node column is w-7 (28px), rail at left-[13px] centers under it */}
       <div className="lg:hidden flex items-stretch gap-3 pb-8">
-        {/* Node + connector column — fixed width so rail aligns */}
-        <div className="flex flex-col items-center w-7 flex-shrink-0 pt-1">
-          <Node active={active} />
-          {index < totalSteps - 1 && (
-            <div className="w-px flex-1 min-h-12 mt-2 bg-gradient-to-b from-border/50 to-transparent" />
-          )}
-        </div>
-        {/* Card column — takes remaining width */}
+        <MobileNodeColumn index={index} totalSteps={totalSteps} />
         <div className="flex-1 min-w-0">
-          <StepCard step={step} index={index} active={active} isLeft={false} isMobile={true} featured={featured} />
+          <MobileStepCard step={step} index={index} featured={featured} />
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ─── Mobile node + connector (self-animating via whileInView) ────────────── */
+function MobileNodeColumn({ index, totalSteps }: { index: number; totalSteps: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const active = useInView(ref, { once: true, margin: '0px 0px -48px 0px' });
+
+  return (
+    <div ref={ref} className="flex flex-col items-center w-7 flex-shrink-0 pt-1">
+      <Node active={active} />
+      {index < totalSteps - 1 && (
+        <div className="w-px flex-1 min-h-12 mt-2 bg-gradient-to-b from-border/50 to-transparent" />
+      )}
     </div>
   );
 }
