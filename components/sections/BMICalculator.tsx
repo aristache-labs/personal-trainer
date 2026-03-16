@@ -2,7 +2,15 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calculator, RotateCcw, ArrowRight } from 'lucide-react';
+import {
+  Calculator,
+  RotateCcw,
+  ArrowRight,
+  Activity,
+  HeartPulse,
+  AlertTriangle,
+  ShieldAlert,
+} from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 
@@ -28,6 +36,13 @@ const CATEGORIES: CategoryConfig[] = [
   { key: 'overweight',  min: 25,   max: 30,   color: 'text-amber-400', bgColor: 'bg-amber-400/10', borderColor: 'border-amber-400/30', barColor: 'bg-amber-400' },
   { key: 'obese',       min: 30,   max: 999,  color: 'text-rose-400',  bgColor: 'bg-rose-400/10',  borderColor: 'border-rose-400/30',  barColor: 'bg-rose-400'  },
 ];
+
+const CATEGORY_ICONS: Record<BMICategory, typeof Activity> = {
+  underweight: Activity,
+  healthy:     HeartPulse,
+  overweight:  AlertTriangle,
+  obese:       ShieldAlert,
+};
 
 function getBMICategory(bmi: number): CategoryConfig {
   return CATEGORIES.find(c => bmi >= c.min && bmi < c.max) ?? CATEGORIES[CATEGORIES.length - 1];
@@ -88,26 +103,31 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                   <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
                   <div className="p-6 md:p-8">
-                    {/* Compact header row */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    {/* Header */}
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-7">
+                      <div className="flex items-start gap-3">
+                        <div className="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 border border-accent/30">
                           <Calculator size={17} className="text-accent" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-accent mb-0.5">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent mb-1">
                             Free Assessment Tool
                           </p>
-                          <p className="text-white font-bold text-sm">{d.heading}</p>
+                          <h2 className="font-display text-xl md:text-2xl font-semibold text-white tracking-tight">
+                            {d.heading}
+                          </h2>
+                          <p className="mt-1 text-xs md:text-sm text-zinc-400 max-w-md leading-relaxed">
+                            {d.subheading ?? 'Get a quick snapshot of your current status before we build your personalised plan.'}
+                          </p>
                         </div>
                       </div>
-                      <p className="hidden sm:block text-zinc-400 text-xs max-w-[200px] text-right leading-relaxed">
-                        Use this before your consultation to understand your starting point.
+                      <p className="hidden sm:block text-zinc-500 text-xs max-w-[220px] text-right leading-relaxed">
+                        Results are an estimate and don&apos;t replace a full professional assessment.
                       </p>
                     </div>
 
-                    {/* Two-column layout: form left, scale right */}
-                    <div className="grid md:grid-cols-[1fr_180px] gap-6 md:gap-8">
+                    {/* Two-column layout: form left, category legend right */}
+                    <div className="grid md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] gap-6 md:gap-8 items-start">
                       {/* Left: inputs + button */}
                       <div>
                         <div className="grid sm:grid-cols-3 gap-4 mb-4">
@@ -134,18 +154,40 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                         </button>
                       </div>
 
-                      {/* Right: compact BMI scale */}
-                      <div className="flex flex-col gap-1.5">
-                        <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1">Scale</p>
-                        {CATEGORIES.map(cat => (
-                          <div key={cat.key} className={`flex items-center gap-2 px-2.5 py-2 rounded-lg ${cat.bgColor} border ${cat.borderColor}`}>
-                            <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${cat.barColor}`} />
-                            <div className="min-w-0">
-                              <p className={`text-[11px] font-bold ${cat.color} leading-tight`}>{d.categories[cat.key]}</p>
-                              <p className="text-zinc-400 text-[10px] leading-tight truncate">{d.ranges[cat.key]}</p>
-                            </div>
-                          </div>
-                        ))}
+                      {/* Right: premium BMI category legend */}
+                      <div className="space-y-3 rounded-2xl bg-background/80 border border-border/70 p-4 md:p-5">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-400 mb-1.5">
+                          BMI Categories
+                        </p>
+                        <div className="space-y-2.5">
+                          {CATEGORIES.map(cat => {
+                            const Icon = CATEGORY_ICONS[cat.key];
+                            const isActive = category && category.key === cat.key;
+                            return (
+                              <div
+                                key={cat.key}
+                                className={[
+                                  'flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-all duration-200',
+                                  cat.bgColor,
+                                  cat.borderColor,
+                                  isActive ? 'ring-1 ring-white/40 shadow-[0_0_24px_rgba(0,0,0,0.8)]' : 'opacity-80 hover:opacity-100',
+                                ].join(' ')}
+                              >
+                                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-background/80 border border-white/5 flex-shrink-0">
+                                  <Icon className={`${cat.color} w-4 h-4`} strokeWidth={1.7} />
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                  <p className={`text-[11px] font-bold leading-tight ${cat.color}`}>
+                                    {d.categories[cat.key]}
+                                  </p>
+                                  <p className="text-[10px] text-zinc-300 leading-tight">
+                                    {d.ranges[cat.key]}
+                                  </p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
                     </div>
                   </div>

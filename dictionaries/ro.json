@@ -132,8 +132,16 @@
     ]
   },
   "benefits": {
-    "heading": "De Ce Să Mă Alegi",
-    "subheading": "Ce Diferențiază Acest Program",
+    "heading": "De ce să mă alegi",
+    "subheading": "Ce diferențiază acest program",
+    "microLabels": [
+      "STRATEGIE PERSONALIZATĂ",
+      "SCHIMBARE DURABILĂ",
+      "EXPERTIZĂ DE ANTRENOR",
+      "MONITORIZARE CONSTANTĂ",
+      "TEHNICĂ ȘI EXECUȚIE",
+      "SUPORT CONTINUU"
+    ],
     "items": [
       {
         "title": "Planuri Personalizate",
