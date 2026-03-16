@@ -413,9 +413,25 @@
     "follow": "Urmărește pe Instagram",
     "handle": "@elitetrainer"
   },
+  "ctaLimited": {
+    "eyebrow": "Disponibilitate limitată",
+    "headlineLine1": "Locuri limitate disponibile",
+    "headlineLine2": "în fiecare lună.",
+    "headlineHighlight": "Rezervă-ți locul.",
+    "body": "O transformare serioasă are nevoie de un antrenor dedicat. Doar câteva locuri se deschid în fiecare lună — acționează înainte să dispară.",
+    "trustRated": "Evaluat 5.0",
+    "trustClients": "300+ clienți",
+    "trustReply": "Răspuns < 2h",
+    "trustLimited": "Locuri limitate",
+    "primaryCta": "Rezervă consultație gratuită",
+    "secondaryCta": "Conversație WhatsApp"
+  },
   "bmi": {
     "heading": "Calculator IMC",
     "subheading": "Cunoaște-ți Punctul de Plecare",
+    "freeAssessmentLabel": "Instrument de evaluare gratuită",
+    "categoriesLabel": "Categorii IMC",
+    "estimateNote": "Rezultatele sunt o estimare și nu înlocuiesc o evaluare profesională completă.",
     "intro": "Calculează-ți Indicele de Masă Corporală pentru a înțelege unde ești și unde vrei să ajungi. Folosește-l ca punct de plecare — nu ca linie de sosire.",
     "heightLabel": "Înălțime (cm)",
     "weightLabel": "Greutate (kg)",

@@ -413,9 +413,25 @@
     "follow": "Follow on Instagram",
     "handle": "@elitetrainer"
   },
+  "ctaLimited": {
+    "eyebrow": "Limited Availability",
+    "headlineLine1": "Limited spots available",
+    "headlineLine2": "each month.",
+    "headlineHighlight": "Reserve yours.",
+    "body": "Serious transformation requires a committed coach. Only a handful of spots open monthly — act before they're gone.",
+    "trustRated": "5.0 Rated",
+    "trustClients": "300+ Clients",
+    "trustReply": "< 2h Reply",
+    "trustLimited": "Limited Spots",
+    "primaryCta": "Book Free Consultation",
+    "secondaryCta": "Chat on WhatsApp"
+  },
   "bmi": {
     "heading": "BMI Calculator",
     "subheading": "Know Your Starting Point",
+    "freeAssessmentLabel": "Free Assessment Tool",
+    "categoriesLabel": "BMI Categories",
+    "estimateNote": "Results are an estimate and don't replace a full professional assessment.",
     "intro": "Calculate your Body Mass Index to understand where you are and where you want to go. Use this as a starting point — not a finish line.",
     "heightLabel": "Height (cm)",
     "weightLabel": "Weight (kg)",

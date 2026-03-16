@@ -111,7 +111,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                         </div>
                         <div>
                           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent mb-1">
-                            Free Assessment Tool
+                            {d.freeAssessmentLabel ?? 'Free Assessment Tool'}
                           </p>
                           <h2 className="font-display text-xl md:text-2xl font-semibold text-white tracking-tight">
                             {d.heading}
@@ -122,7 +122,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                         </div>
                       </div>
                       <p className="hidden sm:block text-zinc-500 text-xs max-w-[220px] text-right leading-relaxed">
-                        Results are an estimate and don&apos;t replace a full professional assessment.
+                        {d.estimateNote ?? "Results are an estimate and don't replace a full professional assessment."}
                       </p>
                     </div>
 
@@ -157,7 +157,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                       {/* Right: premium BMI category legend */}
                       <div className="space-y-3 rounded-2xl bg-background/80 border border-border/70 p-4 md:p-5">
                         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-zinc-400 mb-1.5">
-                          BMI Categories
+                          {d.categoriesLabel ?? 'BMI Categories'}
                         </p>
                         <div className="space-y-2.5">
                           {CATEGORIES.map(cat => {

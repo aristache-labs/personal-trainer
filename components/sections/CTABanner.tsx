@@ -5,14 +5,14 @@ interface CTABannerProps {
   dict: any;
 }
 
-const trustItems = [
-  { icon: Star,  label: '5.0 Rated' },
-  { icon: Users, label: '300+ Clients' },
-  { icon: Clock, label: '< 2h Reply' },
-  { icon: Zap,   label: 'Limited Spots' },
-];
-
 export default function CTABanner({ dict }: CTABannerProps) {
+  const t = dict.ctaLimited ?? {};
+  const trustItems = [
+    { icon: Star, label: t.trustRated ?? '5.0 Rated' },
+    { icon: Users, label: t.trustClients ?? '300+ Clients' },
+    { icon: Clock, label: t.trustReply ?? '< 2h Reply' },
+    { icon: Zap, label: t.trustLimited ?? 'Limited Spots' },
+  ];
   return (
     <section className="relative overflow-hidden section-divider bg-surface">
       {/* Subtle radial glow — accent hint without hard panels */}
@@ -27,14 +27,15 @@ export default function CTABanner({ dict }: CTABannerProps) {
           <div className="max-w-2xl">
             <p className="text-[11px] font-bold text-accent uppercase tracking-[0.2em] mb-5 flex items-center gap-2">
               <span className="w-5 h-px bg-accent" />
-              Limited Availability
+              {t.eyebrow ?? 'Limited Availability'}
             </p>
             <h2 className="font-display text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-white leading-[1.1] tracking-tight mb-5">
-              Limited spots available<br className="hidden sm:block" /> each month.{' '}
-              <span className="text-accent">Reserve yours.</span>
+              {(t.headlineLine1 ?? 'Limited spots available')}
+              <br className="hidden sm:block" /> {t.headlineLine2 ?? 'each month.'}{' '}
+              <span className="text-accent">{t.headlineHighlight ?? 'Reserve yours.'}</span>
             </h2>
             <p className="text-zinc-400 text-base leading-relaxed max-w-lg mb-6">
-              Serious transformation requires a committed coach. Only a handful of spots open monthly — act before they&apos;re gone.
+              {t.body ?? "Serious transformation requires a committed coach. Only a handful of spots open monthly — act before they're gone."}
             </p>
 
             {/* Trust strip */}
@@ -52,16 +53,16 @@ export default function CTABanner({ dict }: CTABannerProps) {
           </div>
 
           {/* Right: CTAs */}
-          <div className="flex flex-col gap-3 lg:min-w-[220px]">
+            <div className="flex flex-col gap-3 lg:min-w-[220px]">
             <div className="shadow-lg shadow-accent/20 rounded-xl">
               <CTAButton size="lg" href="#contact" className="w-full justify-center">
-                Book Free Consultation
+                {t.primaryCta ?? 'Book Free Consultation'}
                 <ArrowRight size={17} />
               </CTAButton>
             </div>
             <CTAButton size="md" variant="secondary" href="https://wa.me/1234567890" className="w-full justify-center">
               <MessageCircle size={17} />
-              Chat on WhatsApp
+                {t.secondaryCta ?? 'Chat on WhatsApp'}
             </CTAButton>
           </div>
         </div>
