@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Instagram, Youtube } from 'lucide-react';
+import { Menu, X, Instagram, Youtube, Phone } from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Locale } from '@/lib/getDictionary';
@@ -77,6 +77,14 @@ export default function Navbar({ locale, dict }: NavbarProps) {
 
             {/* Desktop right */}
             <div className="hidden lg:flex items-center gap-4">
+              <a
+                href={`tel:${dict.nav.phone.replace(/\s/g, '')}`}
+                className="flex items-center gap-1.5 text-zinc-400 hover:text-white text-xs font-medium transition-colors"
+                aria-label={`Call ${dict.nav.phone}`}
+              >
+                <Phone size={13} className="text-accent flex-shrink-0" />
+                {dict.nav.phone}
+              </a>
               <LanguageSwitcher currentLocale={locale} />
               <CTAButton size="sm" href="#contact">
                 {dict.nav.bookConsultation}

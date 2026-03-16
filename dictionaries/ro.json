@@ -6,7 +6,8 @@
     "transformations": "Transformări",
     "pricing": "Prețuri",
     "contact": "Contact",
-    "bookConsultation": "Rezervă Consultație"
+    "bookConsultation": "Rezervă Consultație",
+    "phone": "+40 712 345 678"
   },
   "hero": {
     "headline": "Transformă-ți Corpul,",
@@ -25,8 +26,11 @@
     "trustBadges": {
       "certified": "Certificat NASM",
       "years": "8+ Ani",
-      "clients": "300+ Clienți"
-    }
+      "clients": "300+ Clienți",
+      "google": "5.0 Google Reviews"
+    },
+    "phone": "+40 712 345 678",
+    "phoneLabel": "Sună acum"
   },
   "about": {
     "heading": "Despre Mine",
@@ -369,6 +373,15 @@
     "trustQuote": "A lucra cu acest coach a fost cea mai bună investiție pe care am făcut-o în mine.",
     "trustName": "Jessica L., clientă din 2023",
     "whatsappPrimary": "Începe pe WhatsApp",
+    "availability": {
+      "label": "Disponibilitate",
+      "weekdays": "Lun – Vin",
+      "weekdayHours": "7:00 – 21:00",
+      "saturday": "Sâmbătă",
+      "saturdayHours": "9:00 – 15:00",
+      "sunday": "Duminică",
+      "sundayHours": "Închis"
+    },
     "form": {
       "name": "Nume Complet",
       "email": "Adresă Email",
@@ -385,6 +398,41 @@
       "instagram": "Instagram",
       "whatsappCTA": "Conversație WhatsApp"
     }
+  },
+  "instagram": {
+    "subheading": "Urmărește Transformarea",
+    "heading": "Din Culisele Antrenamentelor",
+    "follow": "Urmărește pe Instagram",
+    "handle": "@elitetrainer"
+  },
+  "bmi": {
+    "heading": "Calculator IMC",
+    "subheading": "Cunoaște-ți Punctul de Plecare",
+    "intro": "Calculează-ți Indicele de Masă Corporală pentru a înțelege unde ești și unde vrei să ajungi. Folosește-l ca punct de plecare — nu ca linie de sosire.",
+    "heightLabel": "Înălțime (cm)",
+    "weightLabel": "Greutate (kg)",
+    "ageLabel": "Vârstă (opțional)",
+    "heightPlaceholder": "ex. 175",
+    "weightPlaceholder": "ex. 78",
+    "agePlaceholder": "ex. 30",
+    "calculate": "Calculează IMC",
+    "yourBMI": "IMC-ul Tău",
+    "categories": {
+      "underweight": "Subponderal",
+      "healthy": "Sănătos",
+      "overweight": "Supraponderal",
+      "obese": "Obez"
+    },
+    "ranges": {
+      "underweight": "Sub 18.5",
+      "healthy": "18.5 – 24.9",
+      "overweight": "25.0 – 29.9",
+      "obese": "30.0 și peste"
+    },
+    "cta": "Gata să-ți îmbunătățești IMC-ul? Rezervă o consultație gratuită.",
+    "ctaButton": "Rezervă Consultație Gratuită",
+    "disclaimer": "IMC este un instrument de screening general. Nu ține cont de masa musculară, vârstă sau compoziția corporală. Consultă întotdeauna un specialist calificat.",
+    "reset": "Recalculează"
   },
   "footer": {
     "tagline": "Antrenament personal de elită pentru rezultate reale.",

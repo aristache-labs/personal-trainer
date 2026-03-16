@@ -6,7 +6,8 @@
     "transformations": "Transformations",
     "pricing": "Pricing",
     "contact": "Contact",
-    "bookConsultation": "Book Consultation"
+    "bookConsultation": "Book Consultation",
+    "phone": "+40 712 345 678"
   },
   "hero": {
     "headline": "Transform Your Body,",
@@ -25,8 +26,11 @@
     "trustBadges": {
       "certified": "NASM Certified",
       "years": "8+ Years",
-      "clients": "300+ Clients"
-    }
+      "clients": "300+ Clients",
+      "google": "5.0 Google Reviews"
+    },
+    "phone": "+40 712 345 678",
+    "phoneLabel": "Call now"
   },
   "about": {
     "heading": "About Me",
@@ -369,6 +373,15 @@
     "trustQuote": "Working with this coach was the single best investment I made in myself.",
     "trustName": "Jessica L., client since 2023",
     "whatsappPrimary": "Start on WhatsApp",
+    "availability": {
+      "label": "Availability",
+      "weekdays": "Mon – Fri",
+      "weekdayHours": "7:00 – 21:00",
+      "saturday": "Saturday",
+      "saturdayHours": "9:00 – 15:00",
+      "sunday": "Sunday",
+      "sundayHours": "Closed"
+    },
     "form": {
       "name": "Full Name",
       "email": "Email Address",
@@ -385,6 +398,41 @@
       "instagram": "Instagram",
       "whatsappCTA": "Chat on WhatsApp"
     }
+  },
+  "instagram": {
+    "subheading": "Follow the Journey",
+    "heading": "Behind the Training",
+    "follow": "Follow on Instagram",
+    "handle": "@elitetrainer"
+  },
+  "bmi": {
+    "heading": "BMI Calculator",
+    "subheading": "Know Your Starting Point",
+    "intro": "Calculate your Body Mass Index to understand where you are and where you want to go. Use this as a starting point — not a finish line.",
+    "heightLabel": "Height (cm)",
+    "weightLabel": "Weight (kg)",
+    "ageLabel": "Age (optional)",
+    "heightPlaceholder": "e.g. 175",
+    "weightPlaceholder": "e.g. 78",
+    "agePlaceholder": "e.g. 30",
+    "calculate": "Calculate BMI",
+    "yourBMI": "Your BMI",
+    "categories": {
+      "underweight": "Underweight",
+      "healthy": "Healthy",
+      "overweight": "Overweight",
+      "obese": "Obese"
+    },
+    "ranges": {
+      "underweight": "Under 18.5",
+      "healthy": "18.5 – 24.9",
+      "overweight": "25.0 – 29.9",
+      "obese": "30.0 and above"
+    },
+    "cta": "Ready to improve your BMI? Book a free consultation.",
+    "ctaButton": "Book Free Consultation",
+    "disclaimer": "BMI is a general screening tool. It does not account for muscle mass, age, or body composition. Always consult a qualified professional.",
+    "reset": "Recalculate"
   },
   "footer": {
     "tagline": "Elite personal training for real results.",

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Mail, MessageCircle, Instagram, Send, Clock, Star } from 'lucide-react';
+import { Mail, MessageCircle, Instagram, Send, Clock, Star, CalendarClock } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CTAButton from '@/components/ui/CTAButton';
@@ -137,6 +137,30 @@ export default function Contact({ dict }: ContactProps) {
               <div className="flex items-center gap-2 self-start px-3.5 py-2 rounded-full bg-background border border-border/50">
                 <Clock size={13} className="text-accent flex-shrink-0" />
                 <span className="text-zinc-500 text-xs">{dict.contact.replyTime}</span>
+              </div>
+
+              {/* Availability block */}
+              <div className="bg-background border border-border/40 rounded-2xl p-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <CalendarClock size={14} className="text-accent flex-shrink-0" />
+                  <p className="text-white text-xs font-bold uppercase tracking-[0.12em]">
+                    {dict.contact.availability.label}
+                  </p>
+                </div>
+                <div className="space-y-2.5">
+                  {[
+                    { day: dict.contact.availability.weekdays,  hours: dict.contact.availability.weekdayHours,  closed: false },
+                    { day: dict.contact.availability.saturday,  hours: dict.contact.availability.saturdayHours, closed: false },
+                    { day: dict.contact.availability.sunday,    hours: dict.contact.availability.sundayHours,   closed: true  },
+                  ].map(({ day, hours, closed }) => (
+                    <div key={day} className="flex items-center justify-between">
+                      <span className="text-zinc-400 text-xs">{day}</span>
+                      <span className={`text-xs font-medium ${closed ? 'text-zinc-600' : 'text-white'}`}>
+                        {hours}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Trust quote */}
