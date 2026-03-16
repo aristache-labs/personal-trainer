@@ -206,58 +206,45 @@
     ]
   },
   "testimonials": {
-    "heading": "Proof, not promises",
-    "subheading": "REAL CLIENT RESULTS",
     "eyebrow": "REAL CLIENT RESULTS",
-    "supporting": "Real people. Clear structure. Sustainable progress that fits real life.",
-    "verified": "Verified Client",
-    "metrics": [
-      "Personalized coaching",
-      "Weekly adjustments",
-      "Training + nutrition + accountability"
+    "title": "Proof, not promises",
+    "subtitle": "Real people. Clear structure. Sustainable progress that fits real life.",
+    "trustPills": [
+      "Personalized Coaching",
+      "Weekly Refinement",
+      "Training + Nutrition + Accountability"
     ],
     "items": [
       {
         "name": "Jessica L.",
         "role": "Marketing Manager",
-        "rating": 5,
-        "text": "I've tried many trainers, but this is the first time I've seen real, lasting results. The personalized approach and constant support made all the difference.",
-        "chips": ["12 weeks", "−8 kg", "More energy"]
+        "quote": "For the first time, I had a plan that actually fit my life. The structure was clear, the support was consistent, and the results finally felt sustainable.",
+        "chips": ["12 weeks", "-8 kg", "Better routine"],
+        "featured": true
       },
       {
         "name": "David P.",
         "role": "Software Engineer",
-        "rating": 5,
-        "text": "As someone with a busy schedule, the structured plan and expert guidance helped me achieve my goals without compromising my work.",
-        "chips": ["Busy schedule friendly", "Better routine"]
+        "quote": "I finally had a plan I could follow with a busy schedule — without feeling overwhelmed.",
+        "chips": ["Busy schedule", "Consistency"]
       },
       {
         "name": "Emma T.",
         "role": "Teacher",
-        "rating": 5,
-        "text": "The nutrition guidance alone was worth every cent. I finally understand how to eat for my goals without feeling restricted or miserable.",
-        "chips": ["Nutrition clarity", "Sustainable habits"]
+        "quote": "The nutrition side finally made sense. I stopped overthinking food and started making steady progress.",
+        "chips": ["Nutrition clarity", "More energy"]
       },
       {
         "name": "Chris B.",
         "role": "Entrepreneur",
-        "rating": 5,
-        "text": "Incredible attention to detail and genuine care for my progress. Not just a trainer — a true coach who is invested in your success.",
-        "chips": ["Accountability", "Stronger mindset"]
+        "quote": "What stood out most was the attention to detail. Every adjustment felt intentional, and that made consistency much easier.",
+        "chips": ["Accountability", "Weekly refinement"]
       },
       {
-        "name": "Lisa M.",
-        "role": "Nurse",
-        "rating": 5,
-        "text": "The structured approach and weekly check-ins kept me accountable. I've never been this consistent with my training in my entire life.",
-        "chips": ["Weekly check-ins", "Consistency"]
-      },
-      {
-        "name": "Tom H.",
-        "role": "Sales Director",
-        "rating": 5,
-        "text": "Best investment in myself I've ever made. The program transformed not just my body, but my entire relationship with fitness and health.",
-        "chips": ["Body recomposition", "More confidence"]
+        "name": "Sarah M.",
+        "role": "Project Coordinator",
+        "quote": "I lost weight without extreme restrictions. The process felt realistic, structured, and easy to stay consistent with.",
+        "chips": ["-6 kg", "No extremes"]
       }
     ]
   },

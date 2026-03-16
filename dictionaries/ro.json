@@ -206,58 +206,45 @@
     ]
   },
   "testimonials": {
-    "heading": "Rezultate reale. Consecvență reală.",
-    "subheading": "REZULTATE REALE",
     "eyebrow": "REZULTATE REALE",
-    "supporting": "Oameni reali, structură clară și progres sustenabil adaptat vieții reale.",
-    "verified": "Client Verificat",
-    "metrics": [
+    "title": "Rezultate reale. Consecvență reală.",
+    "subtitle": "Oameni reali, structură clară și progres sustenabil adaptat vieții reale.",
+    "trustPills": [
       "Coaching personalizat",
-      "Ajustări constante",
-      "Antrenament + nutriție + accountability"
+      "Ajustare continuă",
+      "Antrenament + Nutriție + Accountability"
     ],
     "items": [
       {
         "name": "Jessica L.",
-        "role": "Manager Marketing",
-        "rating": 5,
-        "text": "Am încercat mulți antrenori, dar aceasta este prima dată când am văzut rezultate reale și durabile. Abordarea personalizată și suportul constant au făcut toată diferența.",
-        "chips": ["12 săpt.", "−8 kg", "Mai multă energie"]
+        "role": "Marketing Manager",
+        "quote": "Pentru prima dată, am avut un plan care chiar s-a potrivit cu viața mea. Structura a fost clară, suportul constant, iar rezultatele au fost sustenabile.",
+        "chips": ["12 săpt.", "-8 kg", "Rutină mai bună"],
+        "featured": true
       },
       {
         "name": "David P.",
-        "role": "Inginer Software",
-        "rating": 5,
-        "text": "Ca persoană cu program încărcat, planul bine structurat și ghidarea constantă m-au ajutat să-mi ating obiectivele fără să-mi afectez munca.",
-        "chips": ["Adaptat programului", "Program clar"]
+        "role": "Software Engineer",
+        "quote": "În sfârșit am avut un plan pe care l-am putut urma chiar și cu un program aglomerat, fără să mă simt copleșit.",
+        "chips": ["Program aglomerat", "Consecvență"]
       },
       {
         "name": "Emma T.",
-        "role": "Profesoară",
-        "rating": 5,
-        "text": "Doar ghidul nutrițional merită fiecare ban. În sfârșit înțeleg cum să mănânc pentru obiectivele mele fără să mă simt restricționată sau nefericită.",
-        "chips": ["Nutriție clară", "Obiceiuri sustenabile"]
+        "role": "Teacher",
+        "quote": "Partea de nutriție a început, în sfârșit, să aibă sens. Am încetat să mă mai complic și am început să progresez constant.",
+        "chips": ["Nutriție clară", "Mai multă energie"]
       },
       {
         "name": "Chris B.",
-        "role": "Antreprenor",
-        "rating": 5,
-        "text": "Atenție incredibilă la detalii și grijă reală pentru progresul meu. Nu doar un antrenor — un adevărat coach care este investit în succesul tău.",
-        "chips": ["Accountability", "Mindset mai puternic"]
+        "role": "Entrepreneur",
+        "quote": "Ce m-a impresionat cel mai mult a fost atenția la detalii. Fiecare ajustare a avut sens, iar asta a făcut consecvența mult mai ușoară.",
+        "chips": ["Accountability", "Ajustare continuă"]
       },
       {
-        "name": "Lisa M.",
-        "role": "Asistentă Medicală",
-        "rating": 5,
-        "text": "Abordarea structurată și evaluările săptămânale m-au menținut responsabilă. Nu am fost niciodată atât de constantă cu antrenamentul în toată viața mea.",
-        "chips": ["Evaluări săptămânale", "Consecvență"]
-      },
-      {
-        "name": "Tom H.",
-        "role": "Director Vânzări",
-        "rating": 5,
-        "text": "Cea mai bună investiție în mine pe care am făcut-o vreodată. Programul mi-a transformat nu doar corpul, ci întreaga relație cu fitness-ul și sănătatea.",
-        "chips": ["Recompunere corporală", "Mai multă încredere"]
+        "name": "Sarah M.",
+        "role": "Project Coordinator",
+        "quote": "Am slăbit fără restricții extreme. Tot procesul a fost realist, structurat și ușor de urmat pe termen lung.",
+        "chips": ["-6 kg", "Fără extreme"]
       }
     ]
   },

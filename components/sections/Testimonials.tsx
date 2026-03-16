@@ -27,7 +27,8 @@ export default function Testimonials({ dict }: TestimonialsProps) {
   const [activeDot, setActiveDot] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const items = dict.testimonials.items;
-  const [featured, ...rest] = items;
+  const featured = items.find((i: any) => i.featured) ?? items[0];
+  const rest = items.filter((i: any) => i !== featured);
 
   return (
     <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
@@ -37,9 +38,9 @@ export default function Testimonials({ dict }: TestimonialsProps) {
             <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
               {dict.testimonials.eyebrow}
             </p>
-            <SectionHeading heading={dict.testimonials.heading} />
+            <SectionHeading heading={dict.testimonials.title} />
             <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed mt-4">
-              {dict.testimonials.supporting}
+              {dict.testimonials.subtitle}
             </p>
           </div>
         </AnimatedSection>
@@ -57,12 +58,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
           >
             {items.map((item: any, index: number) => (
               <div key={index} className="snap-start flex-shrink-0 w-[86vw] max-w-sm">
-                <TestimonialCard
-                  item={item}
-                  index={index}
-                  verified={dict.testimonials.verified}
-                  compact
-                />
+                <TestimonialCard item={item} index={index} compact />
               </div>
             ))}
           </div>
@@ -87,20 +83,20 @@ export default function Testimonials({ dict }: TestimonialsProps) {
               <div className="relative z-10 space-y-3.5">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-0.5">
-                    {[...Array(featured.rating)].map((_, i) => (
+                    {[...Array(5)].map((_, i) => (
                       <Star key={i} size={15} className="text-accent fill-accent" />
                     ))}
                   </div>
                   <span className="inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/5 px-2.5 py-0.5">
                     <BadgeCheck size={12} className="text-accent" />
                     <span className="text-[11px] uppercase tracking-[0.16em] text-accent/80">
-                      {dict.testimonials.verified}
+                      Verified Client
                     </span>
                   </span>
                 </div>
 
                 <p className="text-zinc-100 text-[15px] md:text-[16px] leading-relaxed md:leading-[1.6] max-w-3xl line-clamp-4">
-                  “{featured.text}”
+                  “{featured.quote}”
                 </p>
 
                 {/* Result chips */}
@@ -143,22 +139,17 @@ export default function Testimonials({ dict }: TestimonialsProps) {
           <div className="grid grid-cols-3 gap-4 lg:gap-5 max-w-5xl mx-auto">
             {rest.slice(0, 3).map((item: any, index: number) => (
               <AnimatedSection key={index} delay={index * 0.06 + 0.1}>
-                <TestimonialCard
-                  item={item}
-                  index={index + 1}
-                  verified={dict.testimonials.verified}
-                  compact
-                />
+                <TestimonialCard item={item} index={index + 1} compact />
               </AnimatedSection>
             ))}
           </div>
         </div>
 
         {/* Trust metrics row */}
-        {dict.testimonials.metrics && (
+        {dict.testimonials.trustPills && (
           <div className="mt-8 md:mt-10">
             <div className="flex flex-wrap justify-center gap-2 md:gap-2.5 max-w-xl mx-auto">
-              {dict.testimonials.metrics.map((label: string, idx: number) => (
+              {dict.testimonials.trustPills.map((label: string, idx: number) => (
                 <div
                   key={idx}
                   className="px-2.5 py-1 rounded-full border border-border/60 bg-background/70 text-[10px] uppercase tracking-[0.16em] text-zinc-400"
@@ -175,13 +166,12 @@ export default function Testimonials({ dict }: TestimonialsProps) {
 }
 
 interface TestimonialCardProps {
-  item: { name: string; role: string; rating: number; text: string; chips?: string[] };
+  item: { name: string; role: string; quote: string; chips?: string[] };
   index: number;
-  verified: string;
   compact?: boolean;
 }
 
-function TestimonialCard({ item, index, verified, compact = false }: TestimonialCardProps) {
+function TestimonialCard({ item, index, compact = false }: TestimonialCardProps) {
   const colorClass = avatarColors[index % avatarColors.length];
 
   return (
@@ -193,7 +183,7 @@ function TestimonialCard({ item, index, verified, compact = false }: Testimonial
       } hover:border-accent/35 hover:bg-background/90 transition-colors h-full flex flex-col group cursor-default`}
     >
       <div className="flex gap-0.5 mb-3 opacity-90">
-        {[...Array(item.rating)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <Star key={i} size={11} className="text-accent fill-accent" />
         ))}
       </div>
@@ -203,7 +193,7 @@ function TestimonialCard({ item, index, verified, compact = false }: Testimonial
           compact ? 'line-clamp-3' : 'line-clamp-4'
         }`}
       >
-        “{item.text}”
+        “{item.quote}”
       </p>
 
       {/* Result chips */}
@@ -228,8 +218,10 @@ function TestimonialCard({ item, index, verified, compact = false }: Testimonial
         </div>
         <div className="min-w-0">
           <div className="flex items-center gap-1.5">
-            <p className="text-white font-semibold text-xs leading-tight truncate">{item.name}</p>
-            <BadgeCheck size={12} className="text-accent flex-shrink-0" aria-label={verified} />
+            <p className="text-white font-semibold text-xs leading-tight truncate">
+              {item.name}
+            </p>
+            <BadgeCheck size={12} className="text-accent flex-shrink-0" aria-label="Verified Client" />
           </div>
           <p className="text-zinc-400 text-[11px] mt-0.5">{item.role}</p>
         </div>
