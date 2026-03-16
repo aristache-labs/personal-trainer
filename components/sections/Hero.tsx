@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowDown, Shield, Clock, Users, Phone, Star } from 'lucide-react';
+import Image from 'next/image';
 import CTAButton from '@/components/ui/CTAButton';
 import StatsCounter from '@/components/ui/StatsCounter';
 
@@ -187,20 +188,21 @@ export default function Hero({ dict }: HeroProps) {
                 <div className="absolute bottom-0 right-0 w-8 h-px bg-accent/50" />
                 <div className="absolute bottom-0 right-0 w-px h-8 bg-accent/50" />
 
-                {/* Silhouette — more athletic, centered */}
-                <div className="absolute inset-0 flex items-center justify-center pb-24">
-                  <svg viewBox="0 0 100 180" className="w-32 h-56 opacity-[0.14]" aria-hidden="true">
-                    <ellipse cx="50" cy="20" rx="16" ry="16" fill="currentColor" className="text-accent" />
-                    {/* Shoulders wide, V-taper torso */}
-                    <path d="M10 58 C10 44 30 34 50 34 C70 34 90 44 90 58 L94 100 L74 100 L70 76 L70 170 L30 170 L30 76 L26 100 L6 100 Z" fill="currentColor" className="text-accent" />
-                  </svg>
-                </div>
+                {/* Trainer photo */}
+                <Image
+                  src="/images/trainer-hero.jpg"
+                  alt={dict.about.trainerName}
+                  fill
+                  priority
+                  sizes="(min-width: 1280px) 500px, 460px"
+                  className="object-cover object-top"
+                />
 
                 {/* Bottom nameplate */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/90 to-transparent pt-16 pb-7 px-7">
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent pt-20 pb-7 px-7">
                   {/* Stat chip — sits above the name, inside the gradient */}
                   <div className="inline-flex items-center gap-2 mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-500">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-zinc-400">
                       {dict.hero.floatingStat ?? 'Avg. 12-week result'}
                     </span>
                     <span className="font-display text-xl font-bold text-accent leading-none">
@@ -212,9 +214,6 @@ export default function Hero({ dict }: HeroProps) {
                   </p>
                   <p className="text-accent text-sm font-medium mt-0.5">
                     {dict.about.trainerTitle}
-                  </p>
-                  <p className="text-zinc-600 text-[11px] mt-3 tracking-widest uppercase">
-                    Photo Coming Soon
                   </p>
                 </div>
               </div>

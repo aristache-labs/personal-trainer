@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -24,19 +25,20 @@ export default function About({ dict }: AboutProps) {
 
               <div className="relative rounded-2xl overflow-hidden border border-white/6 bg-gradient-to-b from-zinc-800/50 to-zinc-900/80 aspect-[3/4]">
                 {/* Corner accent */}
-                <div className="absolute top-0 left-0 w-10 h-px bg-accent" />
-                <div className="absolute top-0 left-0 w-px h-10 bg-accent" />
+                <div className="absolute top-0 left-0 w-10 h-px bg-accent z-10" />
+                <div className="absolute top-0 left-0 w-px h-10 bg-accent z-10" />
 
-                {/* Silhouette */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg viewBox="0 0 100 160" className="w-24 h-40 opacity-[0.12]" aria-hidden="true">
-                    <ellipse cx="50" cy="22" rx="18" ry="18" fill="currentColor" className="text-accent" />
-                    <path d="M16 62 C16 46 34 36 50 36 C66 36 84 46 84 62 L90 108 L66 108 L62 82 L62 156 L38 156 L38 82 L34 108 L10 108 Z" fill="currentColor" className="text-accent" />
-                  </svg>
-                </div>
+                {/* Trainer photo */}
+                <Image
+                  src="/images/trainer-about.jpg"
+                  alt={dict.about.trainerName}
+                  fill
+                  sizes="(min-width: 1024px) 360px, 360px"
+                  className="object-cover object-top"
+                />
 
                 {/* Nameplate */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/90 to-transparent pt-16 pb-6 px-6">
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent pt-20 pb-6 px-6 z-10">
                   <p className="font-display font-bold text-white text-xl">
                     {dict.about.trainerName}
                   </p>

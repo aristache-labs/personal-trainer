@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -7,45 +8,67 @@ interface TransformationsProps {
   dict: any;
 }
 
-function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel }: {
+function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc, afterSrc }: {
   size?: 'large' | 'small';
   beforeLabel: string;
   afterLabel: string;
+  beforeSrc?: string;
+  afterSrc?: string;
 }) {
-  const h = size === 'large' ? 'h-52 md:h-auto min-h-[220px]' : 'h-44';
+  const h = size === 'large' ? 'h-[300px] sm:h-[360px] md:h-auto min-h-[300px]' : 'h-56';
   return (
     <div className={`relative flex ${h}`}>
       {/* Before side */}
-      <div className="flex-1 bg-zinc-900/80 flex flex-col items-center justify-center">
-        <span className="absolute top-3 left-3">
-          <span className="px-2 py-0.5 rounded bg-zinc-800 text-[10px] font-bold tracking-[0.15em] text-zinc-300 uppercase border border-zinc-600/60">
+      <div className="flex-1 relative bg-zinc-900/80 flex flex-col items-center justify-center overflow-hidden">
+        {beforeSrc ? (
+          <Image
+            src={beforeSrc}
+            alt={beforeLabel}
+            fill
+            sizes={size === 'large' ? "(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 50vw" : "140px"}
+            className="object-cover object-top"
+          />
+        ) : (
+          <svg viewBox="0 0 80 120" className={`${size === 'large' ? 'w-14 h-20' : 'w-10 h-14'} opacity-20`} aria-hidden="true">
+            <ellipse cx="40" cy="18" rx="14" ry="14" fill="currentColor" className="text-zinc-300" />
+            <path d="M14 50 C14 38 28 30 40 30 C52 30 66 38 66 50 L72 88 L54 88 L50 68 L50 118 L30 118 L30 68 L26 88 L8 88 Z" fill="currentColor" className="text-zinc-300" />
+          </svg>
+        )}
+        <span className="absolute top-3 left-3 z-10">
+          <span className="px-2 py-0.5 rounded bg-zinc-900/80 text-[10px] font-bold tracking-[0.15em] text-zinc-300 uppercase border border-zinc-600/60 backdrop-blur-sm">
             {beforeLabel}
           </span>
         </span>
-        <svg viewBox="0 0 80 120" className={`${size === 'large' ? 'w-14 h-20' : 'w-10 h-14'} opacity-20`} aria-hidden="true">
-          <ellipse cx="40" cy="18" rx="14" ry="14" fill="currentColor" className="text-zinc-300" />
-          <path d="M14 50 C14 38 28 30 40 30 C52 30 66 38 66 50 L72 88 L54 88 L50 68 L50 118 L30 118 L30 68 L26 88 L8 88 Z" fill="currentColor" className="text-zinc-300" />
-        </svg>
       </div>
 
       {/* Vertical divider with BEFORE→AFTER chip */}
-      <div className="absolute left-1/2 inset-y-0 -translate-x-1/2 w-px bg-border/40 flex items-center justify-center z-10">
+      <div className="absolute left-1/2 inset-y-0 -translate-x-1/2 w-px bg-border/40 flex items-center justify-center z-20">
         <div className="bg-zinc-900 border border-border/60 rounded-full px-2.5 py-1 text-[9px] text-zinc-500 font-bold tracking-wide whitespace-nowrap">
           →
         </div>
       </div>
 
       {/* After side */}
-      <div className="flex-1 bg-accent/5 flex flex-col items-center justify-center">
-        <span className="absolute top-3 right-3">
-          <span className="px-2 py-0.5 rounded bg-accent/15 text-[10px] font-bold tracking-[0.15em] text-accent uppercase border border-accent/40">
+      <div className="flex-1 relative bg-accent/5 flex flex-col items-center justify-center overflow-hidden">
+        {afterSrc ? (
+          <Image
+            src={afterSrc}
+            alt={afterLabel}
+            fill
+            sizes={size === 'large' ? "(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 50vw" : "140px"}
+            className="object-cover object-top"
+          />
+        ) : (
+          <svg viewBox="0 0 80 120" className={`${size === 'large' ? 'w-14 h-20' : 'w-10 h-14'} opacity-35`} aria-hidden="true">
+            <ellipse cx="40" cy="18" rx="14" ry="14" fill="currentColor" className="text-accent" />
+            <path d="M18 50 C18 38 30 30 40 30 C50 30 62 38 62 50 L67 88 L51 88 L48 68 L48 118 L32 118 L32 68 L29 88 L13 88 Z" fill="currentColor" className="text-accent" />
+          </svg>
+        )}
+        <span className="absolute top-3 right-3 z-10">
+          <span className="px-2 py-0.5 rounded bg-zinc-900/80 text-[10px] font-bold tracking-[0.15em] text-accent uppercase border border-accent/40 backdrop-blur-sm">
             {afterLabel}
           </span>
         </span>
-        <svg viewBox="0 0 80 120" className={`${size === 'large' ? 'w-14 h-20' : 'w-10 h-14'} opacity-35`} aria-hidden="true">
-          <ellipse cx="40" cy="18" rx="14" ry="14" fill="currentColor" className="text-accent" />
-          <path d="M18 50 C18 38 30 30 40 30 C50 30 62 38 62 50 L67 88 L51 88 L48 68 L48 118 L32 118 L32 68 L29 88 L13 88 Z" fill="currentColor" className="text-accent" />
-        </svg>
       </div>
     </div>
   );
@@ -68,12 +91,14 @@ export default function Transformations({ dict }: TransformationsProps) {
         {/* Featured result — wide case study card */}
         <AnimatedSection delay={0.05}>
           <div className="group rounded-2xl border border-border bg-surface overflow-hidden mb-5 hover:border-accent/40 transition-all duration-300">
-            <div className="grid md:grid-cols-[280px_1fr] gap-0">
+            <div className="grid md:grid-cols-[400px_1fr] lg:grid-cols-[480px_1fr] xl:grid-cols-[540px_1fr] gap-0">
               {/* Before/After visual */}
               <BeforeAfterVisual
                 size="large"
                 beforeLabel={dict.transformations.beforeLabel}
                 afterLabel={dict.transformations.afterLabel}
+                beforeSrc="/images/before-large.png"
+                afterSrc="/images/after-large.png"
               />
 
               {/* Content */}
@@ -117,16 +142,24 @@ export default function Transformations({ dict }: TransformationsProps) {
         </AnimatedSection>
 
         {/* Remaining case study cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {rest.map((item: any, index: number) => (
-            <AnimatedSection key={index} delay={index * 0.1 + 0.1}>
-              <div className="group bg-surface border border-border rounded-2xl overflow-hidden hover:border-accent/35 transition-all duration-300 h-full">
-                {/* Before/After split */}
-                <BeforeAfterVisual
-                  size="small"
-                  beforeLabel={dict.transformations.beforeLabel}
-                  afterLabel={dict.transformations.afterLabel}
-                />
+        {/* Images indexed from case 02 onward (index 0 = case 02) */}
+        {(() => {
+          const smallImages: { beforeSrc?: string; afterSrc?: string }[] = [
+            { beforeSrc: '/images/before-small-Sarah.png', afterSrc: '/images/after-small-Sarah.png' },
+          ];
+          return (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {rest.map((item: any, index: number) => (
+                <AnimatedSection key={index} delay={index * 0.1 + 0.1}>
+                  <div className="group bg-surface border border-border rounded-2xl overflow-hidden hover:border-accent/35 transition-all duration-300 h-full">
+                    {/* Before/After split */}
+                    <BeforeAfterVisual
+                      size="small"
+                      beforeLabel={dict.transformations.beforeLabel}
+                      afterLabel={dict.transformations.afterLabel}
+                      beforeSrc={smallImages[index]?.beforeSrc}
+                      afterSrc={smallImages[index]?.afterSrc}
+                    />
 
                 {/* Stats */}
                 <div className="p-5">
@@ -163,7 +196,9 @@ export default function Transformations({ dict }: TransformationsProps) {
               </div>
             </AnimatedSection>
           ))}
-        </div>
+            </div>
+          );
+        })()}
 
         {/* Disclaimer */}
         <AnimatedSection delay={0.3}>
