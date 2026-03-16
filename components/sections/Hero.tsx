@@ -91,22 +91,7 @@ export default function Hero({ dict }: HeroProps) {
               </CTAButton>
             </motion.div>
 
-            {/* Mobile phone CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.52, duration: 0.4, ease }}
-              className="flex items-center gap-2 mb-8 sm:hidden"
-            >
-              <a
-                href={`tel:${dict.hero.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-2 text-zinc-400 hover:text-white text-sm font-medium transition-colors"
-              >
-                <Phone size={13} className="text-accent" />
-                <span>{dict.hero.phoneLabel}:</span>
-                <span className="text-white">{dict.hero.phone}</span>
-              </a>
-            </motion.div>
+            {/* Mobile phone CTA moved to navbar — no extra row here */}
 
             {/* Stats */}
             <motion.div

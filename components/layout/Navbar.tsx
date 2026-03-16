@@ -79,11 +79,16 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href={`tel:${dict.nav.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-1.5 text-zinc-400 hover:text-white text-xs font-medium transition-colors"
-                aria-label={`Call ${dict.nav.phone}`}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/80 border border-border/60 text-xs text-zinc-300 hover:text-white hover:border-accent/40 transition-colors"
+                aria-label={`${dict.nav.callNow} ${dict.nav.phone}`}
               >
                 <Phone size={13} className="text-accent flex-shrink-0" />
-                {dict.nav.phone}
+                <span className="uppercase tracking-[0.16em] text-[10px] text-zinc-500">
+                  {dict.nav.callNow}
+                </span>
+                <span className="font-medium text-xs text-white">
+                  {dict.nav.phone}
+                </span>
               </a>
               <LanguageSwitcher currentLocale={locale} />
               <CTAButton size="sm" href="#contact">
@@ -179,46 +184,68 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               </nav>
 
               {/* Drawer footer */}
-              <div className="px-5 pb-8 pt-4 border-t border-border/60 space-y-4">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
+              <div className="px-5 pb-8 pt-4 space-y-4">
+                {/* Phone row above divider */}
+                <motion.a
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.35 }}
+                  transition={{ delay: 0.25 }}
+                  href={`tel:${dict.nav.phone.replace(/\s/g, '')}`}
+                  className="flex items-center justify-between rounded-xl bg-background px-3.5 py-2.5 border border-border/60 text-sm text-zinc-300"
+                  aria-label={`Call ${dict.nav.phone}`}
                 >
-                  <CTAButton
-                    href="#contact"
-                    className="w-full"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {dict.nav.bookConsultation}
-                  </CTAButton>
-                </motion.div>
+                  <span className="flex items-center gap-2">
+                    <Phone size={14} className="text-accent flex-shrink-0" />
+                      <span className="text-xs uppercase tracking-[0.16em] text-zinc-500">
+                      {dict.nav.callNow}
+                    </span>
+                  </span>
+                  <span className="text-sm font-medium text-white">
+                    {dict.nav.phone}
+                  </span>
+                </motion.a>
 
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.45 }}
-                  className="flex items-center justify-center gap-4 pt-2"
-                >
-                  <a
-                    href="https://instagram.com/elitetrainer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-zinc-500 hover:text-accent transition-colors"
-                    aria-label="Instagram"
+                <div className="border-t border-border/60 pt-4 space-y-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35 }}
                   >
-                    <Instagram size={18} />
-                  </a>
-                  <a
-                    href="https://youtube.com/@elitetrainer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-zinc-500 hover:text-accent transition-colors"
-                    aria-label="YouTube"
+                    <CTAButton
+                      href="#contact"
+                      className="w-full"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {dict.nav.bookConsultation}
+                    </CTAButton>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.45 }}
+                    className="flex items-center justify-center gap-4 pt-2"
                   >
-                    <Youtube size={18} />
-                  </a>
-                </motion.div>
+                    <a
+                      href="https://instagram.com/elitetrainer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-500 hover:text-accent transition-colors"
+                      aria-label="Instagram"
+                    >
+                      <Instagram size={18} />
+                    </a>
+                    <a
+                      href="https://youtube.com/@elitetrainer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-500 hover:text-accent transition-colors"
+                      aria-label="YouTube"
+                    >
+                      <Youtube size={18} />
+                    </a>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           </>
