@@ -412,11 +412,13 @@
     }
   },
   "instagram": {
-    "subheading": "Urmărește Transformarea",
-    "heading": "Din Culisele Antrenamentelor",
-    "follow": "Urmărește pe Instagram",
-    "handle": "@elitetrainer",
-    "viewPost": "Vezi postarea"
+  "subheading": "ÎN SPATELE METODEI",
+  "heading": "Cum Sunt Construite Rezultatele Reale",
+  "subtitle": "Coaching-ul real merge dincolo de antrenamente. Descoperă principiile de antrenament, nutriție, recuperare și mindset din spatele unei transformări sustenabile.",
+  "follow": "Insight-uri pe Instagram",
+  "handle": "@elitetrainer",
+  "handleMeta": "Insight-uri noi în fiecare săptămână",
+  "viewPost": "Vezi insight-ul"
   },
   "ctaLimited": {
     "eyebrow": "Disponibilitate limitată",

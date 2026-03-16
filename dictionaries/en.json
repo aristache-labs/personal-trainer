@@ -412,11 +412,13 @@
     }
   },
   "instagram": {
-    "subheading": "Follow the Journey",
-    "heading": "Behind the Training",
-    "follow": "Follow on Instagram",
-    "handle": "@elitetrainer",
-    "viewPost": "View post"
+  "subheading": "INSIDE THE METHOD",
+  "heading": "How Real Results Are Built",
+  "subtitle": "Real coaching goes beyond workouts. Explore the training, nutrition, recovery, and mindset principles behind sustainable transformation.",
+  "follow": "Instagram insights",
+  "handle": "@elitetrainer",
+  "handleMeta": "New coaching insights weekly",
+  "viewPost": "View insight"
   },
   "ctaLimited": {
     "eyebrow": "Limited Availability",
