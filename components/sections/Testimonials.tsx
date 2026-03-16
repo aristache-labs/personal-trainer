@@ -33,17 +33,22 @@ export default function Testimonials({ dict }: TestimonialsProps) {
     <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-section">
         <AnimatedSection>
-          <SectionHeading
-            heading={dict.testimonials.heading}
-            subheading={dict.testimonials.subheading}
-          />
+          <div className="max-w-2xl mx-auto text-center mb-9 md:mb-12">
+            <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
+              {dict.testimonials.eyebrow}
+            </p>
+            <SectionHeading heading={dict.testimonials.heading} />
+            <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed mt-4">
+              {dict.testimonials.supporting}
+            </p>
+          </div>
         </AnimatedSection>
 
-        {/* Mobile: snap carousel */}
+        {/* Mobile: compact snap carousel */}
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto snap-x scrollbar-hide pb-4 -mx-4 px-4"
+            className="flex gap-3 overflow-x-auto snap-x scrollbar-hide pb-3 -mx-4 px-4"
             onScroll={(e) => {
               const el = e.currentTarget;
               const cardWidth = el.scrollWidth / items.length;
@@ -51,54 +56,81 @@ export default function Testimonials({ dict }: TestimonialsProps) {
             }}
           >
             {items.map((item: any, index: number) => (
-              <div key={index} className="snap-start flex-shrink-0 w-[82vw] max-w-xs">
-                <TestimonialCard item={item} index={index} verified={dict.testimonials.verified} />
+              <div key={index} className="snap-start flex-shrink-0 w-[86vw] max-w-sm">
+                <TestimonialCard
+                  item={item}
+                  index={index}
+                  verified={dict.testimonials.verified}
+                  compact
+                />
               </div>
             ))}
           </div>
           {/* Polished pagination dots */}
-          <div className="flex justify-center gap-1.5 mt-5">
+          <div className="flex justify-center gap-1 mt-3">
             {items.map((_: any, i: number) => (
               <div
                 key={i}
                 className={`rounded-full transition-all duration-300 ${
-                  i === activeDot ? 'w-6 h-1.5 bg-accent' : 'w-1.5 h-1.5 bg-border'
+                  i === activeDot ? 'w-4 h-1 bg-accent' : 'w-1.5 h-1 bg-border/70'
                 }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Desktop: editorial asymmetric layout */}
+        {/* Desktop: featured + compact proof grid */}
         <div className="hidden md:block">
-          {/* Featured large card with decorative quote mark */}
+          {/* Featured compact card */}
           <AnimatedSection delay={0.05}>
-            <div className="relative bg-background border border-border rounded-2xl p-8 md:p-10 mb-4 hover:border-accent/25 transition-colors group overflow-hidden">
-              {/* Large decorative quotation mark — editorial detail */}
-              <span
-                className="absolute -top-4 -left-2 font-display text-[10rem] font-bold text-accent/[0.07] leading-none select-none pointer-events-none"
-                aria-hidden="true"
-              >
-                &ldquo;
-              </span>
-
-              <div className="relative z-10">
-                <div className="flex gap-1 mb-5">
-                  {[...Array(featured.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="text-accent fill-accent" />
-                  ))}
+            <div className="relative bg-background/80 border border-border/60 rounded-3xl p-6 md:p-7 mb-5 hover:border-accent/40 hover:bg-background/90 transition-colors group overflow-hidden max-w-4xl mx-auto">
+              <div className="relative z-10 space-y-3.5">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-0.5">
+                    {[...Array(featured.rating)].map((_, i) => (
+                      <Star key={i} size={15} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <span className="inline-flex items-center gap-1 rounded-full border border-accent/20 bg-accent/5 px-2.5 py-0.5">
+                    <BadgeCheck size={12} className="text-accent" />
+                    <span className="text-[11px] uppercase tracking-[0.16em] text-accent/80">
+                      {dict.testimonials.verified}
+                    </span>
+                  </span>
                 </div>
-                <p className="text-zinc-200 text-lg md:text-xl leading-[1.8] mb-8 max-w-3xl font-light">
-                  &ldquo;{featured.text}&rdquo;
+
+                <p className="text-zinc-100 text-[15px] md:text-[16px] leading-relaxed md:leading-[1.6] max-w-3xl line-clamp-4">
+                  “{featured.text}”
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className={`w-11 h-11 rounded-full flex items-center justify-center font-bold text-sm ${avatarColors[0]}`}>
+
+                {/* Result chips */}
+                {featured.chips && (
+                  <div className="flex flex-wrap gap-1.5 pt-0.5">
+                    {featured.chips.slice(0, 3).map((chip: string, idx: number) => (
+                      <span
+                        key={idx}
+                        className="px-2.5 py-0.5 rounded-full border border-border/60 bg-background/80 text-[11px] text-zinc-300"
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <div className="flex items-center gap-3 pt-0.5">
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold text-xs ${avatarColors[0]}`}
+                  >
                     {getInitials(featured.name)}
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5">
                       <p className="text-white font-semibold text-sm">{featured.name}</p>
-                      <BadgeCheck size={14} className="text-accent" aria-label={dict.testimonials.verified} />
+                      <BadgeCheck
+                        size={13}
+                        className="text-accent"
+                        aria-label={dict.testimonials.verified}
+                      />
                     </div>
                     <p className="text-zinc-400 text-xs mt-0.5">{featured.role}</p>
                   </div>
@@ -107,47 +139,91 @@ export default function Testimonials({ dict }: TestimonialsProps) {
             </div>
           </AnimatedSection>
 
-          {/* Rest in 2-col then 3-col grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {rest.map((item: any, index: number) => (
-              <AnimatedSection key={index} delay={index * 0.07 + 0.1}>
-                <TestimonialCard item={item} index={index + 1} verified={dict.testimonials.verified} />
+          {/* Compact proof cards */}
+          <div className="grid grid-cols-3 gap-4 lg:gap-5 max-w-5xl mx-auto">
+            {rest.slice(0, 3).map((item: any, index: number) => (
+              <AnimatedSection key={index} delay={index * 0.06 + 0.1}>
+                <TestimonialCard
+                  item={item}
+                  index={index + 1}
+                  verified={dict.testimonials.verified}
+                  compact
+                />
               </AnimatedSection>
             ))}
           </div>
         </div>
+
+        {/* Trust metrics row */}
+        {dict.testimonials.metrics && (
+          <div className="mt-8 md:mt-10">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-2.5 max-w-xl mx-auto">
+              {dict.testimonials.metrics.map((label: string, idx: number) => (
+                <div
+                  key={idx}
+                  className="px-2.5 py-1 rounded-full border border-border/60 bg-background/70 text-[10px] uppercase tracking-[0.16em] text-zinc-400"
+                >
+                  {label}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
 }
 
 interface TestimonialCardProps {
-  item: { name: string; role: string; rating: number; text: string };
+  item: { name: string; role: string; rating: number; text: string; chips?: string[] };
   index: number;
   verified: string;
+  compact?: boolean;
 }
 
-function TestimonialCard({ item, index, verified }: TestimonialCardProps) {
+function TestimonialCard({ item, index, verified, compact = false }: TestimonialCardProps) {
   const colorClass = avatarColors[index % avatarColors.length];
 
   return (
     <motion.div
       whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="bg-background border border-border rounded-2xl p-6 hover:border-accent/25 transition-colors h-full flex flex-col group cursor-default"
+      className={`bg-background/80 border border-border/60 rounded-2xl ${
+        compact ? 'p-5' : 'p-6'
+      } hover:border-accent/35 hover:bg-background/90 transition-colors h-full flex flex-col group cursor-default`}
     >
-      <div className="flex gap-0.5 mb-4">
+      <div className="flex gap-0.5 mb-3 opacity-90">
         {[...Array(item.rating)].map((_, i) => (
-          <Star key={i} size={13} className="text-accent fill-accent" />
+          <Star key={i} size={11} className="text-accent fill-accent" />
         ))}
       </div>
 
-      <p className="text-zinc-300 text-base leading-[1.8] flex-grow mb-5">
-        &ldquo;{item.text}&rdquo;
+      <p
+        className={`text-zinc-300 text-sm leading-relaxed flex-grow mb-3 ${
+          compact ? 'line-clamp-3' : 'line-clamp-4'
+        }`}
+      >
+        “{item.text}”
       </p>
 
-      <div className="flex items-center gap-3 pt-4 border-t border-border/40">
-        <div className={`w-9 h-9 rounded-full flex items-center justify-center font-semibold text-xs flex-shrink-0 ${colorClass}`}>
+      {/* Result chips */}
+      {item.chips && (
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {item.chips.slice(0, compact ? 2 : 3).map((chip, idx) => (
+            <span
+              key={idx}
+              className="px-2 py-0.5 rounded-full border border-border/60 bg-background/80 text-[10px] text-zinc-300"
+            >
+              {chip}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <div className="flex items-center gap-3 pt-2.5 border-t border-border/40">
+        <div
+          className={`w-7 h-7 rounded-full flex items-center justify-center font-semibold text-[11px] flex-shrink-0 ${colorClass}`}
+        >
           {getInitials(item.name)}
         </div>
         <div className="min-w-0">
