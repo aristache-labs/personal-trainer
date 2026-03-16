@@ -30,7 +30,10 @@
       "google": "5.0 Google Reviews"
     },
     "phone": "+40 712 345 678",
-    "phoneLabel": "Call now"
+    "phoneLabel": "Call now",
+    "floatingBadges": ["Online Coaching", "1-on-1 Training", "Nutrition Included"],
+    "floatingStat": "Avg. 12-week result",
+    "floatingStatValue": "-18 kg"
   },
   "about": {
     "heading": "About Me",
@@ -74,16 +77,6 @@
           "Hands-on coaching",
           "Form correction",
           "Flexible scheduling"
-        ]
-      },
-      {
-        "title": "Online Coaching",
-        "description": "Train anywhere with personalized programming, weekly check-ins, and 24/7 support.",
-        "benefits": [
-          "Custom training programs",
-          "Weekly video check-ins",
-          "Nutrition guidance",
-          "Progress tracking app"
         ]
       },
       {
@@ -173,6 +166,7 @@
     "subheading": "Transformations That Speak for Themselves",
     "beforeLabel": "Before",
     "afterLabel": "After",
+    "caseLabel": "Case",
     "disclaimer": "Results vary. Individual outcomes depend on consistency, effort, and adherence to the program.",
     "items": [
       {
@@ -180,6 +174,7 @@
         "metric": "−18 kg",
         "duration": "5 months",
         "result": "Fat Loss Program",
+        "secondaryMetrics": ["Body Fat −8%", "Strength +25%"],
         "testimonial": "Best decision I ever made. The program was tough but totally worth it."
       },
       {
@@ -187,6 +182,7 @@
         "metric": "+8 kg",
         "duration": "6 months",
         "result": "Muscle Building",
+        "secondaryMetrics": ["Lean Mass +8 kg", "Body Fat −3%"],
         "testimonial": "I finally have the strong, confident body I've always wanted."
       },
       {
@@ -194,6 +190,7 @@
         "metric": "−25 kg",
         "duration": "8 months",
         "result": "Body Recomposition",
+        "secondaryMetrics": ["Waist −14 cm", "Energy +40%"],
         "testimonial": "Life-changing experience. I feel like a completely new person."
       }
     ]
@@ -373,6 +370,8 @@
     "trustQuote": "Working with this coach was the single best investment I made in myself.",
     "trustName": "Jessica L., client since 2023",
     "whatsappPrimary": "Start on WhatsApp",
+    "subCopy": "Your next 90 days start with one conversation.",
+    "urgencyNote": "Limited spots available this month",
     "availability": {
       "label": "Availability",
       "weekdays": "Mon – Fri",

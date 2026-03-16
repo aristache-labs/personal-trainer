@@ -21,39 +21,30 @@ export default function Benefits({ dict }: BenefitsProps) {
           />
         </AnimatedSection>
 
-        <div className="space-y-4">
+        {/* Open editorial rows — no card shells, divider-separated */}
+        <div>
           {dict.benefits.items.map((benefit: any, index: number) => {
             const Icon = iconMap[index] || Target;
             const isEven = index % 2 === 0;
-            const num = String(index + 1).padStart(2, '0');
+            const isLast = index === dict.benefits.items.length - 1;
 
             return (
-              <AnimatedSection
-                key={index}
-                delay={index * 0.06}
-                direction="up"
-              >
+              <AnimatedSection key={index} delay={index * 0.07} direction="up">
                 <div
-                  className={`flex items-center gap-6 md:gap-10 p-6 md:p-8 rounded-2xl bg-background border border-border/40 hover:border-accent/25 transition-colors duration-250 group ${
+                  className={`flex items-center gap-8 md:gap-16 py-9 md:py-11 group ${
                     isEven ? '' : 'md:flex-row-reverse'
-                  }`}
+                  } ${!isLast ? 'border-b border-border/25' : ''}`}
                 >
-                  {/* Icon + watermark */}
-                  <div className="relative flex-shrink-0">
-                    <span
-                      className="absolute -top-4 -left-2 text-[3.5rem] font-display font-bold text-accent/[0.07] leading-none select-none pointer-events-none tabular-nums"
-                      aria-hidden="true"
-                    >
-                      {num}
-                    </span>
-                    <div className="relative w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:bg-accent/18 transition-colors">
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-accent/8 rounded-full flex items-center justify-center ring-1 ring-accent/25 group-hover:bg-accent/15 group-hover:ring-accent/50 transition-all duration-300">
                       <Icon className="text-accent" size={26} />
                     </div>
                   </div>
 
                   {/* Text */}
-                  <div>
-                    <h3 className="font-display text-lg font-bold text-white mb-1.5 group-hover:text-accent transition-colors duration-200">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-xl font-bold text-white mb-2 tracking-tight group-hover:text-accent transition-colors duration-200">
                       {benefit.title}
                     </h3>
                     <p className="text-zinc-300 text-sm leading-relaxed max-w-2xl">

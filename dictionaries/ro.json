@@ -30,7 +30,10 @@
       "google": "5.0 Google Reviews"
     },
     "phone": "+40 712 345 678",
-    "phoneLabel": "Sună acum"
+    "phoneLabel": "Sună acum",
+    "floatingBadges": ["Coaching Online", "1-la-1", "Nutriție Inclusă"],
+    "floatingStat": "Rezultat mediu 12 săptămâni",
+    "floatingStatValue": "−18 kg"
   },
   "about": {
     "heading": "Despre Mine",
@@ -74,16 +77,6 @@
           "Coaching direct",
           "Corectare formă",
           "Program flexibil"
-        ]
-      },
-      {
-        "title": "Coaching Online",
-        "description": "Antrenează-te oriunde cu programare personalizată, evaluări săptămânale și suport 24/7.",
-        "benefits": [
-          "Programe de antrenament personalizate",
-          "Evaluări video săptămânale",
-          "Ghid nutrițional",
-          "Aplicație tracking progres"
         ]
       },
       {
@@ -173,6 +166,7 @@
     "subheading": "Transformări Care Vorbesc de la Sine",
     "beforeLabel": "Înainte",
     "afterLabel": "După",
+    "caseLabel": "Caz",
     "disclaimer": "Rezultatele variază. Progresul individual depinde de consistență, efort și respectarea programului.",
     "items": [
       {
@@ -180,6 +174,7 @@
         "metric": "−18 kg",
         "duration": "5 luni",
         "result": "Program Ardere Grăsime",
+        "secondaryMetrics": ["Grăsime −8%", "Forță +25%"],
         "testimonial": "Cea mai bună decizie pe care am luat-o vreodată. Programul a fost dificil dar merită total."
       },
       {
@@ -187,6 +182,7 @@
         "metric": "+8 kg",
         "duration": "6 luni",
         "result": "Construcție Musculară",
+        "secondaryMetrics": ["Masă Slabă +8 kg", "Grăsime −3%"],
         "testimonial": "În sfârșit am corpul puternic și încrezător pe care mi l-am dorit mereu."
       },
       {
@@ -194,6 +190,7 @@
         "metric": "−25 kg",
         "duration": "8 luni",
         "result": "Recompunere Corporală",
+        "secondaryMetrics": ["Talie −14 cm", "Energie +40%"],
         "testimonial": "Experiență care mi-a schimbat viața. Mă simt ca o persoană complet nouă."
       }
     ]
@@ -373,6 +370,8 @@
     "trustQuote": "A lucra cu acest coach a fost cea mai bună investiție pe care am făcut-o în mine.",
     "trustName": "Jessica L., clientă din 2023",
     "whatsappPrimary": "Începe pe WhatsApp",
+    "subCopy": "Următoarele tale 90 de zile încep cu o singură conversație.",
+    "urgencyNote": "Locuri limitate disponibile luna aceasta",
     "availability": {
       "label": "Disponibilitate",
       "weekdays": "Lun – Vin",

@@ -40,7 +40,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                     <Star key={i} size={12} className="text-accent fill-accent" />
                   ))}
                 </div>
-                <span className="text-zinc-600 text-xs">{dict.footer.socialProof}</span>
+                <span className="text-zinc-400 text-xs">{dict.footer.socialProof}</span>
               </div>
               <CTAButton size="sm" href="#contact">
                 {dict.footer.ctaButton}
@@ -61,7 +61,7 @@ export default function Footer({ locale, dict }: FooterProps) {
               <span className="text-white">Elite</span>
               <span className="text-accent">Trainer</span>
             </Link>
-            <p className="text-zinc-600 text-sm leading-relaxed max-w-[220px]">
+            <p className="text-zinc-400 text-sm leading-relaxed max-w-[220px]">
               {dict.footer.tagline}
             </p>
 
@@ -78,7 +78,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 bg-background rounded-lg border border-border/50 flex items-center justify-center text-zinc-600 hover:text-accent hover:border-accent/35 transition-all duration-200"
+                  className="w-9 h-9 bg-background rounded-lg border border-border/50 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/35 transition-all duration-200"
                 >
                   <Icon size={15} />
                 </a>
@@ -88,7 +88,7 @@ export default function Footer({ locale, dict }: FooterProps) {
 
           {/* Quick links */}
           <div>
-            <p className="text-[11px] font-bold text-zinc-600 uppercase tracking-[0.16em] mb-5">
+            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.16em] mb-5">
               {locale === 'ro' ? 'Navigare' : 'Navigate'}
             </p>
             <ul className="space-y-2.5">
@@ -96,7 +96,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-zinc-500 text-sm hover:text-accent transition-colors duration-150"
+                    className="text-zinc-300 text-sm hover:text-accent transition-colors duration-150"
                   >
                     {link.label}
                   </a>
@@ -107,7 +107,7 @@ export default function Footer({ locale, dict }: FooterProps) {
 
           {/* Language */}
           <div>
-            <p className="text-[11px] font-bold text-zinc-600 uppercase tracking-[0.16em] mb-5">
+            <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.16em] mb-5">
               {locale === 'ro' ? 'Limbă' : 'Language'}
             </p>
             <div className="flex gap-2">
@@ -118,7 +118,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider border transition-all duration-200 ${
                     locale === l
                       ? 'bg-accent text-black border-accent'
-                      : 'bg-transparent text-zinc-600 border-border/50 hover:border-accent/40 hover:text-zinc-300'
+                      : 'bg-transparent text-zinc-300 border-border/50 hover:border-accent/40 hover:text-white'
                   }`}
                 >
                   {l}
@@ -130,9 +130,9 @@ export default function Footer({ locale, dict }: FooterProps) {
 
         {/* Copyright */}
         <div className="mt-10 pt-5 border-t border-border/25 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-zinc-700 text-xs">{dict.footer.copyright}</p>
-          <p className="text-zinc-800 text-xs">
-            Built with precision. <span className="text-accent/60">EliteTrainer®</span>
+          <p className="text-zinc-400 text-xs">{dict.footer.copyright}</p>
+          <p className="text-zinc-500 text-xs">
+            Built with precision. <span className="text-accent/80">EliteTrainer®</span>
           </p>
         </div>
       </div>

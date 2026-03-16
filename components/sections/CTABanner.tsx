@@ -1,16 +1,24 @@
-import { MessageCircle, ArrowRight } from 'lucide-react';
+import { MessageCircle, ArrowRight, Star, Users, Clock, Zap } from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
 
 interface CTABannerProps {
   dict: any;
 }
 
+const trustItems = [
+  { icon: Star,  label: '5.0 Rated' },
+  { icon: Users, label: '300+ Clients' },
+  { icon: Clock, label: '< 2h Reply' },
+  { icon: Zap,   label: 'Limited Spots' },
+];
+
 export default function CTABanner({ dict }: CTABannerProps) {
   return (
     <section className="relative overflow-hidden section-divider bg-surface">
-      {/* Accent tint panel — right third */}
-      <div className="absolute top-0 right-0 bottom-0 w-1/3 bg-accent/[0.04] pointer-events-none" />
-      <div className="absolute top-0 right-1/3 bottom-0 w-px bg-border/30 pointer-events-none" />
+      {/* Subtle radial glow — accent hint without hard panels */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[300px] bg-accent/[0.06] rounded-full blur-[80px]" />
+      </div>
 
       <div className="relative container mx-auto py-section-sm">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
@@ -25,17 +33,32 @@ export default function CTABanner({ dict }: CTABannerProps) {
               Limited spots available<br className="hidden sm:block" /> each month.{' '}
               <span className="text-accent">Reserve yours.</span>
             </h2>
-            <p className="text-zinc-400 text-base leading-relaxed max-w-lg">
+            <p className="text-zinc-400 text-base leading-relaxed max-w-lg mb-6">
               Serious transformation requires a committed coach. Only a handful of spots open monthly — act before they&apos;re gone.
             </p>
+
+            {/* Trust strip */}
+            <div className="flex flex-wrap gap-2">
+              {trustItems.map(({ icon: Icon, label }) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-background/60 border border-border/50 text-xs font-medium text-zinc-400"
+                >
+                  <Icon size={11} className="text-accent flex-shrink-0" />
+                  {label}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Right: CTAs */}
           <div className="flex flex-col gap-3 lg:min-w-[220px]">
-            <CTAButton size="lg" href="#contact" className="w-full justify-center">
-              Book Free Consultation
-              <ArrowRight size={17} />
-            </CTAButton>
+            <div className="shadow-lg shadow-accent/20 rounded-xl">
+              <CTAButton size="lg" href="#contact" className="w-full justify-center">
+                Book Free Consultation
+                <ArrowRight size={17} />
+              </CTAButton>
+            </div>
             <CTAButton size="md" variant="secondary" href="https://wa.me/1234567890" className="w-full justify-center">
               <MessageCircle size={17} />
               Chat on WhatsApp

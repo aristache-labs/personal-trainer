@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Mail, MessageCircle, Instagram, Send, Clock, Star, CalendarClock } from 'lucide-react';
+import { Mail, MessageCircle, Instagram, Send, Clock, CalendarClock } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CTAButton from '@/components/ui/CTAButton';
@@ -44,8 +44,15 @@ export default function Contact({ dict }: ContactProps) {
               heading={dict.contact.heading}
               subheading={dict.contact.subheading}
               align="left"
-              className="mb-8"
+              className="mb-4"
             />
+
+            {/* Strong conversion sub-copy */}
+            {dict.contact.subCopy && (
+              <p className="text-zinc-300 text-base leading-relaxed mb-8 max-w-md">
+                {dict.contact.subCopy}
+              </p>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
@@ -94,6 +101,14 @@ export default function Contact({ dict }: ContactProps) {
                 />
               </div>
 
+              {/* Urgency note */}
+              {dict.contact.urgencyNote && (
+                <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-accent/8 border border-accent/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 animate-pulse" />
+                  <span className="text-accent text-xs font-semibold">{dict.contact.urgencyNote}</span>
+                </div>
+              )}
+
               <CTAButton type="submit" className="w-full" disabled={formState === 'sending'}>
                 <Send size={16} className={formState === 'sending' ? 'animate-pulse' : ''} />
                 {formState === 'sending' ? dict.contact.form.sending : dict.contact.form.submit}
@@ -128,7 +143,7 @@ export default function Contact({ dict }: ContactProps) {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-white font-bold text-sm">{dict.contact.whatsappPrimary}</p>
-                  <p className="text-zinc-600 text-xs mt-0.5">Most direct path to getting started</p>
+                  <p className="text-zinc-500 text-xs mt-0.5">Most direct path to getting started</p>
                 </div>
                 <span className="text-zinc-700 group-hover:text-accent transition-colors text-lg leading-none">→</span>
               </a>
@@ -155,29 +170,11 @@ export default function Contact({ dict }: ContactProps) {
                   ].map(({ day, hours, closed }) => (
                     <div key={day} className="flex items-center justify-between">
                       <span className="text-zinc-400 text-xs">{day}</span>
-                      <span className={`text-xs font-medium ${closed ? 'text-zinc-600' : 'text-white'}`}>
+                      <span className={`text-xs font-medium ${closed ? 'text-zinc-400' : 'text-white'}`}>
                         {hours}
                       </span>
                     </div>
                   ))}
-                </div>
-              </div>
-
-              {/* Trust quote */}
-              <div className="bg-background border border-border/40 rounded-2xl p-6 flex-grow">
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={13} className="text-accent fill-accent" />
-                  ))}
-                </div>
-                <p className="text-zinc-300 text-sm italic leading-[1.8] mb-5">
-                  &ldquo;{dict.contact.trustQuote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-border/30">
-                  <div className="w-8 h-8 rounded-full bg-accent/15 text-accent flex items-center justify-center text-[11px] font-bold flex-shrink-0">
-                    JL
-                  </div>
-                  <p className="text-zinc-600 text-xs">{dict.contact.trustName}</p>
                 </div>
               </div>
 
@@ -187,10 +184,10 @@ export default function Contact({ dict }: ContactProps) {
                   href="mailto:contact@elitetrainer.com"
                   className="flex items-center gap-3 p-3.5 rounded-xl bg-background border border-border/40 hover:border-accent/25 transition-colors group"
                 >
-                  <Mail size={16} className="text-zinc-600 group-hover:text-accent transition-colors flex-shrink-0" />
+                  <Mail size={16} className="text-zinc-400 group-hover:text-accent transition-colors flex-shrink-0" />
                   <div>
                     <p className="text-zinc-300 text-xs font-semibold">{dict.contact.info.email}</p>
-                    <p className="text-zinc-700 text-[11px] mt-0.5">contact@elitetrainer.com</p>
+                    <p className="text-zinc-400 text-[11px] mt-0.5">contact@elitetrainer.com</p>
                   </div>
                 </a>
                 <a
@@ -198,10 +195,10 @@ export default function Contact({ dict }: ContactProps) {
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3.5 rounded-xl bg-background border border-border/40 hover:border-accent/25 transition-colors group"
                 >
-                  <Instagram size={16} className="text-zinc-600 group-hover:text-accent transition-colors flex-shrink-0" />
+                  <Instagram size={16} className="text-zinc-400 group-hover:text-accent transition-colors flex-shrink-0" />
                   <div>
                     <p className="text-zinc-300 text-xs font-semibold">{dict.contact.info.instagram}</p>
-                    <p className="text-zinc-700 text-[11px] mt-0.5">@elitetrainer</p>
+                    <p className="text-zinc-400 text-[11px] mt-0.5">@elitetrainer</p>
                   </div>
                 </a>
               </div>

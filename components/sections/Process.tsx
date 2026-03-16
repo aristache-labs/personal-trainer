@@ -21,10 +21,14 @@ export default function Process({ dict }: ProcessProps) {
         </AnimatedSection>
 
         {/* Desktop: horizontal timeline */}
-        <div className="hidden lg:block relative">
-          {/* Connector line */}
-          <div className="absolute top-9 left-14 right-14 h-px bg-border/60" />
-          <div className="absolute top-9 left-14 right-14 h-px bg-gradient-to-r from-accent/60 via-accent/20 to-transparent" />
+        {/* Outer wrapper is relative; the connector line is absolutely positioned
+            so its vertical centre aligns with the centre of the badge circles.
+            Badge height = 4.5rem (72px). Label above = ~1rem text + mb-2 (8px) ≈ 24px.
+            So badge centre from top of grid row ≈ 24 + 36 = 60px → use top-[60px]. */}
+        <div className="hidden lg:block relative mt-6">
+          {/* Connector line — centred on the circles */}
+          <div className="absolute left-[8.33%] right-[8.33%] top-[60px] h-px bg-border/50 pointer-events-none z-0" />
+          <div className="absolute left-[8.33%] right-[8.33%] top-[60px] h-px bg-gradient-to-r from-accent/50 via-accent/20 to-transparent pointer-events-none z-0" />
 
           <div className="grid grid-cols-6 gap-2">
             {steps.map((step: any, index: number) => (
