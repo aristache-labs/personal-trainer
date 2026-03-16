@@ -279,57 +279,88 @@
     ]
   },
   "pricing": {
-    "heading": "Investment Plans",
-    "subheading": "Choose the Program That Fits Your Goals",
-    "mostPopular": "Most Popular",
-    "cta": "Get Started",
-    "noContract": "Cancel anytime. No contracts.",
+    "eyebrow": "SESSION PACKAGES",
+    "title": "Training Packages",
+    "subtitle": "Choose the option that best matches your schedule, experience level, and transformation goals.",
+    "popularBadge": "MOST POPULAR",
+    "bestStartBadge": "BEST START",
+    "cta": "Choose Package",
+    "note": "All packages include personalized coaching, form guidance, and structured progression.",
     "plans": [
       {
-        "name": "Starter",
-        "price": "€199",
-        "period": "/month",
-        "description": "Perfect for beginners ready to start their fitness journey.",
+        "id": "single",
+        "name": "1 session",
+        "duration": "Single session · no expiry",
+        "price": "140",
+        "currency": "RON",
+        "pricePerSession": "140 RON / session",
+        "description": "A one-off session to assess your level and refine your technique.",
+        "badgeType": "none",
         "features": [
-          "Custom workout plan",
-          "Basic nutrition guidelines",
-          "Monthly check-ins",
-          "Email support",
-          "Exercise video library"
-        ],
-        "popular": false
+          "1x 1-on-1 session",
+          "Initial assessment",
+          "Form feedback"
+        ]
       },
       {
-        "name": "Pro",
-        "price": "€349",
-        "period": "/month",
-        "description": "The most popular choice for serious transformation seekers.",
+        "id": "four",
+        "name": "4 sessions",
+        "duration": "4 sessions · 30 days",
+        "price": "480",
+        "currency": "RON",
+        "pricePerSession": "120 RON / session",
+        "description": "The ideal starting package for structure, momentum, and consistency.",
+        "badgeType": "bestStart",
         "features": [
-          "Personalized training program",
-          "Custom nutrition plan",
-          "Weekly video check-ins",
-          "24/7 chat support",
-          "Progress tracking app",
-          "Form review videos",
-          "Supplement guidance"
-        ],
-        "popular": true
+          "4x 1-on-1 sessions",
+          "30-day structure",
+          "Personalized guidance"
+        ]
       },
       {
-        "name": "Elite",
-        "price": "€599",
-        "period": "/month",
-        "description": "Premium experience with maximum support and results.",
+        "id": "eight",
+        "name": "8 sessions",
+        "duration": "8 sessions · 30 days",
+        "price": "840",
+        "currency": "RON",
+        "pricePerSession": "105 RON / session",
+        "description": "The most balanced option for visible progress and stronger habits.",
+        "badgeType": "popular",
         "features": [
-          "Everything in Pro",
-          "2x weekly check-ins",
-          "Priority response",
-          "Advanced analytics",
-          "Personalized supplement plan",
-          "Monthly in-person session",
-          "Lifetime community access"
-        ],
-        "popular": false
+          "8x 1-on-1 sessions",
+          "Progress check-ins",
+          "Technique refinement"
+        ]
+      },
+      {
+        "id": "twelve",
+        "name": "12 sessions",
+        "duration": "12 sessions · 30 days",
+        "price": "1190",
+        "currency": "RON",
+        "pricePerSession": "99 RON / session",
+        "description": "Higher weekly frequency for faster progress and stronger accountability.",
+        "badgeType": "none",
+        "features": [
+          "Higher frequency",
+          "Priority booking",
+          "Ongoing refinements"
+        ]
+      },
+      {
+        "id": "twenty",
+        "name": "20 sessions",
+        "duration": "20 sessions · 30 days",
+        "price": "1980",
+        "currency": "RON",
+        "pricePerSession": "99 RON / session",
+        "description": "Built for intensive coaching, maximum structure, and full support.",
+        "badgeType": "none",
+        "features": [
+          "Intensive coaching",
+          "Maximum flexibility",
+          "Full accountability"
+        ]
       }
     ]
   },

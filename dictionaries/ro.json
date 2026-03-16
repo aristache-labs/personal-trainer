@@ -279,57 +279,88 @@
     ]
   },
   "pricing": {
-    "heading": "Planuri Investiție",
-    "subheading": "Alege Programul Care Se Potrivește Obiectivelor Tale",
-    "mostPopular": "Cel Mai Popular",
-    "cta": "Începe Acum",
-    "noContract": "Anulezi oricând. Fără contract.",
+    "eyebrow": "PACHETE DE ȘEDINȚE",
+    "title": "Pachete de antrenament",
+    "subtitle": "Alege varianta potrivită programului tău, nivelului actual și obiectivului pe care vrei să îl atingi.",
+    "popularBadge": "CEL MAI POPULAR",
+    "bestStartBadge": "CEL MAI BUN START",
+    "cta": "Alege pachetul",
+    "note": "Toate pachetele includ ghidare personalizată, corectarea tehnicii și progres structurat.",
     "plans": [
       {
-        "name": "Starter",
-        "price": "€199",
-        "period": "/lună",
-        "description": "Perfect pentru începători gata să-și înceapă călătoria fitness.",
+        "id": "single",
+        "name": "1 ședință",
+        "duration": "Ședință individuală · fără expirare",
+        "price": "140",
+        "currency": "RON",
+        "pricePerSession": "140 RON / ședință",
+        "description": "O ședință individuală pentru evaluare, claritate și corectarea execuției.",
+        "badgeType": "none",
         "features": [
-          "Plan antrenament personalizat",
-          "Ghiduri nutriționale de bază",
-          "Evaluări lunare",
-          "Suport email",
-          "Bibliotecă video exerciții"
-        ],
-        "popular": false
+          "1x antrenament 1-la-1",
+          "Evaluare inițială",
+          "Feedback pe execuție"
+        ]
       },
       {
-        "name": "Pro",
-        "price": "€349",
-        "period": "/lună",
-        "description": "Alegerea cea mai populară pentru cei care caută transformare serioasă.",
+        "id": "four",
+        "name": "4 ședințe",
+        "duration": "4 ședințe · 30 zile",
+        "price": "480",
+        "currency": "RON",
+        "pricePerSession": "120 RON / ședință",
+        "description": "Pachetul ideal pentru un start corect, structură și consistență.",
+        "badgeType": "bestStart",
         "features": [
-          "Program antrenament personalizat",
-          "Plan nutrițional personalizat",
-          "Evaluări video săptămânale",
-          "Suport chat 24/7",
-          "Aplicație tracking progres",
-          "Video-uri review formă",
-          "Ghid suplimente"
-        ],
-        "popular": true
+          "4x antrenamente 1-la-1",
+          "Structură pe 30 zile",
+          "Ghidare personalizată"
+        ]
       },
       {
-        "name": "Elite",
-        "price": "€599",
-        "period": "/lună",
-        "description": "Experiență premium cu suport maxim și rezultate.",
+        "id": "eight",
+        "name": "8 ședințe",
+        "duration": "8 ședințe · 30 zile",
+        "price": "840",
+        "currency": "RON",
+        "pricePerSession": "105 RON / ședință",
+        "description": "Varianta cea mai echilibrată pentru progres vizibil și obiceiuri solide.",
+        "badgeType": "popular",
         "features": [
-          "Tot din Pro",
-          "2 evaluări săptămânale",
-          "Răspuns prioritar",
-          "Analize avansate",
-          "Plan suplimente personalizat",
-          "Sesiune lunară în persoană",
-          "Acces comunitate pe viață"
-        ],
-        "popular": false
+          "8x antrenamente 1-la-1",
+          "Check-in pe progres",
+          "Rafinarea tehnicii"
+        ]
+      },
+      {
+        "id": "twelve",
+        "name": "12 ședințe",
+        "duration": "12 ședințe · 30 zile",
+        "price": "1190",
+        "currency": "RON",
+        "pricePerSession": "99 RON / ședință",
+        "description": "Frecvență mai mare pentru progres accelerat și responsabilitate constantă.",
+        "badgeType": "none",
+        "features": [
+          "Frecvență ridicată",
+          "Prioritate la programări",
+          "Ajustări continue"
+        ]
+      },
+      {
+        "id": "twenty",
+        "name": "20 ședințe",
+        "duration": "20 ședințe · 30 zile",
+        "price": "1980",
+        "currency": "RON",
+        "pricePerSession": "99 RON / ședință",
+        "description": "Pentru coaching intensiv, structură maximă și suport complet.",
+        "badgeType": "none",
+        "features": [
+          "Coaching intensiv",
+          "Flexibilitate maximă",
+          "Suport complet"
+        ]
       }
     ]
   },
