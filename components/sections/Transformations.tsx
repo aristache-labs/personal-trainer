@@ -25,7 +25,11 @@ function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc,
             src={beforeSrc}
             alt={beforeLabel}
             fill
-            sizes={size === 'large' ? "(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 50vw" : "140px"}
+            sizes={
+              size === 'large'
+                ? '(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 50vw'
+                : '(min-width: 1024px) 260px, (min-width: 768px) 220px, 70vw'
+            }
             className="object-cover object-top"
           />
         ) : (
@@ -55,7 +59,11 @@ function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc,
             src={afterSrc}
             alt={afterLabel}
             fill
-            sizes={size === 'large' ? "(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 50vw" : "140px"}
+            sizes={
+              size === 'large'
+                ? '(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 50vw'
+                : '(min-width: 1024px) 260px, (min-width: 768px) 220px, 70vw'
+            }
             className="object-cover object-top"
           />
         ) : (
@@ -104,13 +112,13 @@ export default function Transformations({ dict }: TransformationsProps) {
               {/* Content */}
               <div className="p-7 md:p-10 flex flex-col justify-center border-t md:border-t-0 md:border-l border-border/40">
                 {/* Case eyebrow */}
-                <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-400 font-bold mb-4">
+                <p className="text-xs uppercase tracking-[0.22em] text-zinc-200 font-semibold mb-4">
                   {caseLabel} 01 · {featured.result}
                 </p>
 
                 {/* Primary metric */}
                 <div className="flex items-baseline gap-4 mb-3">
-                  <span className="text-5xl md:text-6xl font-display font-bold text-accent leading-none">
+                  <span className="text-5xl md:text-[3.25rem] font-display font-bold text-accent leading-tight">
                     {featured.metric}
                   </span>
                   <div>
@@ -165,7 +173,7 @@ export default function Transformations({ dict }: TransformationsProps) {
                 {/* Stats */}
                 <div className="p-5">
                   {/* Case label */}
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-zinc-400 font-bold mb-2">
+                  <p className="text-xs uppercase tracking-[0.22em] text-zinc-200 font-semibold mb-2">
                     {caseLabel} {String(index + 2).padStart(2, '0')} · {item.result}
                   </p>
 
