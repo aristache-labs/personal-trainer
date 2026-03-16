@@ -69,7 +69,7 @@
     "learnMore": "Află Mai Mult",
     "whatsIncluded": "Ce este inclus",
     "notSure": "Nu ești sigur ce program ți se potrivește?",
-    "notSureCTA": "Rezervă o Consultație Gratuită",
+    "notSureCTA": "Programează consultație gratuită",
     "items": [
       {
         "title": "Antrenament Personal 1-la-1",
@@ -376,7 +376,7 @@
   },
   "contact": {
     "heading": "Gata de Transformare?",
-    "subheading": "Rezervă o consultație gratuită astăzi. Hai să discutăm despre obiectivele tale și să construim planul tău.",
+    "subheading": "Programează consultație gratuită astăzi. Hai să discutăm despre obiectivele tale și să construim planul tău.",
     "replyTime": "Răspuns tipic: sub 2 ore",
     "trustQuote": "A lucra cu acest coach a fost cea mai bună investiție pe care am făcut-o în mine.",
     "trustName": "Jessica L., clientă din 2023",
@@ -430,7 +430,7 @@
     "trustClients": "300+ clienți",
     "trustReply": "Răspuns < 2h",
     "trustLimited": "Locuri limitate",
-    "primaryCta": "Rezervă consultație gratuită",
+    "primaryCta": "Programează consultație gratuită",
     "secondaryCta": "Conversație WhatsApp"
   },
   "bmi": {
@@ -461,8 +461,8 @@
       "overweight": "25.0 – 29.9",
       "obese": "30.0 și peste"
     },
-    "cta": "Cunoaște-ți punctul de plecare — acum hai să construim planul în jurul lui. Rezervă o consultație gratuită.",
-    "ctaButton": "Rezervă Consultație Gratuită",
+    "cta": "Cunoaște-ți punctul de plecare — acum hai să construim planul în jurul lui. Programează consultație gratuită.",
+    "ctaButton": "Programează consultație gratuită",
     "disclaimer": "IMC este un instrument de screening general. Nu ține cont de masa musculară, vârstă sau compoziția corporală. Consultă întotdeauna un specialist calificat.",
     "reset": "Recalculează"
   },
@@ -470,8 +470,8 @@
     "tagline": "Antrenament personal de elită pentru rezultate reale.",
     "builtWithPrecision": "Creat cu precizie.",
     "ctaBannerText": "Gata de transformare?",
-    "ctaBannerSub": "Rezervă consultația ta gratuită astăzi și fă primul pas.",
-    "ctaButton": "Rezervă Apel Gratuit",
+    "ctaBannerSub": "Programează o consultație gratuită astăzi și fă primul pas.",
+    "ctaButton": "Programează consultație gratuită",
     "socialProof": "Evaluat 5/5 de 300+ clienți",
     "links": {
       "services": "Servicii",
