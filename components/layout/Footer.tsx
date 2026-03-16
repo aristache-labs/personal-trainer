@@ -71,8 +71,13 @@ export default function Footer({ locale, dict }: FooterProps) {
             <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
               {dict.footer.tagline}
             </p>
+            <p className="text-[11px] text-zinc-500">
+              {locale === 'ro'
+                ? 'Antrenament • Nutriție • Responsabilitate'
+                : 'Training • Nutrition • Accountability'}
+            </p>
 
-            <div className="flex gap-2.5 pt-1">
+            <div className="flex gap-2 pt-2">
               {[
                 { href: 'https://instagram.com', icon: Instagram, label: 'Instagram' },
                 { href: 'https://facebook.com',  icon: Facebook,  label: 'Facebook' },
@@ -85,7 +90,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg bg-zinc-950/80 border border-zinc-700/60 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/60 hover:bg-zinc-900/90 transition-all duration-200 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] hover:shadow-[0_0_28px_rgba(190,242,100,0.22)]"
+                  className="w-9 h-9 rounded-xl bg-zinc-950/90 border border-zinc-800/70 flex items-center justify-center text-zinc-400 hover:text-accent hover:border-accent/60 hover:bg-zinc-900 transition-all duration-200 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] hover:shadow-[0_0_22px_rgba(190,242,100,0.25)]"
                 >
                   <Icon size={15} />
                 </a>
@@ -96,7 +101,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           {/* Navigation */}
           <div className="space-y-4">
             <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.18em]">
-              {locale === 'ro' ? 'Navigare' : 'Navigate'}
+              {locale === 'ro' ? 'Explorează' : 'Explore'}
             </p>
             <ul className="space-y-2.5">
               {links.map((link) => (
