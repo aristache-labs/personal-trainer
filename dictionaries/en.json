@@ -334,45 +334,48 @@
     ]
   },
   "faq": {
-    "heading": "Common Questions",
-    "subheading": "Everything You Need to Know",
-    "stillHaveQuestions": "Still have questions?",
-    "replyNote": "We usually reply in under 2 hours.",
-    "contactWhatsApp": "Chat with us on WhatsApp",
+    "eyebrow": "CLIENT CLARITY",
+    "title": "Questions, answered",
+    "subtitle": "Everything you need to know before getting started — from coaching structure to progress, nutrition, and support.",
     "items": [
       {
         "question": "Do I need gym experience to start?",
-        "answer": "Not at all. I work with beginners and advanced athletes alike. Your program will be tailored to your current experience level, and I'll teach you everything you need to know."
+        "answer": "No. The coaching is built around your current level, not an ideal starting point. Whether you're completely new or returning after a long break, everything is structured so you can start confidently and progress at a pace that fits you."
       },
       {
         "question": "Is nutrition coaching included?",
-        "answer": "Yes, all plans include nutrition guidance. The level of detail varies by plan — from basic guidelines in Starter to fully customized meal planning in Pro and Elite."
+        "answer": "Yes. Nutrition is part of the process, not an afterthought. The goal is to create a simple, realistic structure you can actually follow — based on your lifestyle, schedule, food preferences, and overall goal."
       },
       {
         "question": "Can I work with you from anywhere?",
-        "answer": "Absolutely. My programs work from anywhere in the world. You'll receive a fully personalised training and nutrition plan, regular check-ins via video call, and dedicated expert support every step of the way."
+        "answer": "Yes. The coaching is designed to work remotely, so you can follow the plan from anywhere as long as you have a way to train consistently and stay in communication. Everything is built to be flexible, structured, and easy to follow online."
       },
       {
-        "question": "How quickly will I see results?",
-        "answer": "Most clients notice visible changes within 3–4 weeks. Significant transformations typically take 12–16 weeks. Sustainable results require consistency, and that's exactly what we build together."
+        "question": "When should I expect to see progress?",
+        "answer": "That depends on your starting point, consistency, and goal — but most clients notice meaningful progress within the first few weeks when they follow the structure consistently. The focus is not just fast results, but results you can actually maintain."
       },
       {
         "question": "What if I have injuries or limitations?",
-        "answer": "No problem. I'll design your program around any injuries or limitations. I have extensive experience working with various conditions and will always ensure safe, effective training."
+        "answer": "That is taken into account from the start. Exercises, volume, intensity, and progression can all be adjusted based on your limitations, training history, and recovery capacity. The goal is to train intelligently, not force a plan that doesn't fit your body."
       },
       {
-        "question": "How often will we check progress?",
-        "answer": "Weekly for Pro and Elite plans, monthly for Starter. Progress tracking includes measurements, photos, performance metrics, and subjective feedback."
+        "question": "How often will we review progress?",
+        "answer": "Progress is reviewed consistently, not randomly. Depending on your plan, goals, and phase, adjustments are made based on performance, recovery, adherence, and real-life feedback — so the process keeps moving forward without guesswork."
       },
       {
-        "question": "Can I switch plans later?",
-        "answer": "Yes, you can upgrade or downgrade your plan at any time. I want you in the program that best serves your needs and goals."
+        "question": "Can we adjust the plan later?",
+        "answer": "Absolutely. The plan is meant to evolve with you. As your schedule, recovery, performance, or goals change, the structure can be refined so it continues to stay effective, realistic, and aligned with your lifestyle."
       },
       {
-        "question": "What equipment do I need?",
-        "answer": "It depends on your program. I can design plans for full gym access, home gym setups, or even minimal equipment. We'll discuss this during your consultation."
+        "question": "What do I need to get started?",
+        "answer": "That depends on the type of coaching and your setup. In most cases, you only need a realistic training environment, consistency, and a willingness to follow structure. If you're training at a gym, at home, or with limited equipment, the plan can be adapted accordingly."
       }
-    ]
+    ],
+    "support": {
+      "title": "Still need clarity?",
+      "text": "Send a message and get a clear answer before you start.",
+      "cta": "Chat on WhatsApp"
+    }
   },
   "contact": {
       "heading": "Let’s build your plan",

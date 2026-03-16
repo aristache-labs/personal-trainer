@@ -334,45 +334,48 @@
     ]
   },
   "faq": {
-    "heading": "Întrebări Frecvente",
-    "subheading": "Tot Ce Trebuie Să Știi",
-    "stillHaveQuestions": "Ai întrebări?",
-    "replyNote": "De obicei răspundem în mai puțin de 2 ore.",
-    "contactWhatsApp": "Scrie-ne pe WhatsApp",
+    "eyebrow": "CLARITATE ÎNAINTE DE START",
+    "title": "Tot ce trebuie să știi",
+    "subtitle": "Tot ce trebuie să știi înainte să începi — de la structură și nutriție până la progres, suport și organizare.",
     "items": [
       {
-        "question": "Trebuie să am experiență la sală pentru a începe?",
-        "answer": "Deloc. Lucrez atât cu începători cât și cu atleți avansați. Programul tău va fi adaptat la nivelul tău actual de experiență și te voi învăța tot ce trebuie să știi."
+        "question": "Am nevoie de experiență în sală ca să încep?",
+        "answer": "Nu. Coaching-ul este construit în jurul nivelului tău actual, nu al unui punct de plecare ideal. Fie că ești la început sau revii după o pauză lungă, totul este structurat astfel încât să începi cu încredere și să progresezi într-un ritm potrivit pentru tine."
       },
       {
-        "question": "Coaching-ul nutrițional este inclus?",
-        "answer": "Da, toate planurile includ ghidare nutrițională. Nivelul de detaliu variază în funcție de plan — de la ghiduri de bază în Starter până la planificare completă de mese în Pro și Elite."
+        "question": "Este inclusă și partea de nutriție?",
+        "answer": "Da. Nutriția face parte din proces, nu este un element separat adăugat ulterior. Scopul este să construim o structură simplă, realistă și ușor de urmat, adaptată stilului tău de viață, programului, preferințelor alimentare și obiectivului tău."
       },
       {
-        "question": "Pot lucra cu tine de oriunde?",
-        "answer": "Absolut. Programul meu funcționează de oriunde din lume. Vei primi un plan complet personalizat de antrenament și nutriție, evaluări regulate prin apel video și suport expert dedicat la fiecare pas."
+        "question": "Putem lucra împreună de oriunde?",
+        "answer": "Da. Coaching-ul este gândit pentru a funcționa online, astfel încât să poți urma planul de oriunde, atâta timp cât ai o modalitate de a te antrena constant și putem menține comunicarea. Totul este construit să fie flexibil, clar și ușor de urmat de la distanță."
       },
       {
-        "question": "Cât de repede voi vedea rezultate?",
-        "answer": "Majoritatea clienților observă schimbări vizibile în 3–4 săptămâni. Transformări semnificative durează de obicei 12–16 săptămâni. Rezultatele sustenabile necesită consistență, și exact asta construim împreună."
+        "question": "Când ar trebui să mă aștept să văd progres?",
+        "answer": "Asta depinde de punctul tău de plecare, de consecvență și de obiectiv — însă majoritatea clienților observă un progres clar în primele săptămâni atunci când urmează structura constant. Accentul nu este doar pe rezultate rapide, ci pe rezultate pe care le poți menține."
       },
       {
-        "question": "Ce se întâmplă dacă am accidentări sau limitări?",
-        "answer": "Nicio problemă. Voi proiecta programul tău în jurul oricăror accidentări sau limitări. Am experiență vastă în lucrul cu diverse condiții și voi asigura mereu un antrenament sigur și eficient."
+        "question": "Ce fac dacă am accidentări sau limitări?",
+        "answer": "Aceste lucruri sunt luate în calcul încă de la început. Exercițiile, volumul, intensitatea și progresia pot fi ajustate în funcție de limitările tale, istoricul de antrenament și capacitatea de recuperare. Scopul este să te antrenezi inteligent, nu să forțăm un plan care nu se potrivește corpului tău."
       },
       {
-        "question": "Cât de des vom verifica progresul?",
-        "answer": "Săptămânal pentru planurile Pro și Elite, lunar pentru Starter. Tracking-ul progresului include măsurători, fotografii, metrici de performanță și feedback subiectiv."
+        "question": "Cât de des analizăm progresul?",
+        "answer": "Progresul este analizat constant, nu ocazional. În funcție de plan, obiective și etapa în care te afli, ajustările se fac pe baza performanței, recuperării, consecvenței și feedback-ului din viața reală, astfel încât procesul să meargă înainte fără presupuneri."
       },
       {
-        "question": "Pot să schimb planul mai târziu?",
-        "answer": "Da, poți face upgrade sau downgrade la planul tău oricând. Vreau să fii în programul care servește cel mai bine nevoile și obiectivele tale."
+        "question": "Putem ajusta planul pe parcurs?",
+        "answer": "Absolut. Planul este gândit să evolueze odată cu tine. Pe măsură ce programul, recuperarea, performanța sau obiectivele tale se schimbă, structura poate fi ajustată astfel încât să rămână eficientă, realistă și aliniată stilului tău de viață."
       },
       {
-        "question": "Ce echipament am nevoie?",
-        "answer": "Depinde de programul tău. Pot proiecta planuri pentru acces complet la sală, configurații home gym sau chiar echipament minimal. Vom discuta despre asta în timpul consultației."
+        "question": "De ce am nevoie ca să încep?",
+        "answer": "Asta depinde de tipul de coaching și de contextul tău. În cele mai multe cazuri, ai nevoie doar de un mediu realist în care să te antrenezi, consecvență și disponibilitatea de a urma o structură clară. Fie că te antrenezi la sală, acasă sau cu echipament limitat, planul poate fi adaptat în consecință."
       }
-    ]
+    ],
+    "support": {
+      "title": "Mai ai nelămuriri?",
+      "text": "Scrie-ne și primești un răspuns clar înainte să începi.",
+      "cta": "Scrie-ne pe WhatsApp"
+    }
   },
   "contact": {
     "heading": "Hai să-ți construim planul",
