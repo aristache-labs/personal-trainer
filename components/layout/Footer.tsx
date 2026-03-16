@@ -25,7 +25,7 @@ export default function Footer({ locale, dict }: FooterProps) {
         <div className="container mx-auto py-10">
           <div className="relative rounded-3xl border border-border/40 bg-gradient-to-br from-zinc-900/90 via-zinc-950 to-black px-5 py-7 md:px-8 md:py-8 shadow-[0_24px_60px_rgba(0,0,0,0.75)] overflow-hidden">
             <div className="pointer-events-none absolute inset-0 opacity-55 bg-[radial-gradient(circle_at_top_left,rgba(190,242,100,0.12),transparent_58%),radial-gradient(circle_at_bottom_right,rgba(24,24,27,0.9),transparent_60%)]" />
-            <div className="relative flex flex-col md:flex-row items-start md:items-start justify-between gap-6 md:gap-8">
+            <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8">
               <div className="space-y-2 md:space-y-3 max-w-xl">
                 <p className="text-[11px] font-semibold tracking-[0.22em] text-accent/70 uppercase">
                   {locale === 'ro' ? 'Începe transformarea' : 'Start your transformation'}
@@ -40,18 +40,13 @@ export default function Footer({ locale, dict }: FooterProps) {
                 </p>
               </div>
 
-              <div className="flex flex-col items-start md:items-end gap-3 md:gap-3.5 flex-shrink-0 md:min-w-[260px] md:pt-1">
-                <p className="text-xs md:text-sm text-zinc-400 md:text-zinc-300 leading-relaxed max-w-xs text-left md:text-right">
-                  {locale === 'ro'
-                    ? 'Coaching personalizat. Structură reală. Rezultate sustenabile.'
-                    : 'Personalized coaching. Real structure. Sustainable results.'}
-                </p>
+              <div className="flex flex-col items-start md:items-end gap-3 md:gap-3.5 flex-shrink-0 md:min-w-[260px]">
                 <div className="flex flex-col items-start md:items-end gap-1.5 w-full">
                   <CTAButton size="md" href="#contact">
-                    {locale === 'ro' ? 'Programează o consultație gratuită' : 'Book Free Call'}
+                    {locale === 'ro' ? 'Programează o consultație' : 'Book Free Call'}
                     <ArrowRight size={14} />
                   </CTAButton>
-                  <p className="text-[11px] text-zinc-400">
+                  <p className="text-[11px] text-zinc-500 md:text-zinc-400">
                     {locale === 'ro'
                       ? 'Fără presiune. Doar următorul pas clar.'
                       : 'No pressure. Just a clear next step.'}
