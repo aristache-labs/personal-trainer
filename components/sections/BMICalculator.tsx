@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, animate } from 'framer-motion';
 import {
   Calculator,
@@ -110,6 +110,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
   // Animated BMI display value
   const bmiMotion = useMotionValue(0);
   const [displayedBmi, setDisplayedBmi] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   // Animate the BMI value whenever a new result is set
   useEffect(() => {
@@ -135,6 +136,24 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
     };
   }, [bmi, bmiMotion]);
 
+  // After a result is available, gently scroll the BMI section into view
+  useEffect(() => {
+    if (bmi === null || !sectionRef.current) return;
+
+    // Small timeout lets layout settle (especially after virtual keyboard closes)
+    const id = window.setTimeout(() => {
+      try {
+        const rect = sectionRef.current?.getBoundingClientRect();
+        const offsetTop = (rect?.top ?? 0) + window.scrollY - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      } catch {
+        // no-op: scroll not available
+      }
+    }, 120);
+
+    return () => window.clearTimeout(id);
+  }, [bmi]);
+
   const d = dict?.bmi;
   if (!d) return null;
 
@@ -157,11 +176,15 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
   const indicatorPercent = bmi !== null ? getBMIIndicatorPercent(bmi) : 0;
   const ActiveCategoryIcon = category ? CATEGORY_ICONS[category.key] : null;
 
-  const inputCls = 'w-full bg-background border border-border/60 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all';
+  const inputCls = 'w-full bg-background border border-border/60 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 text-[16px] sm:text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all';
   const labelCls = 'block text-xs font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1.5';
 
   return (
-    <section id="bmi" className="py-section-sm bg-background section-divider overflow-x-clip">
+    <section
+      id="bmi"
+      ref={sectionRef}
+      className="py-section-sm bg-background section-divider overflow-x-clip"
+    >
       <div className="container mx-auto">
         <AnimatedSection>
           <div className="max-w-4xl mx-auto">
