@@ -102,7 +102,7 @@ export default function Benefits({ dict }: BenefitsProps) {
                     </div>
 
                     {/* Description */}
-                    <p className="text-sm text-zinc-400 leading-relaxed flex-1">
+                    <p className="text-base sm:text-sm text-zinc-400 leading-relaxed flex-1">
                       {benefit.description}
                     </p>
                   </div>

@@ -109,7 +109,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                           <Calculator size={17} className="text-accent" />
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent mb-0.5">
+                          <p className="text-xs font-bold uppercase tracking-[0.15em] text-accent mb-0.5">
                             {d.freeAssessmentLabel ?? 'Free Assessment Tool'}
                           </p>
                           <h2 className="font-display text-lg md:text-xl font-semibold text-white tracking-tight leading-tight">
@@ -165,7 +165,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                       {error && <p className="text-rose-400 text-xs mb-3">{error}</p>}
                       <button
                         onClick={calculate}
-                        className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-accent text-black font-bold text-sm hover:bg-accent/90 active:scale-95 transition-all duration-150 shadow-md shadow-accent/20"
+                        className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-accent text-black font-bold text-sm hover:bg-accent/90 active:scale-95 transition-all duration-150 shadow-md shadow-accent/20"
                       >
                         <Calculator size={15} />
                         {d.calculate}
@@ -174,7 +174,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
 
                     {/* Horizontal category strip */}
                     <div className="mt-6 pt-5 border-t border-border/40">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                      <p className="text-xs font-bold uppercase tracking-[0.15em] text-zinc-500 mb-3">
                         {d.categoriesLabel ?? 'BMI Categories'}
                       </p>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -220,7 +220,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                   <div className="relative z-10 p-6 md:p-8">
                     <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start mb-6">
                       <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-zinc-500 mb-2">{d.yourBMI}</p>
+                        <p className="text-xs font-bold uppercase tracking-[0.15em] text-zinc-500 mb-2">{d.yourBMI}</p>
 
                         {/* Primary metric */}
                         <div className="flex items-end gap-4 mb-4">

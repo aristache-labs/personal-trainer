@@ -66,7 +66,7 @@ export default function Pricing({ dict }: PricingProps) {
                           size={15}
                           className={`flex-shrink-0 mt-0.5 ${isPopular ? 'text-accent' : 'text-zinc-600'}`}
                         />
-                        <span className="text-zinc-300 text-sm">{feature}</span>
+                        <span className="text-zinc-300 text-base sm:text-sm">{feature}</span>
                       </li>
                     ))}
                   </ul>

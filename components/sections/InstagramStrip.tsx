@@ -115,7 +115,7 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
 
               {/* Content overlay */}
               <div className="relative z-10 p-6 bg-gradient-to-t from-zinc-950 via-zinc-950/90 to-transparent">
-                <p className={`text-[10px] font-bold uppercase tracking-[0.18em] mb-3 ${FEATURED_POST.accent}`}>
+                <p className={`text-xs font-bold uppercase tracking-[0.15em] mb-3 ${FEATURED_POST.accent}`}>
                   {isRo ? FEATURED_POST.categoryRo : FEATURED_POST.category}
                 </p>
                 <p className="text-zinc-100 font-semibold text-base leading-snug mb-4 max-w-sm">
@@ -157,10 +157,10 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
 
                   {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <p className={`text-[10px] font-bold uppercase tracking-[0.16em] mb-1 ${post.accent}`}>
+                    <p className={`text-xs font-bold uppercase tracking-[0.14em] mb-1 ${post.accent}`}>
                       {isRo ? post.categoryRo : post.category}
                     </p>
-                    <p className="text-zinc-200 text-sm font-medium leading-snug line-clamp-2">
+                    <p className="text-zinc-200 text-base sm:text-sm font-medium leading-snug line-clamp-2">
                       {isRo ? post.titleRo : post.title}
                     </p>
                   </div>

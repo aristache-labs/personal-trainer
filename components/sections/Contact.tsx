@@ -36,7 +36,7 @@ export default function Contact({ dict }: ContactProps) {
   return (
     <section id="contact" className="bg-surface section-divider">
       <div className="container mx-auto py-section">
-        <div className="grid lg:grid-cols-2 gap-14 xl:gap-20 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 max-w-6xl mx-auto">
 
           {/* Left — form */}
           <AnimatedSection direction="left" delay={0.05}>

@@ -41,7 +41,7 @@ export default function Services({ dict }: ServicesProps) {
                     {featured.title}
                   </h3>
                 </div>
-                <p className="text-zinc-300 leading-relaxed text-sm max-w-sm">
+                <p className="text-zinc-300 leading-relaxed text-base max-w-sm">
                   {featured.description}
                 </p>
                 <motion.span
@@ -123,14 +123,16 @@ function ServiceCard({ service, Icon, learnMore }: ServiceCardProps) {
           {service.title}
         </h3>
       </div>
-      <p className="text-zinc-400 text-sm leading-relaxed mb-4 flex-grow">
+      <p className="text-zinc-400 text-base sm:text-sm leading-relaxed mb-4 flex-grow">
         {service.description}
       </p>
 
       <motion.span
         whileHover={{ x: 3 }}
         transition={{ duration: 0.15 }}
-        className="inline-flex items-center gap-1.5 text-accent text-xs font-semibold mt-auto"
+        className="inline-flex items-center gap-1.5 text-accent text-xs font-semibold mt-auto pt-3"
+        role="presentation"
+        aria-hidden="true"
       >
         {learnMore}
         <ArrowRight size={13} />

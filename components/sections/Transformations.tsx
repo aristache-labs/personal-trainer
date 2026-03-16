@@ -39,7 +39,7 @@ function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc,
           </svg>
         )}
         <span className="absolute top-3 left-3 z-10">
-          <span className="px-2 py-1 rounded bg-zinc-800 text-[10px] font-bold tracking-[0.15em] text-white uppercase border border-zinc-500">
+          <span className="px-2 py-1 rounded bg-zinc-800 text-xs font-bold tracking-[0.12em] text-white uppercase border border-zinc-500">
             {beforeLabel}
           </span>
         </span>
@@ -73,7 +73,7 @@ function BeforeAfterVisual({ size = 'large', beforeLabel, afterLabel, beforeSrc,
           </svg>
         )}
         <span className="absolute top-3 right-3 z-10">
-          <span className="px-2 py-1 rounded bg-accent text-[10px] font-bold tracking-[0.15em] text-black uppercase border border-accent">
+          <span className="px-2 py-1 rounded bg-accent text-xs font-bold tracking-[0.12em] text-black uppercase border border-accent">
             {afterLabel}
           </span>
         </span>
@@ -171,7 +171,7 @@ export default function Transformations({ dict }: TransformationsProps) {
                     />
 
                 {/* Stats */}
-                <div className="p-5">
+                <div className="p-6">
                   {/* Case label */}
                   <p className="text-xs uppercase tracking-[0.22em] text-zinc-200 font-semibold mb-2">
                     {caseLabel} {String(index + 2).padStart(2, '0')} · {item.result}
@@ -180,7 +180,7 @@ export default function Transformations({ dict }: TransformationsProps) {
                   {/* Primary metric */}
                   <div className="flex items-baseline gap-3 mb-2.5">
                     <span className="text-3xl font-display font-bold text-accent">{item.metric}</span>
-                    <p className="text-xs text-zinc-400 font-medium">{item.duration}</p>
+                    <p className="text-sm text-zinc-400 font-medium">{item.duration}</p>
                   </div>
 
                   {/* Secondary metric chips */}
@@ -189,7 +189,7 @@ export default function Transformations({ dict }: TransformationsProps) {
                       {item.secondaryMetrics.map((m: string) => (
                         <span
                           key={m}
-                          className="px-2 py-0.5 rounded-full bg-accent/8 border border-accent/20 text-accent text-[10px] font-semibold"
+                          className="px-2 py-0.5 rounded-full bg-accent/8 border border-accent/20 text-accent text-[11px] font-semibold"
                         >
                           {m}
                         </span>
@@ -197,10 +197,10 @@ export default function Transformations({ dict }: TransformationsProps) {
                     </div>
                   )}
 
-                  <p className="text-zinc-300 text-sm italic leading-relaxed mb-2">
+                  <p className="text-zinc-300 text-base sm:text-sm italic leading-relaxed mb-2">
                     &ldquo;{item.testimonial}&rdquo;
                   </p>
-                  <p className="text-zinc-400 text-xs font-semibold">— {item.name}</p>
+                  <p className="text-zinc-400 text-sm font-semibold">— {item.name}</p>
                 </div>
               </div>
             </AnimatedSection>

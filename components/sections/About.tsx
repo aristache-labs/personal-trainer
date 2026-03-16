@@ -83,12 +83,12 @@ export default function About({ dict }: AboutProps) {
                 {dict.about.values.map((value: any, index: number) => (
                   <div
                     key={index}
-                    className="flex gap-3.5 p-4 rounded-xl bg-background border-l-2 border-accent border border-border/30 hover:border-accent/50 transition-colors duration-200"
+                    className="flex gap-3.5 p-5 rounded-xl bg-background border-l-2 border-accent border border-border/30 hover:border-accent/50 transition-colors duration-200"
                   >
                     <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={18} />
                     <div>
                       <p className="font-semibold text-white text-sm mb-0.5">{value.title}</p>
-                      <p className="text-sm text-zinc-400 leading-relaxed">{value.description}</p>
+                      <p className="text-base sm:text-sm text-zinc-400 leading-relaxed">{value.description}</p>
                     </div>
                   </div>
                 ))}

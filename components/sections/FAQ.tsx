@@ -69,7 +69,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         className="w-full flex items-center justify-between px-5 py-4 text-left gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
         aria-expanded={isOpen}
       >
-        <span className={`text-sm font-semibold leading-snug transition-colors ${isOpen ? 'text-white' : 'text-zinc-300'}`}>
+        <span className={`text-base font-semibold leading-snug transition-colors ${isOpen ? 'text-white' : 'text-zinc-300'}`}>
           {question}
         </span>
         <motion.div
@@ -90,7 +90,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <p className="px-5 pb-5 text-zinc-300 text-sm leading-[1.75]">
+            <p className="px-5 pb-5 text-zinc-300 text-base leading-[1.75]">
               {answer}
             </p>
           </motion.div>
