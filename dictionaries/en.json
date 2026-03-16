@@ -375,15 +375,16 @@
     ]
   },
   "contact": {
-    "heading": "Ready to Transform?",
-    "subheading": "Book a free consultation today. Let's talk about your goals and build your plan.",
-    "replyTime": "Typical reply: under 2 hours",
+      "heading": "Let’s build your plan",
+      "subheading": "Your next 90 days start with one conversation.",
+      "replyTime": "Typical reply: under 2 hours",
     "trustQuote": "Working with this coach was the single best investment I made in myself.",
     "trustName": "Jessica L., client since 2023",
+      "eyebrow": "START YOUR CONSULTATION",
     "whatsappPrimary": "Start on WhatsApp",
-    "whatsappSecondary": "Most direct path to getting started",
-    "subCopy": "Your next 90 days start with one conversation.",
-    "urgencyNote": "Limited spots available this month",
+      "whatsappSecondary": "The fastest way to get a clear next step.",
+      "subCopy": "Tell me about your goals and I’ll help you map the best starting point for your training, nutrition, and long-term progress.",
+      "responseNote": "Reviewed personally — clear next step, no automated replies.",
     "availability": {
       "label": "Availability",
       "weekdays": "Mon – Fri",
@@ -409,7 +410,8 @@
       "email": "Email",
       "instagram": "Instagram",
       "whatsappCTA": "Chat on WhatsApp"
-    }
+      },
+      "trustNote": "Built around your goals, schedule, and lifestyle. Every inquiry gets a clear next step."
   },
   "instagram": {
   "subheading": "INSIDE THE METHOD",

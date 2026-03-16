@@ -375,15 +375,16 @@
     ]
   },
   "contact": {
-    "heading": "Gata de Transformare?",
-    "subheading": "Programează consultație gratuită astăzi. Hai să discutăm despre obiectivele tale și să construim planul tău.",
+    "heading": "Hai să-ți construim planul",
+    "subheading": "Următoarele tale 90 de zile pot începe cu o singură conversație.",
     "replyTime": "Răspuns tipic: sub 2 ore",
     "trustQuote": "A lucra cu acest coach a fost cea mai bună investiție pe care am făcut-o în mine.",
     "trustName": "Jessica L., clientă din 2023",
+    "eyebrow": "ÎNCEPE CONSULTAȚIA",
     "whatsappPrimary": "Începe pe WhatsApp",
-    "whatsappSecondary": "Cel mai direct mod de a începe",
-    "subCopy": "Următoarele tale 90 de zile încep cu o singură conversație.",
-    "urgencyNote": "Locuri limitate disponibile luna aceasta",
+    "whatsappSecondary": "Cel mai rapid mod de a primi un prim pas clar.",
+    "subCopy": "Spune-mi unde ești acum, unde vrei să ajungi și cum preferi să lucrăm. Analizez personal și revin cu un prim pas clar, adaptat ție.",
+    "responseNote": "Analizat personal — următor pas clar, fără răspunsuri automate.",
     "availability": {
       "label": "Disponibilitate",
       "weekdays": "Lun – Vin",
@@ -398,8 +399,9 @@
       "email": "Adresă Email",
       "phone": "Număr Telefon",
       "message": "Spune-mi despre obiectivele tale",
-      "messagePlaceholder": "Vreau să slăbesc 15kg și să pun masă musculară...",
-      "submit": "Trimite Mesaj",
+      "messagePlaceholder": "Vreau să slăbesc 15kg, să fiu mai puternic(ă) și să rămân consecvent(ă) cu un program aglomerat...",
+      "messageHint": "Poți include cât de multe detalii dorești.",
+      "submit": "Solicită consultația",
       "sending": "Se trimite...",
       "success": "Mesaj trimis! Voi reveni în 24 de ore.",
       "error": "Ceva nu a mers bine. Te rog încearcă WhatsApp sau email."
@@ -409,7 +411,8 @@
       "email": "Email",
       "instagram": "Instagram",
       "whatsappCTA": "Conversație WhatsApp"
-    }
+    },
+    "trustNote": "Construit în jurul obiectivelor, programului și stilului tău de viață."
   },
   "instagram": {
   "subheading": "ÎN SPATELE METODEI",
