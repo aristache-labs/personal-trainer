@@ -28,13 +28,60 @@ interface CategoryConfig {
   bgColor: string;
   borderColor: string;
   barColor: string;
+  /* Badge: always white text on a solid category-tinted bg — readable on any glow */
+  badgeBg: string;
+  badgeBorder: string;
 }
 
 const CATEGORIES: CategoryConfig[] = [
-  { key: 'underweight', min: 0,    max: 18.5, color: 'text-blue-400',  bgColor: 'bg-blue-400/10',  borderColor: 'border-blue-400/30',  barColor: 'bg-blue-400'  },
-  { key: 'healthy',     min: 18.5, max: 25,   color: 'text-accent',    bgColor: 'bg-accent/10',    borderColor: 'border-accent/30',    barColor: 'bg-accent'    },
-  { key: 'overweight',  min: 25,   max: 30,   color: 'text-amber-400', bgColor: 'bg-amber-400/10', borderColor: 'border-amber-400/30', barColor: 'bg-amber-400' },
-  { key: 'obese',       min: 30,   max: 999,  color: 'text-rose-400',  bgColor: 'bg-rose-400/10',  borderColor: 'border-rose-400/30',  barColor: 'bg-rose-400'  },
+  {
+    key: 'underweight',
+    min: 0,
+    max: 18.5,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-400/10',
+    borderColor: 'border-blue-400/30',
+    barColor: 'bg-blue-400',
+    // soft blue-tinted badge surface
+    badgeBg: 'bg-blue-500/10',
+    badgeBorder: 'border-blue-400/60',
+  },
+  {
+    key: 'healthy',
+    min: 18.5,
+    max: 25,
+    color: 'text-accent',
+    bgColor: 'bg-accent/10',
+    borderColor: 'border-accent/30',
+    barColor: 'bg-accent',
+    // soft lime-tinted badge surface
+    badgeBg: 'bg-lime-400/10',
+    badgeBorder: 'border-accent/60',
+  },
+  {
+    key: 'overweight',
+    min: 25,
+    max: 30,
+    color: 'text-amber-400',
+    bgColor: 'bg-amber-400/10',
+    borderColor: 'border-amber-400/30',
+    barColor: 'bg-amber-400',
+    // soft amber-tinted badge surface
+    badgeBg: 'bg-amber-400/10',
+    badgeBorder: 'border-amber-400/70',
+  },
+  {
+    key: 'obese',
+    min: 30,
+    max: 999,
+    color: 'text-rose-400',
+    bgColor: 'bg-rose-400/10',
+    borderColor: 'border-rose-400/30',
+    barColor: 'bg-rose-400',
+    // soft rose-tinted badge surface
+    badgeBg: 'bg-rose-400/10',
+    badgeBorder: 'border-rose-400/70',
+  },
 ];
 
 const CATEGORY_ICONS: Record<BMICategory, typeof Activity> = {
@@ -80,6 +127,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
 
   const category = bmi !== null ? getBMICategory(bmi) : null;
   const indicatorPercent = bmi !== null ? getBMIIndicatorPercent(bmi) : 0;
+  const ActiveCategoryIcon = category ? CATEGORY_ICONS[category.key] : null;
 
   const inputCls = 'w-full bg-background border border-border/60 rounded-xl px-4 py-3 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all';
   const labelCls = 'block text-xs font-bold uppercase tracking-[0.12em] text-zinc-400 mb-1.5';
@@ -124,8 +172,11 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
 
                     {/* Single-column: inputs + button */}
                     <div>
-                      <p className="text-xs text-zinc-400 leading-relaxed mb-5">
+                      <p className="text-xs text-zinc-400 leading-relaxed mb-3">
                         {d.intro ?? d.subheading}
+                      </p>
+                      <p className="text-[11px] text-zinc-500/80 leading-relaxed italic mb-4 sm:mb-5">
+                        * {d.disclaimer}
                       </p>
                       <div className="grid sm:grid-cols-3 gap-3 mb-4">
                         <div>
@@ -184,16 +235,24 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                             <div
                               key={cat.key}
                               className={[
-                                'flex flex-col items-center gap-1.5 rounded-xl px-3 py-3 border text-center',
+                                'relative flex flex-col items-center gap-1.5 rounded-xl px-3 py-3 border text-center',
                                 cat.bgColor,
                                 cat.borderColor,
                               ].join(' ')}
                             >
-                              <Icon className={`${cat.color} w-4 h-4`} strokeWidth={1.7} />
-                              <p className={`text-xs font-bold leading-tight ${cat.color}`}>
+                              {/* subtle top accent */}
+                              <div className="pointer-events-none absolute inset-x-2 top-1 h-px bg-gradient-to-r from-transparent via-white/14 to-transparent" />
+
+                              {/* icon + title */}
+                              <div className="mt-0.5 flex items-center gap-1.5">
+                                <div className="inline-flex items-center justify-center rounded-md bg-black/40 px-1.5 py-1">
+                                  <Icon className={`${cat.color} w-4 h-4`} strokeWidth={1.7} />
+                                </div>
+                              </div>
+                              <p className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${cat.color}`}>
                                 {d.categories[cat.key]}
                               </p>
-                              <p className="text-xs text-zinc-400 leading-tight">
+                              <p className="text-[13px] font-medium text-zinc-50 leading-tight">
                                 {d.ranges[cat.key]}
                               </p>
                             </div>
@@ -214,71 +273,101 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
                 >
                   <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
 
-                  {/* Ambient glow */}
-                  <div className={`absolute top-0 right-0 w-72 h-72 rounded-full blur-[90px] pointer-events-none opacity-10 ${category!.barColor}`} />
+                  {/* Ambient glow — softened and pushed into corner */}
+                  <div className={`absolute -top-10 -right-10 w-64 h-64 rounded-full blur-[80px] pointer-events-none opacity-8 ${category!.barColor}`} />
 
                   <div className="relative z-10 p-6 md:p-8">
-                    <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start mb-6">
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.15em] text-zinc-500 mb-2">{d.yourBMI}</p>
 
-                        {/* Primary metric */}
-                        <div className="flex items-end gap-4 mb-4">
-                          <motion.span
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className={`font-display text-[4.5rem] font-bold leading-none ${category!.color}`}
-                          >
-                            {bmi}
-                          </motion.span>
-                          <motion.span
-                            initial={{ opacity: 0, x: -4 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                            className={`mb-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide ${category!.bgColor} ${category!.color} border ${category!.borderColor}`}
-                          >
-                            {d.categories[category!.key]}
-                          </motion.span>
-                        </div>
-
-                        {/* Indicator bar */}
-                        <div className="max-w-sm">
-                          <div className="relative h-2 rounded-full overflow-hidden bg-background/80">
-                            <div
-                              className="absolute inset-0"
-                              style={{ background: 'linear-gradient(to right, rgba(96,165,250,0.5), rgba(163,230,53,0.5), rgba(251,191,36,0.5), rgba(248,113,113,0.5))' }}
-                            />
-                            <motion.div
-                              initial={{ left: 0 }}
-                              animate={{ left: `${indicatorPercent}%` }}
-                              transition={{ delay: 0.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white border-2 border-background shadow-md"
-                              style={{ position: 'absolute' }}
-                            />
-                          </div>
-                          <div className="flex justify-between mt-1.5">
-                            <span className="text-blue-400 text-[9px] font-medium">10</span>
-                            <span className="text-accent text-[9px] font-medium">18.5</span>
-                            <span className="text-amber-400 text-[9px] font-medium">25</span>
-                            <span className="text-rose-400 text-[9px] font-medium">30+</span>
-                            <span className="text-zinc-600 text-[9px]">40</span>
-                          </div>
-                        </div>
-                      </div>
-
+                    {/* Header row: YOUR BMI title — more prominent + Recalculate desktop-only */}
+                    <div className="flex items-center justify-between mb-5">
+                      <h3 className="font-display text-lg font-bold text-white tracking-tight">
+                        {d.yourBMI}
+                      </h3>
+                      {/* Recalculate: neutral zinc, visible on desktop in header */}
                       <button
                         onClick={reset}
-                        className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-background border border-border/50 text-zinc-400 hover:text-white hover:border-border text-xs font-medium transition-all"
+                        className="hidden sm:flex group items-center gap-2 px-4 py-2 rounded-xl bg-zinc-800 border border-zinc-600 text-zinc-200 hover:bg-zinc-700 hover:border-zinc-400 hover:text-white text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-200"
                       >
-                        <RotateCcw size={12} />
+                        <RotateCcw size={13} className="transition-transform duration-500 group-hover:-rotate-180" />
                         {d.reset}
                       </button>
                     </div>
 
+                    <div className="mb-6">
+                      {/* Primary metric + badge */}
+                      <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:gap-4 mb-4">
+                        <motion.span
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.1 }}
+                          className={`font-display text-[4.5rem] font-bold leading-none ${category!.color}`}
+                        >
+                          {bmi}
+                        </motion.span>
+                        {/* Badge: unified for mobile + desktop, softly tinted by status color */}
+                        <motion.span
+                          initial={{ opacity: 0, x: -4 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className={`inline-flex items-center gap-1.5 mt-1 sm:mt-0 sm:mb-2 px-3 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.18em] border backdrop-blur-sm shadow-[0_0_12px_rgba(0,0,0,0.35)] ${category!.badgeBg} ${category!.badgeBorder} ${category!.color}`}
+                        >
+                          {ActiveCategoryIcon && (
+                            <ActiveCategoryIcon
+                              size={13}
+                              className={`${category!.color.replace('text-', 'stroke-')} text-current`}
+                              strokeWidth={1.7}
+                            />
+                          )}
+                          <span>{d.categories[category!.key]}</span>
+                        </motion.span>
+                      </div>
+
+                      {/* Indicator bar */}
+                      <div className="max-w-sm">
+                        {/* Track */}
+                        <div className="relative h-[10px] rounded-full overflow-visible bg-background/85">
+                          <div
+                            className="absolute inset-0 rounded-full overflow-hidden"
+                            style={{ background: 'linear-gradient(to right, rgba(96,165,250,0.55), rgba(163,230,53,0.55), rgba(251,191,36,0.55), rgba(248,113,113,0.55))' }}
+                          />
+                          {/* Diamond pointer */}
+                          <motion.div
+                            initial={{ left: 0 }}
+                            animate={{ left: `${indicatorPercent}%` }}
+                            transition={{ delay: 0.25, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                            className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
+                            style={{ position: 'absolute' }}
+                          >
+                            <span className={`absolute inset-0 m-auto rounded-full blur-[6px] opacity-60 w-5 h-5 ${category!.barColor}`} />
+                            <span
+                              className="relative block w-4 h-4 rotate-45 rounded-sm bg-white"
+                              style={{ boxShadow: '0 0 0 2px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5)' }}
+                            />
+                          </motion.div>
+                        </div>
+                        {/* Scale labels */}
+                        <div className="flex justify-between mt-2">
+                          <span className="text-blue-400 text-[10px] font-medium">10</span>
+                          <span className="text-accent text-[10px] font-medium">18.5</span>
+                          <span className="text-amber-400 text-[10px] font-medium">25</span>
+                          <span className="text-rose-400 text-[10px] font-medium">30+</span>
+                          <span className="text-zinc-500 text-[10px]">40</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Recalculate — mobile only, sits above CTA text */}
+                    <button
+                      onClick={reset}
+                      className="sm:hidden group flex items-center gap-2 w-full justify-center mb-5 px-4 py-2.5 rounded-xl bg-zinc-800 border border-zinc-600 text-zinc-200 hover:bg-zinc-700 hover:border-zinc-400 hover:text-white text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-200"
+                    >
+                      <RotateCcw size={13} className="transition-transform duration-500 group-hover:-rotate-180" />
+                      {d.reset}
+                    </button>
+
                     {/* CTA */}
-                    <div className="pt-5 border-t border-border/40">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="pt-4 border-t border-border/40">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
                         <p className="text-zinc-300 text-sm leading-relaxed max-w-sm">{d.cta}</p>
                         <CTAButton href="#contact" size="sm" className="flex-shrink-0">
                           <span className="flex items-center gap-1.5">

@@ -28,12 +28,12 @@ export default async function Home({ params }: { params: { locale: Locale } }) {
       <Services dict={dict} />
       <Benefits dict={dict} />
       <Transformations dict={dict} />
-      <Testimonials dict={dict} />
       <CTABanner dict={dict} />
       <Process dict={dict} />
       <Pricing dict={dict} />
       <FAQ dict={dict} />
       <BMICalculator dict={dict} />
+      <Testimonials dict={dict} />
       <Contact dict={dict} />
       <InstagramStrip dict={dict} />
       <ScrollToTop />

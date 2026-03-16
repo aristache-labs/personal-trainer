@@ -436,7 +436,7 @@
     "subheading": "Know Your Starting Point",
     "freeAssessmentLabel": "Free Assessment Tool",
     "inputError": "Please enter a valid height (50–250 cm) and weight (20–300 kg).",
-    "categoriesLabel": "BMI Categories",
+    "categoriesLabel": "BMI Classification",
     "estimateNote": "Results are an estimate and don't replace a full professional assessment.",
     "intro": "Calculate your Body Mass Index to understand where you are and where you want to go. Use this as a starting point — not a finish line.",
     "heightLabel": "Height (cm)",
@@ -457,7 +457,7 @@
       "underweight": "Under 18.5",
       "healthy": "18.5 – 24.9",
       "overweight": "25.0 – 29.9",
-      "obese": "30.0 and above"
+      "obese": "30+"
     },
     "cta": "Know your starting point — now let's build the plan around it. Book a free consultation.",
     "ctaButton": "Book Free Consultation",
