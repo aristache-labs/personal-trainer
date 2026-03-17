@@ -20,8 +20,8 @@ export default function SectionEyebrow({
         .filter(Boolean)
         .join(' ')}
     >
-      <span className="inline-block h-px w-5 md:w-6 bg-accent" />
-      <span className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase">
+      <span className="inline-block h-px w-5 md:w-8 bg-accent" />
+      <span className="text-[11px] md:text-[12px] font-semibold tracking-[0.20em] md:tracking-[0.24em] text-accent/70 uppercase">
         {label}
       </span>
     </div>

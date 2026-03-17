@@ -4,9 +4,8 @@ import { useState } from 'react';
 import { ChevronDown, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import SectionHeading from '@/components/ui/SectionHeading';
 import CTAButton from '@/components/ui/CTAButton';
-import SectionEyebrow from '@/components/ui/SectionEyebrow';
+import SectionHeader from '@/components/ui/SectionHeader';
 
 interface FAQProps {
   dict: any;
@@ -18,13 +17,13 @@ export default function FAQ({ dict }: FAQProps) {
       <div className="container mx-auto py-10 md:py-section">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
-            <div className="mb-6 md:mb-9">
-              <SectionEyebrow label={dict.faq.eyebrow} align="left" className="mb-3" />
-              <SectionHeading heading={dict.faq.title} align="left" className="mb-2" />
-              <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed max-w-2xl">
-                {dict.faq.subtitle}
-              </p>
-            </div>
+            <SectionHeader
+              eyebrow={dict.faq.eyebrow}
+              title={dict.faq.title}
+              subtitle={dict.faq.subtitle}
+              align="left"
+              className="mb-6 md:mb-9"
+            />
           </AnimatedSection>
 
           <div className="space-y-1.5 md:space-y-2">

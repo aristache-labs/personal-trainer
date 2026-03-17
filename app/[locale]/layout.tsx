@@ -56,7 +56,7 @@ export default async function LocaleLayout({
     <html lang={params.locale} className={`${syne.variable} ${dmSans.variable} scroll-smooth`}>
       <body className="antialiased">
         <Navbar locale={params.locale} dict={dict} />
-        <main className="pb-20 md:pb-0">{children}</main>
+        <main>{children}</main>
         <Footer locale={params.locale} dict={dict} />
       </body>
     </html>

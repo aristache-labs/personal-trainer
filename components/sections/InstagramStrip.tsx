@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { Instagram, Flame, Trophy, Apple, Brain, Dumbbell, Utensils, Moon } from 'lucide-react';
 import { useRef } from 'react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
+import SectionHeader from '@/components/ui/SectionHeader';
 
 interface InstagramStripProps {
   dict: any;
@@ -201,20 +202,14 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
         {/* Section header */}
         <AnimatedSection>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 md:mb-12">
-            <div className="max-w-2xl">
-              <p className="text-accent text-xs font-bold uppercase tracking-[0.18em] mb-3 flex items-center gap-2">
-                <span className="inline-block w-6 h-px bg-accent opacity-60" aria-hidden="true" />
-                {d.subheading}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight">
-                {d.heading}
-              </h2>
-              {d.subtitle && (
-                <p className="mt-3 text-sm md:text-base text-zinc-400 max-w-xl">
-                  {d.subtitle}
-                </p>
-              )}
-            </div>
+            <SectionHeader
+              eyebrow={d.subheading}
+              title={d.heading}
+              subtitle={d.subtitle}
+              align="left"
+              maxWidth="md"
+              className="mb-0"
+            />
 
             <div className="flex flex-col items-start sm:items-end gap-2 text-xs text-zinc-500">
               <a
@@ -250,7 +245,7 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
               rel="noopener noreferrer"
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="group relative flex flex-col bg-background border border-border/50 rounded-2xl overflow-hidden cursor-pointer hover:border-accent/35 transition-colors duration-300 h-full min-h-[320px] lg:min-h-[380px]"
+              className="group relative flex flex-col bg-background border border-border/50 rounded-2xl overflow-hidden cursor-pointer hover:border-accent/35 transition-colors duration-300 h-full lg:min-h-[380px]"
               aria-label={`${FEATURED_POST.category}: ${FEATURED_POST.title}`}
             >
               {/* Background gradient */}

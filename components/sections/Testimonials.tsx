@@ -4,8 +4,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Star, BadgeCheck } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
-import SectionHeading from '@/components/ui/SectionHeading';
-import SectionEyebrow from '@/components/ui/SectionEyebrow';
+import SectionHeader from '@/components/ui/SectionHeader';
 
 interface TestimonialsProps {
   dict: any;
@@ -35,13 +34,14 @@ export default function Testimonials({ dict }: TestimonialsProps) {
     <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
       <div className="container mx-auto py-10 md:py-section">
         <AnimatedSection>
-          <div className="max-w-2xl mx-auto text-center mb-7 md:mb-12">
-            <SectionEyebrow label={dict.testimonials.eyebrow} align="center" className="mb-3 justify-center" />
-            <SectionHeading heading={dict.testimonials.title} />
-            <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed mt-4">
-              {dict.testimonials.subtitle}
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow={dict.testimonials.eyebrow}
+            title={dict.testimonials.title}
+            subtitle={dict.testimonials.subtitle}
+            align="center"
+            className="mb-7 md:mb-12"
+            maxWidth="md"
+          />
         </AnimatedSection>
 
         {/* Mobile: compact snap carousel */}
