@@ -242,7 +242,8 @@ function MobileStepCard({
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className={[
         'group relative rounded-2xl overflow-hidden',
-        'p-4 sm:p-5 flex flex-col gap-3',
+        // slightly tighter on mobile, keep air on sm+
+        'p-3.5 sm:p-5 flex flex-col gap-2.5 sm:gap-3',
         'cursor-default w-full',
         featured
           ? 'bg-surface border border-accent/30'
@@ -319,7 +320,7 @@ function MobileNodeColumn({ index, totalSteps }: { index: number; totalSteps: nu
     <div ref={ref} className="flex flex-col items-center w-7 flex-shrink-0 pt-1">
       <Node active={active} />
       {index < totalSteps - 1 && (
-        <div className="w-px flex-1 min-h-8 md:min-h-12 mt-2 bg-gradient-to-b from-border/50 to-transparent" />
+        <div className="w-px flex-1 min-h-7 md:min-h-12 mt-1.5 md:mt-2 bg-gradient-to-b from-border/50 to-transparent" />
       )}
     </div>
   );
@@ -338,7 +339,7 @@ export default function Process({ dict }: ProcessProps) {
 
   return (
     <section id="process" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-12 md:py-section">
+      <div className="container mx-auto py-10 md:py-section">
 
         {/* Header */}
         <motion.div
@@ -354,7 +355,7 @@ export default function Process({ dict }: ProcessProps) {
         </motion.div>
 
         {/* Steps area */}
-        <div ref={stepsRef} className="relative mt-10 md:mt-14">
+        <div ref={stepsRef} className="relative mt-8 md:mt-14">
 
           {/* ── Desktop center track ── */}
           <div className="hidden lg:block absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-border/20 pointer-events-none" />

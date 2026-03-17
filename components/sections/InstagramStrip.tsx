@@ -196,7 +196,7 @@ export default function InstagramStrip({ dict }: InstagramStripProps) {
   const isRo = viewInsight !== 'View insight';
 
   return (
-    <section className="py-12 md:py-section bg-surface section-divider overflow-hidden">
+    <section className="py-10 md:py-section bg-surface section-divider overflow-hidden">
       <div className="container mx-auto">
         {/* Section header */}
         <AnimatedSection>

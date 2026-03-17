@@ -32,7 +32,7 @@ export default function Benefits({ dict }: BenefitsProps) {
 
   return (
     <section id="benefits" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-12 md:py-section">
+      <div className="container mx-auto py-10 md:py-section">
         <AnimatedSection>
           <SectionHeading
             heading={dict.benefits.heading}

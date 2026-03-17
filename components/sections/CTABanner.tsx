@@ -20,7 +20,7 @@ export default function CTABanner({ dict }: CTABannerProps) {
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[300px] bg-accent/[0.06] rounded-full blur-[80px]" />
       </div>
 
-      <div className="relative container mx-auto py-section-sm">
+      <div className="relative container mx-auto py-10 md:py-section-sm">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
 
           {/* Left: copy */}

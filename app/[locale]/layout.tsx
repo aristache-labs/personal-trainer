@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { getDictionary, Locale } from '@/lib/getDictionary';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import StickyMobileCTA from '@/components/ui/StickyMobileCTA';
 
 const syne = Syne({
   subsets: ['latin'],
@@ -59,7 +58,6 @@ export default async function LocaleLayout({
         <Navbar locale={params.locale} dict={dict} />
         <main className="pb-20 md:pb-0">{children}</main>
         <Footer locale={params.locale} dict={dict} />
-        <StickyMobileCTA dict={dict} />
       </body>
     </html>
   );

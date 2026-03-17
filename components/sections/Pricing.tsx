@@ -36,7 +36,7 @@ export default function Pricing({ dict }: PricingProps) {
 
   return (
     <section id="pricing" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-14 md:py-section">
+      <div className="container mx-auto py-12 md:py-section">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto text-center mb-8 md:mb-14">
             <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
@@ -188,7 +188,11 @@ function PricingCard({
         </div>
       )}
 
-      <div className={`flex flex-col flex-1 p-3.5 md:p-4 ${isHighlight ? 'pt-8 md:pt-9' : ''}`}>
+      <div
+        className={`flex flex-col flex-1 p-3 md:p-4 ${
+          isHighlight ? 'pt-7 md:pt-9' : ''
+        }`}
+      >
         {/* Header */}
         <div className="mb-3">
           <h3 className="font-display text-base md:text-lg font-bold text-white">
@@ -213,12 +217,12 @@ function PricingCard({
         <div className="h-px bg-border/50 mb-3" />
 
         {/* Description — 2 lines max for consistent card height */}
-        <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-3 line-clamp-2 flex-1">
+        <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-2.5 line-clamp-2 flex-1">
           {plan.description}
         </p>
 
         {/* Features */}
-        <ul className="space-y-1.5 mb-4">
+        <ul className="space-y-1 mb-4 md:space-y-1.5">
           {plan.features.slice(0, 3).map((feature, idx) => (
             <li key={idx} className="flex items-start gap-2">
               <Check

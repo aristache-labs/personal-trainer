@@ -18,7 +18,7 @@ export default function Services({ dict }: ServicesProps) {
 
   return (
     <section id="services" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-12 md:py-section">
+      <div className="container mx-auto py-10 md:py-section">
         <AnimatedSection>
           <SectionHeading
             heading={dict.services.heading}

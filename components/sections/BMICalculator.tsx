@@ -183,7 +183,7 @@ export default function BMICalculator({ dict }: BMICalculatorProps) {
     <section
       id="bmi"
       ref={sectionRef}
-      className="py-section-sm bg-background section-divider overflow-x-clip"
+      className="py-10 md:py-section-sm bg-background section-divider overflow-x-clip"
     >
       <div className="container mx-auto">
         <AnimatedSection>

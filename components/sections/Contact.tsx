@@ -31,11 +31,11 @@ export default function Contact({ dict }: ContactProps) {
   };
 
   const inputBase =
-    'w-full bg-background/70 border border-border/60 rounded-xl px-4 py-3.5 text-white text-sm placeholder-zinc-700/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/35 focus:border-accent/70 hover:border-border';
+    'w-full bg-background/70 border border-border/60 rounded-xl px-4 py-3 md:py-3.5 text-white text-sm placeholder-zinc-700/90 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/35 focus:border-accent/70 hover:border-border';
 
   return (
     <section id="contact" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-12 md:py-section">
+      <div className="container mx-auto py-10 md:py-section">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 max-w-6xl mx-auto">
 
           {/* Left — premium consultation form */}
@@ -55,7 +55,7 @@ export default function Contact({ dict }: ContactProps) {
             </div>
 
             {/* Mobile-only: WhatsApp + reply first (conversion order) */}
-            <div className="flex flex-col gap-3 mb-4 lg:hidden">
+            <div className="flex flex-col gap-3 mb-5 lg:hidden">
               <a
                 href={WA_URL}
                 target="_blank"
@@ -88,7 +88,7 @@ export default function Contact({ dict }: ContactProps) {
 
             <form
               onSubmit={handleSubmit}
-              className="space-y-4 md:space-y-5 rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-950/80 via-background/90 to-black/80 px-4 py-5 sm:px-5 sm:py-6 shadow-[0_18px_50px_rgba(0,0,0,0.7)] pb-8"
+              className="space-y-3.5 md:space-y-5 rounded-2xl border border-border/50 bg-gradient-to-br from-zinc-950/80 via-background/90 to-black/80 px-4 py-5 sm:px-5 sm:py-6 shadow-[0_18px_50px_rgba(0,0,0,0.7)] pb-8"
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>

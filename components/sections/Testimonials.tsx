@@ -32,7 +32,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
 
   return (
     <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-12 md:py-section">
+      <div className="container mx-auto py-10 md:py-section">
         <AnimatedSection>
           <div className="max-w-2xl mx-auto text-center mb-7 md:mb-12">
             <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
@@ -49,7 +49,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="flex gap-3 overflow-x-auto snap-x scrollbar-hide pb-3 -mx-4 px-4"
+            className="flex gap-3 overflow-x-auto snap-x scrollbar-hide pb-3 -mx-4 px-5"
             onScroll={(e) => {
               const el = e.currentTarget;
               const cardWidth = el.scrollWidth / items.length;
@@ -63,12 +63,14 @@ export default function Testimonials({ dict }: TestimonialsProps) {
             ))}
           </div>
           {/* Polished pagination dots */}
-          <div className="flex justify-center gap-1 mt-3">
+          <div className="flex justify-center gap-1.5 mt-3.5">
             {items.map((_: any, i: number) => (
               <div
                 key={i}
                 className={`rounded-full transition-all duration-300 ${
-                  i === activeDot ? 'w-4 h-1 bg-accent' : 'w-1.5 h-1 bg-border/70'
+                  i === activeDot
+                    ? 'w-4 h-1.5 bg-accent'
+                    : 'w-2 h-1 bg-border'
                 }`}
               />
             ))}
@@ -178,9 +180,9 @@ function TestimonialCard({ item, index, compact = false }: TestimonialCardProps)
     <motion.div
       whileHover={{ scale: 1.01 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className={`bg-background/80 border border-border/60 rounded-2xl ${
+      className={`bg-background/90 md:bg-background/80 border border-border/60 rounded-2xl ${
         compact ? 'p-5' : 'p-6'
-      } hover:border-accent/35 hover:bg-background/90 transition-colors h-full flex flex-col group cursor-default`}
+      } hover:border-accent/35 hover:bg-background/95 md:hover:bg-background/90 transition-colors h-full flex flex-col group cursor-default`}
     >
       <div className="flex gap-0.5 mb-3 opacity-90">
         {[...Array(5)].map((_, i) => (
