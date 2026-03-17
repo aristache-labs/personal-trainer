@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Youtube, Star, MessageCircle, ArrowRight } from 'lucide-react';
+import { Instagram, Facebook, Youtube, MessageCircle, ArrowRight } from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 import { Locale } from '@/lib/getDictionary';
 
 interface FooterProps {
@@ -22,15 +23,18 @@ export default function Footer({ locale, dict }: FooterProps) {
 
       {/* Conversion strip */}
       <div className="border-b border-border/30">
-        <div className="container mx-auto py-10">
-          <div className="relative rounded-3xl border border-border/40 bg-gradient-to-br from-zinc-900/90 via-zinc-950 to-black px-5 py-7 md:px-8 md:py-8 shadow-[0_24px_60px_rgba(0,0,0,0.75)] overflow-hidden">
+        <div className="container mx-auto py-8 md:py-10">
+          <div className="relative rounded-3xl border border-border/40 bg-gradient-to-br from-zinc-900/90 via-zinc-950 to-black px-6 py-8 md:px-10 md:py-10 shadow-[0_24px_60px_rgba(0,0,0,0.75)] overflow-hidden">
             <div className="pointer-events-none absolute inset-0 opacity-55 bg-[radial-gradient(circle_at_top_left,rgba(190,242,100,0.12),transparent_58%),radial-gradient(circle_at_bottom_right,rgba(24,24,27,0.9),transparent_60%)]" />
-            <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8">
-              <div className="space-y-2 md:space-y-3 max-w-xl">
-                <p className="text-[11px] font-semibold tracking-[0.22em] text-accent/70 uppercase">
-                  {locale === 'ro' ? 'Începe transformarea' : 'Start your transformation'}
-                </p>
-                <p className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
+            {/* Subtle top accent line */}
+            <div className="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent pointer-events-none" />
+            <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-10">
+              <div className="flex flex-col gap-2.5 md:gap-3 max-w-xl">
+                <SectionEyebrow
+                  label={locale === 'ro' ? 'Începe transformarea' : 'Start your transformation'}
+                  align="left"
+                />
+                <p className="font-display text-2xl md:text-3xl lg:text-[2rem] font-bold text-white leading-tight tracking-tight">
                   {locale === 'ro' ? 'Pregătit să te transformi?' : 'Ready to transform?'}
                 </p>
                 <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed max-w-lg">
@@ -40,18 +44,16 @@ export default function Footer({ locale, dict }: FooterProps) {
                 </p>
               </div>
 
-              <div className="flex flex-col items-start md:items-end gap-3 md:gap-3.5 flex-shrink-0 md:min-w-[260px]">
-                <div className="flex flex-col items-start md:items-end gap-1.5 w-full">
-                  <CTAButton size="md" href="#contact">
-                    {locale === 'ro' ? 'Programează o consultație' : 'Book Free Call'}
-                    <ArrowRight size={14} />
-                  </CTAButton>
-                  <p className="text-[11px] text-zinc-500 md:text-zinc-400">
-                    {locale === 'ro'
-                      ? 'Fără presiune. Doar următorul pas clar.'
-                      : 'No pressure. Just a clear next step.'}
-                  </p>
-                </div>
+              <div className="flex flex-col items-start md:items-end gap-2 flex-shrink-0 md:min-w-[220px]">
+                <CTAButton size="md" href="#contact" className="w-full md:w-auto">
+                  {locale === 'ro' ? 'Programează o consultație' : 'Book Free Call'}
+                  <ArrowRight size={14} />
+                </CTAButton>
+                <p className="text-[11px] text-zinc-500 leading-snug">
+                  {locale === 'ro'
+                    ? 'Fără presiune. Doar următorul pas clar.'
+                    : 'No pressure. Just a clear next step.'}
+                </p>
               </div>
             </div>
           </div>

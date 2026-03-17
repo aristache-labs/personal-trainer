@@ -22,7 +22,7 @@ export default function SectionHeading({
       title={heading}
       subtitle={subheading}
       align={align}
-      className={cn('mb-12 md:mb-16', className)}
+      className={cn('mb-8 md:mb-12', className)}
     >
       {children}
     </SectionHeader>

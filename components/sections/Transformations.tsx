@@ -88,7 +88,7 @@ export default function Transformations({ dict }: TransformationsProps) {
 
   return (
     <section id="transformations" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-10 md:py-section">
+      <div className="container mx-auto py-14 md:py-section">
         <AnimatedSection>
           <SectionHeading
             heading={dict.transformations.heading}

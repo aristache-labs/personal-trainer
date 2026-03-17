@@ -36,7 +36,7 @@ export default function Contact({ dict }: ContactProps) {
 
   return (
     <section id="contact" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-10 md:py-section">
+      <div className="container mx-auto py-14 md:py-section">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 xl:gap-20 max-w-6xl mx-auto">
 
           {/* Left — premium consultation form */}

@@ -15,7 +15,7 @@ export default function CTABanner({ dict }: CTABannerProps) {
     { icon: Zap, label: t.trustLimited ?? 'Limited Spots' },
   ];
   return (
-    <section className="relative overflow-hidden section-divider bg-surface">
+    <section className="relative overflow-hidden section-divider bg-surface hidden md:block">
       {/* Subtle radial glow — accent hint without hard panels */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[300px] bg-accent/[0.06] rounded-full blur-[80px]" />

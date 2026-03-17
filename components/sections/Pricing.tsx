@@ -36,7 +36,7 @@ export default function Pricing({ dict }: PricingProps) {
 
   return (
     <section id="pricing" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-12 md:py-section">
+      <div className="container mx-auto py-14 md:py-section">
         <AnimatedSection>
           <SectionHeader
             eyebrow={pricing.eyebrow}
@@ -49,7 +49,7 @@ export default function Pricing({ dict }: PricingProps) {
 
         {/* Mobile: stacked in logical order */}
         <div className="grid grid-cols-1 gap-3 md:hidden max-w-6xl mx-auto">
-          {[plan8, plan4, plan1, plan12, plan20].map((plan, index) => {
+          {[plan8, plan12, plan4, plan20, plan1].map((plan, index) => {
             if (!plan) return null;
             const badge = plan.badgeType ?? 'none';
             const isPopular = badge === 'popular';

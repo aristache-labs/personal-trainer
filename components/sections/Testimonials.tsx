@@ -32,7 +32,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
 
   return (
     <section id="testimonials" className="bg-surface section-divider overflow-x-clip">
-      <div className="container mx-auto py-10 md:py-section">
+      <div className="container mx-auto py-14 md:py-section">
         <AnimatedSection>
           <SectionHeader
             eyebrow={dict.testimonials.eyebrow}

@@ -339,7 +339,7 @@ export default function Process({ dict }: ProcessProps) {
 
   return (
     <section id="process" className="bg-background section-divider overflow-x-clip">
-      <div className="container mx-auto py-10 md:py-section">
+      <div className="container mx-auto py-14 md:py-section">
 
         {/* Header */}
         <motion.div
