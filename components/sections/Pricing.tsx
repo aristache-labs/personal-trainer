@@ -5,6 +5,7 @@ import { Check, Sparkles, Award } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CTAButton from '@/components/ui/CTAButton';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 
 interface PricingProps {
   dict: any;
@@ -39,9 +40,7 @@ export default function Pricing({ dict }: PricingProps) {
       <div className="container mx-auto py-12 md:py-section">
         <AnimatedSection>
           <div className="max-w-3xl mx-auto text-center mb-8 md:mb-14">
-            <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
-              {pricing.eyebrow}
-            </p>
+            <SectionEyebrow label={pricing.eyebrow} align="center" className="mb-3" />
             <SectionHeading heading={pricing.title} />
             <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed mt-3 max-w-2xl mx-auto">
               {pricing.subtitle}

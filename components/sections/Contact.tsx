@@ -5,6 +5,7 @@ import { Mail, Instagram, Send, Clock, CalendarClock } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CTAButton from '@/components/ui/CTAButton';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 
 interface ContactProps {
   dict: any;
@@ -41,9 +42,7 @@ export default function Contact({ dict }: ContactProps) {
           {/* Left — premium consultation form */}
           <AnimatedSection direction="left" delay={0.05}>
             <div className="mb-4 md:mb-6">
-              <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
-                {dict.contact.eyebrow}
-              </p>
+              <SectionEyebrow label={dict.contact.eyebrow} align="left" className="mb-3" />
               <SectionHeading
                 heading={dict.contact.heading}
                 align="left"

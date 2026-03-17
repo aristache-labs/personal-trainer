@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Star, BadgeCheck } from 'lucide-react';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 
 interface TestimonialsProps {
   dict: any;
@@ -35,9 +36,7 @@ export default function Testimonials({ dict }: TestimonialsProps) {
       <div className="container mx-auto py-10 md:py-section">
         <AnimatedSection>
           <div className="max-w-2xl mx-auto text-center mb-7 md:mb-12">
-            <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
-              {dict.testimonials.eyebrow}
-            </p>
+            <SectionEyebrow label={dict.testimonials.eyebrow} align="center" className="mb-3 justify-center" />
             <SectionHeading heading={dict.testimonials.title} />
             <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed mt-4">
               {dict.testimonials.subtitle}

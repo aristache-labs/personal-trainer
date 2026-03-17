@@ -1,5 +1,6 @@
 import { MessageCircle, ArrowRight, Star, Users, Clock, Zap } from 'lucide-react';
 import CTAButton from '@/components/ui/CTAButton';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 
 interface CTABannerProps {
   dict: any;
@@ -25,10 +26,11 @@ export default function CTABanner({ dict }: CTABannerProps) {
 
           {/* Left: copy */}
           <div className="max-w-2xl">
-            <p className="text-[11px] font-bold text-accent uppercase tracking-[0.2em] mb-5 flex items-center gap-2">
-              <span className="w-5 h-px bg-accent" />
-              {t.eyebrow ?? 'Limited Availability'}
-            </p>
+            <SectionEyebrow
+              label={t.eyebrow ?? 'Limited Availability'}
+              align="left"
+              className="mb-5"
+            />
             <h2 className="font-display text-3xl md:text-4xl lg:text-[2.6rem] font-bold text-white leading-[1.1] tracking-tight mb-5">
               {(t.headlineLine1 ?? 'Limited spots available')}
               <br className="hidden sm:block" /> {t.headlineLine2 ?? 'each month.'}{' '}

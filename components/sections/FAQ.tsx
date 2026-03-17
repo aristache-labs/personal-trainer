@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import SectionHeading from '@/components/ui/SectionHeading';
 import CTAButton from '@/components/ui/CTAButton';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 
 interface FAQProps {
   dict: any;
@@ -18,9 +19,7 @@ export default function FAQ({ dict }: FAQProps) {
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <div className="mb-6 md:mb-9">
-              <p className="text-[11px] font-semibold tracking-[0.26em] text-accent/70 uppercase mb-3">
-                {dict.faq.eyebrow}
-              </p>
+              <SectionEyebrow label={dict.faq.eyebrow} align="left" className="mb-3" />
               <SectionHeading heading={dict.faq.title} align="left" className="mb-2" />
               <p className="text-zinc-400 text-sm md:text-[15px] leading-relaxed max-w-2xl">
                 {dict.faq.subtitle}

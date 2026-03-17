@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, Shield, Clock, Users, Phone, Star } from 'lucide-react';
 import Image from 'next/image';
 import CTAButton from '@/components/ui/CTAButton';
+import SectionEyebrow from '@/components/ui/SectionEyebrow';
 import StatsCounter from '@/components/ui/StatsCounter';
 
 interface HeroProps {
@@ -48,12 +49,12 @@ export default function Hero({ dict }: HeroProps) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease }}
-              className="flex items-center gap-3 mb-5 md:mb-7"
+              className="mb-5 md:mb-7"
             >
-              <div className="w-10 h-px bg-accent" />
-              <span className="text-accent text-xs font-bold uppercase tracking-[0.2em]">
-                Elite Personal Training
-              </span>
+              <SectionEyebrow
+                align="left"
+                label="Elite Personal Training"
+              />
             </motion.div>
 
             <motion.h1
